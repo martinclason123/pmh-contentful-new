@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="uuid-ff616f07-3409-4c57-aac7-010912380d61" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 53.4">
+  <g id="uuid-2f1d5b8d-d075-471c-9126-eaaeeb0181d2" data-name="Ñëîé 1">
+    <g>
+      <path d="M65,10H5C2.24,10,0,7.76,0,5h0C0,2.24,2.24,0,5,0h60c2.76,0,5,2.24,5,5h0c0,2.76-2.24,5-5,5Z" fill="#4e5b31" stroke-width="0"/>
+      <path d="M65,31.7H25c-2.76,0-5-2.24-5-5h0c0-2.76,2.24-5,5-5h40c2.76,0,5,2.24,5,5h0c0,2.76-2.24,5-5,5Z" fill="#4e5b31" stroke-width="0"/>
+      <path d="M65,53.4H5c-2.76,0-5-2.24-5-5h0c0-2.76,2.24-5,5-5h60c2.76,0,5,2.24,5,5h0c0,2.76-2.24,5-5,5Z" fill="#4e5b31" stroke-width="0"/>
+    </g>
+  </g>
+</svg>

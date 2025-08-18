@@ -1,0 +1,75 @@
+/* About Us section */
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 4em 2em;
+}
+
+.aboutImage {
+  width: 90%;
+  height: auto;
+  border-radius: 0.5em;
+  margin: 0 auto 3em auto;
+}
+
+.aboutText h2 {
+  font-size: 5em;
+  font-family: "martek-regular";
+  margin-bottom: 1em;
+  line-height: 1;
+  width: 12ch;
+}
+
+.aboutText p {
+  margin-bottom: 1.5em;
+  font-size: 3em;
+  line-height: 1.4;
+}
+
+.aboutText .learnMore {
+  font-size: 3em;
+  color: #4e5b31;
+  text-decoration: underline;
+  text-underline-position: under;
+  transition: color 0.3s ease;
+}
+
+.learnMore:hover {
+  color: #818e64;
+}
+
+/* Desktop-specific styling */
+@media (min-width: 641px) {
+  .about {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    gap: 3em;
+    width: 144em;
+    margin: 0 auto 0 auto;
+  }
+
+  .aboutImage {
+    margin-bottom: 0;
+  }
+
+  .aboutText {
+    width: 50%;
+  }
+
+  .aboutText h2 {
+    font-size: 6em;
+    width: 100%;
+  }
+
+  .aboutText p {
+    font-size: 2.4em;
+  }
+
+  .learnMore {
+    font-size: 2em;
+  }
+}

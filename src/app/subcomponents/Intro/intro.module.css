@@ -1,0 +1,30 @@
+.intro {
+  padding: 4em;
+}
+
+.icon {
+  width: 15em;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+.copy {
+  font-size: 1.6em;
+}
+
+.title {
+  font-family: martek-regular;
+  font-size: 5em;
+  margin-bottom: 1em;
+}
+
+@media (min-width: 641px) {
+  .intro {
+    width: 144em;
+    margin: 0 auto;
+  }
+}

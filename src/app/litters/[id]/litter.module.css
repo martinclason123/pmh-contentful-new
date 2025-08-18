@@ -1,0 +1,65 @@
+.litter {
+  padding: 4em;
+}
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  margin-bottom: 2em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.no_results {
+  margin-bottom: 5em;
+  text-align: center;
+}
+
+.no_results img {
+  width: 50%;
+  margin: 0 auto 2em auto;
+}
+
+.no_results h2 {
+  font-size: 3em;
+  text-align: center;
+}
+
+@media (min-width: 641px) {
+  .litter {
+    width: 164em;
+    margin: 0 auto;
+  }
+
+  .videoWrapper {
+    max-width: 110em; /* Set width to 110em on desktop */
+    padding-bottom: 61.875em; /* Maintain 16:9 Aspect Ratio for 110em width */
+  }
+
+  .no_results {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    text-align: left;
+  }
+
+  .no_results h2 {
+    text-align: left;
+  }
+
+  .no_results img {
+    width: 20%;
+    margin: 0;
+  }
+}

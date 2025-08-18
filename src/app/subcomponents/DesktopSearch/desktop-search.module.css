@@ -1,0 +1,74 @@
+/* Existing styles */
+
+.search_input {
+  height: 100%;
+  border: none;
+  width: 85%;
+  background: transparent;
+  padding-left: 1em;
+  box-sizing: border-box;
+  font-size: 1.2em;
+}
+
+.search_box {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+.search {
+  background: #eee;
+  height: 4em;
+  width: 27em;
+  transition: width 0.2s ease-in-out;
+  position: relative;
+  z-index: 4;
+}
+
+.submit {
+  display: inline-flex;
+  border: none;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  width: 15%;
+}
+
+.search .search_icon {
+  display: block;
+  width: 2em;
+}
+
+.focused {
+  width: 45em;
+  z-index: 5;
+}
+
+/* New styles for the dropdown */
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ccc;
+  max-height: 300px; /* Optional max height */
+  overflow-y: auto; /* Adds scrollbar if content exceeds max height */
+  z-index: 6; /* Higher than the search bar */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown_item {
+  display: block;
+  padding: 1em;
+  text-decoration: none;
+  color: #000;
+  font-size: 1.2em;
+}
+
+.dropdown_item:hover {
+  background-color: #f0f0f0;
+}

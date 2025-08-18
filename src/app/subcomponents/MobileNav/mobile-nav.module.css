@@ -1,0 +1,131 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4em;
+  background: #fff;
+  position: sticky;
+  top: 0px;
+  z-index: 3;
+}
+
+.logo {
+  width: 8em;
+}
+
+.burger {
+  cursor: pointer;
+  width: 8em;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  height: 100vh;
+  width: 70vw;
+  max-width: 90%;
+  background: #fff;
+  transition: right 0.3s ease;
+  z-index: 3;
+  padding: 2em 1em;
+  overflow-y: auto;
+}
+
+.menu_right {
+  display: flex;
+  align-items: center;
+  gap: 5em;
+}
+
+.menuOpen {
+  right: 0;
+}
+
+.close {
+  cursor: pointer;
+  width: 2em;
+  margin-left: auto;
+}
+
+.menuList {
+  list-style: none;
+  padding: 0;
+  margin-top: 2em;
+}
+
+.menuItem {
+  background-color: #fff; /* Default background color */
+  padding: 0.5em 0;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.linkItem,
+.dropdownTitle {
+  color: inherit; /* Inherit color from menuItem */
+  text-decoration: none;
+  border-bottom: 0.01em solid #eee;
+}
+
+.dropdownTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 0.5em;
+  border-bottom: 0.01em solid #eee;
+}
+
+.dropdownContent {
+  padding: 1em 0 1em 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  font-size: 1.3em;
+  color: #000;
+  background-color: #eee; /* Slightly darker background for open dropdown */
+}
+
+.dropdownContent a {
+  color: #000;
+  text-decoration: none;
+}
+
+.dropdownContent a:hover {
+  color: #4e5b31; /* Hover color for submenu items */
+}
+
+.chevron {
+  transition: transform 0.3s ease;
+  width: 1em;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.navbar_phone {
+  font-size: 3em;
+}
+
+@media (min-width: 641px) {
+  .header {
+    display: none;
+  }
+}

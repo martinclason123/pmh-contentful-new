@@ -1,0 +1,68 @@
+[
+  {
+    "breed": "Goldendoodles",
+    "id": "gd8324",
+    "message": "Born on August 3, 2024",
+    "price": "1250",
+    "parents": {
+      "dam": {
+        "name": "Roxie",
+        "weight": "65",
+        "image": "roxy",
+        "breed": "Goldendoodle",
+        "description": "Roxie is a nurturing and calm mother, always attentive to her pups. She has a gentle nature that brings comfort and warmth to everyone around her."
+      },
+      "sire": {
+        "name": "Clifford",
+        "weight": "60",
+        "image": "clifford",
+        "breed": "Poodle",
+        "description": "Clifford is a proud and loving father, known for his intelligence and gentle demeanor. He has a joyful presence that lights up the room."
+      }
+    }
+  },
+  {
+    "breed": "Golden Retrievers",
+    "id": "gr0924",
+    "message": "Coming September 2024",
+    "price": "1000",
+    "parents": {
+      "dam": {
+        "name": "Daisy",
+        "weight": "70",
+        "image": "daisy",
+        "breed": "Golden Retriever",
+        "description": "Daisy is cheerful and playful, always bringing energy and warmth wherever she goes. Her friendly demeanor makes her a joy to be around."
+      },
+      "sire": {
+        "name": "Damion",
+        "weight": "100",
+        "image": "damion",
+        "breed": "Golden Retriever",
+        "description": "A gentle giant! Damion is calm and composed, known for his gentle and steady presence. He has a quiet confidence that puts everyone at ease."
+      }
+    }
+  },
+  {
+    "breed": "Mini Goldendoodles",
+    "id": "mgd0924",
+    "message": "Coming September 2024",
+    "price": "1000",
+    "parents": {
+      "dam": {
+        "name": "Beauty",
+        "weight": "65",
+        "image": "beauty",
+        "breed": "Golden Retriever",
+        "description": "Beauty always exudes grace and serenity. She has a nurturing spirit that brings peace and joy to everyone she encounters. Whether it's caring for her pups or simply being by your side, Beauty's gentle presence is a constant source of comfort and love"
+      },
+      "sire": {
+        "name": "Luke",
+        "weight": "20",
+        "image": "luke",
+        "breed": "Poodle",
+        "description": "Luke is an AKC registered poodle with a great temperament and a happy demeanor, he is always happy to meet someone new. Luke thrives on being outside and getting lots of exercise."
+      }
+    }
+  }
+]

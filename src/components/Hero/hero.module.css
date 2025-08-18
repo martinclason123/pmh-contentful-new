@@ -1,0 +1,76 @@
+.hero {
+  border-bottom: 3em solid #4e5b31;
+}
+
+.header {
+  position: absolute;
+  top: 59%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+.header_text {
+  font-size: 9em;
+  color: transparent;
+  text-align: center;
+  font-family: "martek-regular";
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.6));
+}
+
+.cta {
+  background: #fff;
+  border-radius: 0.5em;
+  height: 11.2em;
+  width: 48em;
+  margin: 46em auto 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border: 0.3em solid transparent;
+}
+
+.cta_text {
+  display: inline-block;
+  font-size: 4em;
+  color: #000;
+  position: relative;
+  padding-right: 1.25em;
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 0.6;
+}
+
+.cta_text::after {
+  content: url("/assets/hero/right-arrow.svg");
+  position: absolute;
+  right: 0;
+  width: 1em;
+  height: 1em;
+  top: 0;
+  transition: all 100ms ease-in-out;
+}
+
+@media (min-width: 641px) {
+  .header {
+    width: 43em;
+    top: 43%;
+    left: 39em;
+  }
+  .cta {
+    margin: 0;
+    height: 8.2em;
+    width: 100%;
+  }
+  .cta_text {
+    font-size: 3em;
+  }
+
+  .cta:hover .cta_text::after {
+    right: -0.1em;
+  }
+
+  .cta:hover {
+    border: 0.3em solid #bbda76;
+  }
+}

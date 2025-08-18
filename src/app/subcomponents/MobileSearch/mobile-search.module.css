@@ -1,0 +1,124 @@
+/* Existing styles */
+
+/* Search Icon in the Navbar */
+.mobile_nav {
+  cursor: pointer;
+}
+
+.search_icon {
+  width: 5em;
+}
+
+/* Modal Overlay */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 1000; /* High z-index to appear above other elements */
+  animation: slideIn 0.3s forwards;
+}
+
+/* Slide-in Animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+/* Modal Content */
+.modal {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 2em;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+/* Close Icon */
+.closeIcon {
+  position: absolute;
+  top: 4em;
+  right: 3em;
+  width: 2em;
+  cursor: pointer;
+}
+
+/* Search Container */
+.searchContainer {
+  display: flex;
+  align-items: center;
+  margin-top: 8em;
+  margin-bottom: 1em;
+}
+
+/* New wrapper for input */
+.inputWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.inputWrapper::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 1em;
+  transform: translateY(-50%);
+  width: 4em;
+  height: 4em;
+  background-image: url("/assets/navbar/search.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  pointer-events: none; /* Ensure the icon doesn't block input clicks */
+}
+
+.search_input {
+  width: 100%;
+  height: 4em;
+  border: 0.1em solid #ccc;
+  padding: 0 3em 0 1em; /* Add right padding to make room for the icon */
+  font-size: 2.8em;
+  box-sizing: border-box;
+}
+
+/* Predictive Dropdown */
+.dropdown {
+  margin-top: 1em;
+}
+
+.dropdown_item {
+  display: block;
+  padding: 1em;
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown_item:hover {
+  background-color: #f0f0f0;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 640px) {
+  .search_input {
+    font-size: 2.8em;
+  }
+
+  .dropdown_item {
+    font-size: 2.8em;
+  }
+
+  .mobile_searchbar {
+    display: flex;
+    width: 100%;
+    border: 0.1em solid #eee;
+    height: 11.1em;
+  }
+}

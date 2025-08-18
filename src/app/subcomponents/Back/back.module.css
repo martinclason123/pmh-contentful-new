@@ -1,0 +1,14 @@
+.back {
+  background: transparent;
+  border: none;
+  font-size: 4em;
+  color: #000;
+  font-family: "martek-regular";
+  cursor: pointer;
+}
+
+@media (min-width: 641px) {
+  .back {
+    margin-top: 1em;
+  }
+}

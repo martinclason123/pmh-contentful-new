@@ -1,0 +1,79 @@
+.litter_wrapper {
+}
+
+.litter {
+  background-image: url("/assets/litters/bg.svg");
+  background-size: cover;
+  background-position: center;
+  margin: 3em;
+  border-radius: 1em;
+  overflow: visible;
+  position: relative;
+  height: 53em;
+  padding-top: 4.5em;
+}
+
+.litter_content {
+  background: #fff;
+  border-radius: 1em;
+  width: 49em;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  height: 63em;
+  -webkit-box-shadow: 0px 0.2em 4.4em 0.3em rgba(0, 0, 0, 0.54);
+  -moz-box-shadow: 0px 0.2em 4.4em 0.3em rgba(0, 0, 0, 0.54);
+  box-shadow: 0px 0.2em 4.4em 0.3em rgba(0, 0, 0, 0.54);
+}
+
+.litter_content h2 {
+  text-align: center;
+  font-family: "martek-regular";
+  font-size: 3.6em;
+  line-height: 3;
+}
+
+.litter_content img {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.litter_content p {
+  text-align: center;
+  font-size: 3em;
+  line-height: 2;
+}
+
+.cta {
+  width: 90%;
+  height: 2.4em;
+  font-size: 4em;
+  border-radius: 0.4em;
+  background: #558dca;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5em auto 0 auto;
+  transition: 0.3s ease;
+}
+
+.cta:hover {
+  background: #487ab1;
+}
+
+.cta_text {
+  color: #fff;
+}
+
+@media (min-width: 641px) {
+  .litter_wrapper {
+    width: 110em;
+    margin: 0 auto;
+  }
+
+  .cta {
+    font-size: 2.4em;
+    margin: 1.5em auto 0 auto;
+  }
+}

@@ -1,0 +1,57 @@
+.email {
+  position: relative;
+}
+.label {
+  opacity: 0;
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.email_field {
+  width: 100%;
+  height: 2.4em;
+  font-size: 4em;
+  box-sizing: border-box;
+  padding: 0.2em 0.3em;
+  border-radius: 0.4em;
+  color: #995733;
+  border: 0.08em solid #995733;
+  margin: 0.1em 0 1em 0;
+}
+
+.submit {
+  width: 100%;
+  height: 2.4em;
+  font-size: 4em;
+  border-radius: 0.4em;
+  background: #558dca;
+  color: #fff;
+  border: 0.08em solid #558dca;
+}
+
+@media (min-width: 641px) {
+  .email_field {
+    width: 100%;
+    height: 2.4em;
+    font-size: 3em;
+    padding: 0.2em 0.3em;
+    border-radius: 0.4em;
+    margin: 0.1em 0 0.5em 0;
+  }
+  .submit {
+    width: 100%;
+    height: 2.4em;
+    font-size: 3em;
+    padding: 0.2em 0.3em;
+    border-radius: 0.4em;
+    cursor: pointer;
+  }
+
+  .submit:disabled {
+    background-color: rgb(85, 141, 202, 0.78);
+    cursor: not-allowed;
+  }
+}

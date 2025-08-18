@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="uuid-ac54a60a-31b9-4ac6-a46d-65de0bf11ec9" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 146.07 170.47">
+  <g id="uuid-c1662ceb-91e6-4958-ae92-43c3fbe6fc5c" data-name="Layer 1">
+    <g id="uuid-51a8ba49-06ce-4347-90f7-757c40a23880" data-name="Shield with cross icon">
+      <path id="uuid-4bb06481-180f-4ae0-bdcf-5f5c7938ced9" data-name="Shield icon" d="M145.42,24.21c-27.18,0-52.25-9.01-72.39-24.21C52.9,15.2,27.82,24.21.65,24.21c-.21,0-.65,0-.65,0v45.08c0,45.94,29.43,86.71,73.03,101.18,43.6-14.47,73.03-55.24,73.03-101.18V24.21s-.43,0-.64,0Z" fill="#ed0000" stroke-width="0"/>
+      <polygon id="uuid-3b5e0b21-8be4-48dc-bf8e-35d55f31f128" data-name="cross" points="106.7 74.01 84.26 74.01 84.26 51.57 61.81 51.57 61.81 74.01 39.37 74.01 39.37 96.46 61.81 96.46 61.81 118.9 84.26 118.9 84.26 96.46 106.7 96.46 106.7 74.01" fill="#fff" stroke-width="0"/>
+    </g>
+  </g>
+</svg>

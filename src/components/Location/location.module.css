@@ -1,0 +1,77 @@
+.information {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  background: #464647;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 2em;
+  color: #fff;
+  box-sizing: border-box;
+  padding: 2em 8em;
+}
+
+.information h2 {
+  font-size: 3.2em;
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 0.6em;
+}
+
+.information p {
+  font-size: 2.4em;
+  text-align: left;
+  margin-bottom: 1em;
+}
+
+.information .icon {
+  width: 1em;
+  display: inline-block;
+  margin-right: 0.4em;
+}
+
+.list__header {
+  width: 3em;
+}
+.information a {
+  color: inherit;
+  text-decoration: none;
+}
+.information .list {
+  margin: 1em 0;
+}
+.information li {
+  list-style: none;
+  color: #fff;
+  font-size: 2.4em;
+  margin: 1em 0;
+}
+
+.information .link {
+  text-decoration: underline;
+}
+
+@media (min-width: 641px) {
+  .information {
+    width: 53em;
+    left: 70%;
+  }
+
+  .information h2 {
+    font-size: 2.8em;
+  }
+  .information p {
+    font-size: 2em;
+  }
+  .information li {
+    font-size: 2em;
+  }
+}

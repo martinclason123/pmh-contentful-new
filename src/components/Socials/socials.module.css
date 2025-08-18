@@ -1,0 +1,60 @@
+/* Socials section styling */
+.socials {
+  text-align: center;
+  padding: 8em 0;
+}
+
+/* Title styling */
+.title {
+  font-size: 5em;
+  font-family: "martek-regular";
+  margin-bottom: 0.75em;
+}
+
+/* Container for the icons */
+.iconContainer {
+  display: flex;
+  justify-content: center;
+  gap: 4em;
+}
+
+/* Each icon link */
+.iconLink {
+  transition: transform 0.3s ease;
+}
+
+/* Icons styling */
+.icon {
+  width: 8em;
+  height: 8em;
+  color: #4e5b31;
+  transition: color 0.3s ease;
+}
+
+/* Hover effects */
+.iconLink:hover .icon {
+  color: #818e64; /* Change icon color on hover */
+}
+
+.iconLink:hover {
+  transform: scale(1.1); /* Slight scale-up on hover */
+}
+
+/* Desktop styles */
+@media (min-width: 641px) {
+  .socials {
+    padding: 10em 0;
+  }
+  .title {
+    font-size: 6em;
+  }
+
+  .icon {
+    width: 10em;
+    height: 10em;
+  }
+
+  .iconContainer {
+    gap: 8em;
+  }
+}

@@ -1,0 +1,123 @@
+.overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em 4em;
+  position: sticky;
+  top: 0px;
+  background: #fff;
+  z-index: 2;
+}
+
+.navbar img {
+  width: 6em;
+}
+
+.title {
+  font-size: 5em;
+}
+
+.sidebar {
+  position: fixed;
+  right: 0;
+  height: 100vh;
+  top: 0;
+  width: 0px;
+  overflow: hidden;
+  transition: width 300ms ease-in-out;
+  background: #fff;
+  z-index: 3;
+}
+
+.close {
+  width: 3em;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.menuOpen {
+  width: 50vw;
+  padding: 5em;
+}
+
+.navbar .burger {
+  cursor: pointer;
+  width: 6em;
+}
+
+.sidebar ul {
+  padding: 5em 0 0 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar li {
+  list-style: none;
+  padding: 1.5em 0;
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+}
+.sidebar li::after {
+  content: "";
+  width: 0%;
+  height: 0.3em;
+  background: #4e5b31;
+  transition: width 100ms ease-in-out;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.sidebar li:hover::after {
+  width: 100%; /* Expand on hover */
+}
+
+.sidebar a {
+  font-size: 4.4em;
+  color: #000;
+  text-decoration: none;
+}
+.phone {
+  font-size: 3em;
+  display: block;
+  white-space: nowrap;
+}
+.nav_items_right {
+  display: flex;
+  align-items: center;
+  gap: 4em;
+}
+
+@media (min-width: 641px) {
+  .navbar .logo {
+    width: 8em;
+  }
+  .menuOpen {
+    width: 20vw;
+    padding: 5em;
+  }
+
+  .navbar .burger {
+    width: 6em;
+  }
+  a.phone {
+    background: #00a7e1;
+    color: #fff;
+    font-size: 2.4em;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    transition: background 0.3s ease;
+  }
+
+  a.phone:hover {
+    background-color: #0096ca;
+  }
+}

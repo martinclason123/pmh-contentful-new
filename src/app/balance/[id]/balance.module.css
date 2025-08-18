@@ -1,0 +1,27 @@
+.balance {
+  padding: 4em;
+  margin: 2em 0;
+}
+.balance h1 {
+  font-size: 5em;
+  padding: 1em 0;
+}
+
+.balance p {
+  font-size: 2.4em;
+  padding: 0em 0 2em 0;
+}
+
+.balance .back {
+  font-size: 2.4em;
+  margin: 3em 0;
+  text-decoration: underline;
+  display: block;
+}
+
+@media (min-width: 641px) {
+  .balance {
+    width: 110em;
+    margin: 0 auto;
+  }
+}

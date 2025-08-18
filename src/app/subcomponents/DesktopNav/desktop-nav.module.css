@@ -1,0 +1,218 @@
+.navbar {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em 4em 0;
+  position: sticky;
+  top: 0px;
+  background: #fff;
+  z-index: 2;
+}
+
+.navbar img {
+  width: 6em;
+}
+
+.title {
+  font-size: 5em;
+}
+
+.sidebar {
+  position: fixed;
+  right: 0;
+  height: 100vh;
+  top: 0;
+  width: 0px;
+  overflow: hidden;
+  transition: width 300ms ease-in-out;
+  background: #fff;
+  z-index: 3;
+}
+
+.close {
+  width: 3em;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.menuOpen {
+  width: 50vw;
+  padding: 5em;
+}
+
+.navbar .burger {
+  cursor: pointer;
+  width: 6em;
+}
+
+.sidebar ul {
+  padding: 5em 0 0 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar li {
+  list-style: none;
+  padding: 1.5em 0;
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+}
+.sidebar li::after {
+  content: "";
+  width: 0%;
+  height: 0.3em;
+  background: #4e5b31;
+  transition: width 100ms ease-in-out;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.sidebar li:hover::after {
+  width: 100%; /* Expand on hover */
+}
+
+.sidebar a {
+  font-size: 4.4em;
+  color: #000;
+  text-decoration: none;
+}
+.phone {
+  font-size: 3em;
+  display: block;
+  white-space: nowrap;
+}
+.nav_items_right {
+  display: flex;
+  align-items: center;
+  gap: 4em;
+}
+
+@media (min-width: 641px) {
+  .navbar {
+    display: flex;
+    align-items: flex-end;
+  }
+  .navbar .logo {
+    width: 8em;
+    padding-bottom: 2em;
+  }
+  .menuOpen {
+    width: 20vw;
+    padding: 5em;
+  }
+
+  .navbar .burger {
+    width: 6em;
+  }
+  a.phone {
+    background: #00a7e1;
+    color: #fff;
+    font-size: 2.4em;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    transition: background 0.3s ease;
+  }
+
+  a.phone:hover {
+    background-color: #0096ca;
+  }
+
+  .nav_links {
+    display: flex;
+  }
+
+  .nav_items_left {
+    display: flex;
+    align-items: flex-end;
+    gap: 10em;
+  }
+
+  .link_title {
+    font-size: 2.2em;
+    display: flex;
+    align-items: flex-end;
+    gap: 0.2em;
+    cursor: pointer;
+    border: 0.1em solid #fff;
+    /* position: relative; */
+  }
+
+  .navbar .chevron {
+    display: inline-block;
+    width: 1em;
+  }
+
+  .dropdown {
+    display: none;
+    position: absolute;
+    background: #fff;
+    top: 5.4em;
+    width: 100vw;
+    left: 0;
+    padding: 4em 10em;
+    flex-direction: column;
+    gap: 1em;
+    border-top: 0.1em solid #eee;
+    border-bottom: 0.1em solid #eee;
+  }
+
+  .dropdown_text,
+  .link_text {
+    position: relative;
+    display: inline-flex;
+    gap: 0.2em;
+    padding: 1em;
+  }
+
+  .dropdown_text::after {
+    position: absolute;
+    content: "";
+    height: 0.2em;
+    width: 100%;
+    background: #fff;
+    left: 0;
+    bottom: -0.2em;
+    z-index: 2;
+    display: none;
+  }
+
+  .link_title:hover {
+    border: 0.1em solid #eee;
+  }
+
+  .dropdown .link_message:hover {
+    color: #00a7e1;
+  }
+
+  .link_title:hover .dropdown {
+    display: flex;
+  }
+
+  .link_title:hover .dropdown_text::after {
+    display: initial;
+  }
+
+  .nav_items_right {
+    padding: 1em;
+    display: flex;
+    gap: 4em;
+    align-items: center;
+  }
+
+  .overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0; /* Ensure it covers from the top */
+    left: 0; /* Ensure it covers from the left */
+    z-index: 3; /* Less than search bar but more than other navbar items */
+    background: rgba(165, 177, 182, 0.8);
+    display: none;
+  }
+
+  .overlay_visible {
+    display: block;
+  }
+}

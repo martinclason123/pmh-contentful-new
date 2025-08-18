@@ -1,0 +1,177 @@
+.optionsContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5em;
+  background-color: #fff;
+  width: 100%;
+  height: auto;
+}
+
+.filterActions {
+  text-align: right;
+  margin-bottom: 1.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  align-items: center;
+  gap: 1em;
+  padding-left: 15.5em;
+}
+
+.filterActions button {
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  font-size: 2.4em;
+  padding: 0.5em;
+}
+.desktopActions {
+  display: none;
+}
+.desktopActions button {
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  font-size: 2.4em;
+  padding: 0.5em;
+}
+
+.filterGroup {
+  margin-bottom: 4em;
+}
+
+.filterGroup h3 {
+  margin-bottom: 1em;
+  font-size: 2.4em;
+  font-weight: bold;
+}
+
+.filterOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25em;
+}
+
+.optionLabel {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.2em;
+  position: relative;
+}
+
+.optionLabel input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.optionLabel .checkmark {
+  height: 2.4em;
+  width: 2.4em;
+  background-color: #fff;
+  border: 0.1em solid #000;
+  display: inline-block;
+  margin-right: 1em;
+  position: relative;
+}
+
+.optionLabel:hover input ~ .checkmark {
+  background-color: #f0f0f0;
+}
+
+.optionLabel input:checked ~ .checkmark {
+  background-color: #000;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.optionLabel input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.optionLabel .checkmark:after {
+  left: 0.85em;
+  top: 0.2em;
+  width: 0.3em;
+  height: 1.5em;
+  border: solid white;
+  border-width: 0 0.3em 0.3em 0;
+  transform: rotate(45deg);
+}
+
+.optionName {
+  font-size: 2.4em;
+}
+
+.headerActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5em;
+}
+
+@media (min-width: 641px) {
+  .optionsContainer {
+    margin-top: 10em;
+  }
+  .filterActions {
+    display: none;
+  }
+  .optionsContainer {
+    padding: 2em;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .filterGroup {
+    margin-bottom: 2.5em;
+  }
+
+  .border {
+    border-left: 0.1em solid #8c8888;
+    padding-left: 8em;
+  }
+
+  .filterOptions {
+    gap: 1.5em;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .optionLabel {
+    margin-right: 2em;
+  }
+
+  .doneButton {
+    margin-top: 2em;
+  }
+  .desktopActions {
+    display: flex;
+    align-items: end;
+  }
+  .optionName {
+    font-size: 1.8em;
+  }
+  .filterGroup h3 {
+    font-size: 2.2em;
+  }
+  .desktopActions button {
+    font-size: 1.8em;
+    padding: 0;
+  }
+  .filterIcon {
+    display: block;
+    width: 4em;
+    padding-bottom: 1em;
+  }
+}

@@ -1,0 +1,85 @@
+/* No Results Component Styles */
+.NoResults {
+  text-align: center;
+  padding: 2em 4em;
+  margin: 10em 0;
+}
+
+/* Icon */
+.icon {
+  max-width: 100px; /* Ensures the icon scales well on mobile */
+  margin-bottom: 1.5em; /* Space below the icon */
+  margin: 0 auto 1.5em auto;
+}
+
+/* Header */
+.header {
+  font-size: 3em; /* Mobile-friendly font size */
+  color: #b45309; /* Use a warm golden-brown tone */
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+/* Subheader */
+.suheader {
+  font-size: 2.2em; /* Slightly smaller font size for the subheader */
+  color: #4b5563; /* Neutral dark gray */
+  margin-bottom: 1.5em;
+}
+
+/* Paragraph */
+.p {
+  font-size: 2em;
+  color: #6b7280; /* Gray tone for better readability */
+  margin-bottom: 2em;
+  line-height: 1.4;
+}
+
+/* Call to Action (CTA) Button */
+.NoResults .cta {
+  display: inline-block;
+  padding: 0.8em 1.5em; /* Adjust the padding to make it button-like */
+  font-size: 2.4em; /* Ensure the text is legible */
+  background-color: #fef3c7; /* Amber background for the CTA */
+  color: #d97706;
+  border-radius: 0.4em; /* Slightly rounded corners */
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.NoResults .cta:hover {
+  background-color: #b45309; /* Darken the background on hover */
+  color: #fff;
+}
+
+@media (min-width: 1024px) {
+  /* Desktop adjustments */
+
+  /* Increase size of icon */
+  .icon {
+    max-width: 150px;
+  }
+
+  /* Adjust header for desktop */
+  .header {
+    font-size: 3.5em;
+  }
+
+  /* Adjust subheader */
+  .suheader {
+    font-size: 2.4em;
+  }
+
+  /* Adjust paragraph font size */
+  .p {
+    font-size: 2em;
+    line-height: 1.5;
+  }
+
+  /* Adjust CTA size */
+  .NoResults .cta {
+    font-size: 2.4em;
+    padding: 1em 2em;
+  }
+}

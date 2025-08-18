@@ -1,0 +1,55 @@
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  z-index: 999;
+}
+
+.close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 2rem;
+  color: #fff;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.modalContent {
+  position: relative;
+  z-index: 1;
+  background: #000;
+  border-radius: 0.5em;
+  width: 100%;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+  position: absolute;
+  top: 6rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sliderWrapper {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.slide {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5em;
+  display: block;
+  object-fit: cover;
+}

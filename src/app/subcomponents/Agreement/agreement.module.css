@@ -1,0 +1,80 @@
+.agreement {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4em;
+}
+
+.agreement label {
+  font-size: 2.8em;
+}
+
+.agreement field {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.agreement input {
+  font-size: 2.8em;
+  padding: 0.2em;
+}
+
+.half {
+  display: flex;
+  justify-content: space-between;
+}
+
+.agreement .half field {
+  width: 49%;
+}
+
+.agreement button {
+  width: 100%;
+  font-size: 2.8em;
+  padding: 0.7em 0;
+  margin-top: 1em;
+  background: #494d3f;
+  border-radius: 0.3em;
+  color: #fff;
+  transition: background 300ms ease-in-out;
+  cursor: pointer;
+}
+
+.agreement button:disabled {
+  opacity: 0.2;
+}
+
+.agreement button:hover {
+  background: #818e64;
+}
+
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.radioLabel {
+  margin-bottom: 1em;
+  display: inline-block;
+}
+.radioGroup label {
+  font-size: 2.8em;
+}
+
+.radioGroup input[type="radio"] {
+  margin-right: 0.5em;
+}
+
+.fullWidthInput {
+  width: 100%;
+  font-size: 2.8em;
+  padding: 0.2em;
+}
+
+@media (min-width: 641px) {
+  .agreement button {
+    width: 10em;
+  }
+}

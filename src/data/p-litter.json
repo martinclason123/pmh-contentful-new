@@ -1,0 +1,438 @@
+[
+  {
+    "breed": "Golden Retriever",
+    "name": "Pippin",
+    "id": "4450",
+    "gender": "Male",
+    "dob": "5/22/24",
+    "availability": "Reserved",
+    "price": "600",
+    "deposit": true,
+    "parents": {
+      "dam": {
+        "name": "Laurie",
+        "weight": "75",
+        "image": "laurie",
+        "breed": "Golden Retriever",
+        "description": "Laurie is a gentle and loving Golden Retriever with a calm demeanor. She weighs 75 pounds and has a beautiful, shiny coat."
+      },
+      "sire": {
+        "name": "Asher",
+        "weight": "75",
+        "image": "asher",
+        "breed": "Golden Retriever",
+        "description": "Asher is a strong and handsome Golden Retriever with an affectionate nature. He also weighs 75 pounds and is known for his friendly and playful personality."
+      }
+    },
+    "gallery": [
+      "gallery-2",
+      "gallery-3",
+      "gallery-4",
+      "gallery-5",
+      "gallery-6",
+      "gallery-7"
+    ],
+    "description": "Pippin is a playful and curious pup who loves to explore and make new friends. His cheerful personality and boundless energy make him a perfect companion for any family."
+  },
+  {
+    "breed": "Golden Retriever",
+    "name": "Pearl",
+    "id": "4452",
+    "gender": "Female",
+    "dob": "5/22/24",
+    "availability": "Sold",
+    "price": "750",
+    "deposit": false,
+    "parents": {
+      "dam": {
+        "name": "Laurie",
+        "weight": "75",
+        "image": "laurie",
+        "breed": "Golden Retriever",
+        "description": "Laurie is a gentle and loving Golden Retriever with a calm demeanor. She weighs 75 pounds and has a beautiful, shiny coat."
+      },
+      "sire": {
+        "name": "Asher",
+        "weight": "75",
+        "image": "asher",
+        "breed": "Golden Retriever",
+        "description": "Asher is a strong and handsome Golden Retriever with an affectionate nature. He also weighs 75 pounds and is known for his friendly and playful personality."
+      }
+    },
+    "gallery": [
+      "gallery-2",
+      "gallery-3",
+      "gallery-4",
+      "gallery-5",
+      "gallery-6",
+      "gallery-7",
+      "gallery-8",
+      "gallery-9"
+    ],
+    "description": "Pearl is a gentle and loving little girl who adores cuddles and snuggles. Her sweet nature and affectionate demeanor will melt your heart instantly."
+  },
+  {
+    "breed": "Golden Retriever",
+    "name": "Pluto",
+    "id": "4441",
+    "gender": "Male",
+    "dob": "5/22/24",
+    "availability": "Reserved",
+    "price": "750",
+    "deposit": true,
+    "parents": {
+      "dam": {
+        "name": "Laurie",
+        "weight": "75",
+        "image": "laurie",
+        "breed": "Golden Retriever",
+        "description": "Laurie is a gentle and loving Golden Retriever with a calm demeanor. She weighs 75 pounds and has a beautiful, shiny coat."
+      },
+      "sire": {
+        "name": "Asher",
+        "weight": "75",
+        "image": "asher",
+        "breed": "Golden Retriever",
+        "description": "Asher is a strong and handsome Golden Retriever with an affectionate nature. He also weighs 75 pounds and is known for his friendly and playful personality."
+      }
+    },
+    "gallery": [
+      "gallery-10",
+      "gallery-2",
+      "gallery-3",
+      "gallery-4",
+      "gallery-5",
+      "gallery-6",
+      "gallery-7",
+      "gallery-8",
+      "gallery-9"
+    ],
+    "description": "Pluto is a fun-loving and adventurous pup who enjoys playing fetch and running around. His joyful spirit and zest for life make him a perfect playmate."
+  },
+  {
+    "breed": "Golden Retriever",
+    "name": "Pixie",
+    "id": "4444",
+    "gender": "Female",
+    "dob": "5/22/24",
+    "availability": "Reserved",
+    "price": "750",
+    "deposit": true,
+    "parents": {
+      "dam": {
+        "name": "Laurie",
+        "weight": "75",
+        "image": "laurie",
+        "breed": "Golden Retriever",
+        "description": "Laurie is a gentle and loving Golden Retriever with a calm demeanor. She weighs 75 pounds and has a beautiful, shiny coat."
+      },
+      "sire": {
+        "name": "Asher",
+        "weight": "75",
+        "image": "asher",
+        "breed": "Golden Retriever",
+        "description": "Asher is a strong and handsome Golden Retriever with an affectionate nature. He also weighs 75 pounds and is known for his friendly and playful personality."
+      }
+    },
+    "gallery": [
+      "gallery-2",
+      "gallery-3",
+      "gallery-4",
+      "gallery-5",
+      "gallery-6",
+      "gallery-7"
+    ],
+    "description": "Pixie is a lively and spirited pup with a playful personality. Her enthusiasm for life and endless energy will keep you entertained and active."
+  },
+  {
+    "breed": "Golden Retriever",
+    "name": "Paws",
+    "id": "4455",
+    "gender": "Male",
+    "dob": "5/22/24",
+    "availability": "Sold",
+    "price": "750",
+    "deposit": true,
+    "parents": {
+      "dam": {
+        "name": "Laurie",
+        "weight": "75",
+        "image": "laurie",
+        "breed": "Golden Retriever",
+        "description": "Laurie is a gentle and loving Golden Retriever with a calm demeanor. She weighs 75 pounds and has a beautiful, shiny coat."
+      },
+      "sire": {
+        "name": "Asher",
+        "weight": "75",
+        "image": "asher",
+        "breed": "Golden Retriever",
+        "description": "Asher is a strong and handsome Golden Retriever with an affectionate nature. He also weighs 75 pounds and is known for his friendly and playful personality."
+      }
+    },
+    "gallery": [
+      "gallery-2",
+      "gallery-3",
+      "gallery-4",
+      "gallery-5",
+      "gallery-6",
+      "gallery-7",
+      "gallery-8",
+      "gallery-9"
+    ],
+    "description": "Paws is a loyal and affectionate companion who loves to be around people. His calm and gentle nature makes him an excellent addition to any home."
+  },
+  {
+    "breed": "Golden Retriever",
+    "name": "Patch",
+    "id": "4446",
+    "gender": "Male",
+    "dob": "5/22/24",
+    "availability": "Reserved",
+    "price": "750",
+    "deposit": true,
+    "parents": {
+      "dam": {
+        "name": "Laurie",
+        "weight": "75",
+        "image": "laurie",
+        "breed": "Golden Retriever",
+        "description": "Laurie is a gentle and loving Golden Retriever with a calm demeanor. She weighs 75 pounds and has a beautiful, shiny coat."
+      },
+      "sire": {
+        "name": "Asher",
+        "weight": "75",
+        "image": "asher",
+        "breed": "Golden Retriever",
+        "description": "Asher is a strong and handsome Golden Retriever with an affectionate nature. He also weighs 75 pounds and is known for his friendly and playful personality."
+      }
+    },
+    "gallery": [
+      "gallery-10",
+      "gallery-11",
+      "gallery-12",
+      "gallery-2",
+      "gallery-3",
+      "gallery-4",
+      "gallery-5",
+      "gallery-6",
+      "gallery-7",
+      "gallery-8",
+      "gallery-9"
+    ],
+    "description": "Patch is an adventurous and curious pup who loves exploring new places. His playful antics and charming personality will bring joy to your everyday life."
+  },
+  {
+    "breed": "Golden Retriever",
+    "name": "Poppy",
+    "id": "4447",
+    "gender": "Female",
+    "dob": "5/22/24",
+    "availability": "Sold",
+    "price": "750",
+    "deposit": false,
+    "parents": {
+      "dam": {
+        "name": "Laurie",
+        "weight": "75",
+        "image": "laurie",
+        "breed": "Golden Retriever",
+        "description": "Laurie is a gentle and loving Golden Retriever with a calm demeanor. She weighs 75 pounds and has a beautiful, shiny coat."
+      },
+      "sire": {
+        "name": "Asher",
+        "weight": "75",
+        "image": "asher",
+        "breed": "Golden Retriever",
+        "description": "Asher is a strong and handsome Golden Retriever with an affectionate nature. He also weighs 75 pounds and is known for his friendly and playful personality."
+      }
+    },
+    "gallery": [
+      "gallery-2",
+      "gallery-3",
+      "gallery-4",
+      "gallery-5",
+      "gallery-6",
+      "gallery-7"
+    ],
+    "description": "Poppy is a sweet and loving pup who enjoys being pampered and cuddled. Her gentle nature and warm disposition make her the perfect lap dog."
+  },
+  {
+    "breed": "Golden Retriever",
+    "name": "Pongo",
+    "id": "4443",
+    "gender": "Male",
+    "dob": "5/22/24",
+    "availability": "Sold",
+    "price": "750",
+    "deposit": true,
+    "parents": {
+      "dam": {
+        "name": "Laurie",
+        "weight": "75",
+        "image": "laurie",
+        "breed": "Golden Retriever",
+        "description": "Laurie is a gentle and loving Golden Retriever with a calm demeanor. She weighs 75 pounds and has a beautiful, shiny coat."
+      },
+      "sire": {
+        "name": "Asher",
+        "weight": "75",
+        "image": "asher",
+        "breed": "Golden Retriever",
+        "description": "Asher is a strong and handsome Golden Retriever with an affectionate nature. He also weighs 75 pounds and is known for his friendly and playful personality."
+      }
+    },
+    "gallery": [
+      "gallery-2",
+      "gallery-3",
+      "gallery-4",
+      "gallery-5",
+      "gallery-6",
+      "gallery-7",
+      "gallery-8",
+      "gallery-9"
+    ],
+    "description": "Pongo is a playful and energetic pup who loves to play with his toys. His lively spirit and love for fun make him an ideal companion for active families."
+  },
+  {
+    "breed": "Golden Retriever",
+    "name": "Odin",
+    "id": "4454",
+    "gender": "Male",
+    "dob": "5/31/24",
+    "availability": "Sold",
+    "price": "750",
+    "deposit": true,
+    "parents": {
+      "dam": {
+        "name": "Rosie",
+        "weight": "75",
+        "image": "rosie",
+        "breed": "Golden Retriever",
+        "description": "Rosie is a vibrant and energetic Golden Retriever who loves to play and run. She weighs 75 pounds and has a warm, golden coat that glows in the sunlight."
+      },
+      "sire": {
+        "name": "Barney",
+        "weight": "85",
+        "image": "barney",
+        "breed": "Golden Retriever",
+        "description": "Barney is a majestic and robust Golden Retriever with a loving heart. He weighs 85 pounds and is admired for his strength and gentle demeanor."
+      }
+    },
+    "gallery": [
+      "gallery-2",
+      "gallery-3",
+      "gallery-4",
+      "gallery-5",
+      "gallery-6",
+      "gallery-7",
+      "gallery-8"
+    ],
+    "description": "Odin is a brave and adventurous pup who loves to explore the outdoors. His courageous spirit and inquisitive nature will inspire you to discover new adventures together."
+  },
+  {
+    "breed": "Golden Retriever",
+    "name": "Opey",
+    "id": "4126",
+    "gender": "Male",
+    "dob": "5/31/24",
+    "availability": "Sold",
+    "price": "750",
+    "deposit": true,
+    "parents": {
+      "dam": {
+        "name": "Rosie",
+        "weight": "75",
+        "image": "rosie",
+        "breed": "Golden Retriever",
+        "description": "Rosie is a vibrant and energetic Golden Retriever who loves to play and run. She weighs 75 pounds and has a warm, golden coat that glows in the sunlight."
+      },
+      "sire": {
+        "name": "Barney",
+        "weight": "85",
+        "image": "barney",
+        "breed": "Golden Retriever",
+        "description": "Barney is a majestic and robust Golden Retriever with a loving heart. He weighs 85 pounds and is admired for his strength and gentle demeanor."
+      }
+    },
+    "gallery": [
+      "gallery-2",
+      "gallery-3",
+      "gallery-4",
+      "gallery-5",
+      "gallery-6"
+    ],
+    "description": "Opey is a gentle and calm pup who loves to relax and be pampered. His laid-back attitude and loving nature make him the perfect companion for a peaceful home."
+  },
+  {
+    "breed": "Golden Retriever",
+    "name": "Olive",
+    "id": "4449",
+    "gender": "Male",
+    "dob": "5/31/24",
+    "availability": "Sold",
+    "price": "750",
+    "deposit": false,
+    "gallery": [
+      "gallery-2",
+      "gallery-3",
+      "gallery-4",
+      "gallery-5",
+      "gallery-6",
+      "gallery-7",
+      "gallery-8"
+    ],
+    "description": "Olive is a curious and intelligent pup who loves to learn new tricks. His sharp mind and eagerness to please make him an excellent companion for training and fun activities."
+  },
+  {
+    "breed": "Golden Retriever",
+    "name": "Jerry",
+    "id": "3991",
+    "gender": "Male",
+    "dob": "5/18/24",
+    "availability": "Sold",
+    "price": "750",
+    "deposit": false,
+    "gallery": ["gallery-2", "gallery-1", "gallery-3"],
+    "description": "Jerry is an adventurous and spirited Golden Retriever with a zest for life. His playful antics and boundless energy make him a delightful companion for families who love outdoor activities. Always ready for a game of fetch or a run in the park, Jerry is sure to bring joy and laughter to your home."
+  },
+  {
+    "breed": "Golden Retriever",
+    "name": "Jim",
+    "id": "3997",
+    "gender": "Male",
+    "dob": "5/18/24",
+    "availability": "Reserved",
+    "price": "750",
+    "deposit": false,
+    "parents": {
+      "dam": {
+        "name": "Rosie",
+        "weight": "75",
+        "image": "rosie",
+        "breed": "Golden Retriever",
+        "description": "Rosie is a vibrant and energetic Golden Retriever who loves to play and run. She weighs 75 pounds and has a warm, golden coat that glows in the sunlight."
+      },
+      "sire": {
+        "name": "Barney",
+        "weight": "85",
+        "image": "barney",
+        "breed": "Golden Retriever",
+        "description": "Barney is a majestic and robust Golden Retriever with a loving heart. He weighs 85 pounds and is admired for his strength and gentle demeanor."
+      }
+    },
+    "gallery": ["gallery-3", "gallery-2", "gallery-1"],
+    "description": "Jim is a gentle and affectionate Golden Retriever with a calm demeanor. He loves to snuggle and is happiest when he's close to his humans, making him the perfect lap dog. Jim is great with children and other pets, and his sweet nature makes him an excellent companion for anyone seeking a loving and loyal friend."
+  },
+  {
+    "breed": "Golden Retriever",
+    "name": "Jorgi",
+    "id": "3996",
+    "gender": "Male",
+    "dob": "5/18/24",
+    "availability": "Reserved",
+    "price": "750",
+    "deposit": false,
+    "gallery": ["gallery-2", "gallery-1", "gallery-3"],
+    "description": "Jorgi is a lively and intelligent Golden Retriever with a keen sense of adventure. He loves to explore and is always eager to learn new tricks, making him an excellent candidate for agility training or obedience classes. With his friendly personality and quick wit, Jorgi is sure to be a standout member of your family."
+  }
+]

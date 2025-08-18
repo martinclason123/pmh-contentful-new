@@ -1,0 +1,52 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: flex-start;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.slideout {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 0px;
+  height: 100vh;
+  background: #fff;
+  transition: width 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.openSlideout {
+  width: 50em;
+}
+
+.closeButton {
+  margin: 1rem;
+  background: none;
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.filterContent {
+  padding: 2rem;
+}
+
+@media (min-width: 641px) {
+  .overlay {
+    display: none;
+  }
+}

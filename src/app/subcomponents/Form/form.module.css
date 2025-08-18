@@ -1,0 +1,62 @@
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4em;
+}
+
+.form label {
+  font-size: 2.8em;
+}
+
+.form field {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.form input {
+  font-size: 2.8em;
+  padding: 0.2em;
+}
+
+.form textarea {
+  height: 8em;
+  padding: 0.2em;
+  font-size: 2.8em;
+}
+
+.half {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form .half field {
+  width: 49%;
+}
+
+.form button {
+  width: 100%;
+  font-size: 2.8em;
+  padding: 0.7em 0;
+  margin-top: 1em;
+  background: #494d3f;
+  border-radius: 0.3em;
+  color: #fff;
+  transition: background 300ms ease-in-out;
+  cursor: pointer;
+}
+
+.form button:disabled {
+  opacity: 0.2;
+}
+
+.form button:hover {
+  background: #818e64;
+}
+
+@media (min-width: 641px) {
+  .form button {
+    width: 10em;
+  }
+}

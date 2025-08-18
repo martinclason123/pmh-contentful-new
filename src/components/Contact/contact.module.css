@@ -1,0 +1,16 @@
+.contact {
+  padding: 4em;
+  margin-bottom: 5em;
+}
+.contact h2 {
+  font-size: 5em;
+  font-family: martek-regular;
+  margin-bottom: 1em;
+}
+
+@media (min-width: 641px) {
+  .contact {
+    width: 111em;
+    margin: 0 auto 5em auto;
+  }
+}

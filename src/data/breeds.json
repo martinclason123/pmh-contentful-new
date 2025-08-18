@@ -1,0 +1,400 @@
+{
+  "breeds": {
+    "Golden Retriever": {
+      "header": {
+        "header": "Golden Retriever Puppies",
+        "subheader": "Golden Retrievers: English Cream and Red Coats Available",
+        "alt": "A golden retriever puppy for sale in Sheridan MI",
+        "image": {
+          "lg": "/assets/breeds/golden-retrievers/gr-banner-bg-d",
+          "sm": "/assets/breeds/golden-retrievers/gr-banner-bg-m"
+        }
+      },
+      "intro": {
+        "copy": "Golden Retrievers are known for their loyal, friendly, and playful temperament. At Prairie Creek Puppies, we offer both English Cream and Red Coat Golden Retrievers raised in a loving environment. Read more to learn if a Golden Retriever is right for you.",
+        "alt": "A Golden Retriever illustration",
+        "image": "/assets/breeds/golden-retrievers/golden-retriever"
+      },
+      "faq": [
+        {
+          "icon": "Scissors",
+          "title": "Shedding",
+          "category": "Heavy",
+          "description": "Golden Retrievers shed heavily, especially during seasonal changes. Regular brushing, at least 2-3 times a week, is necessary to manage the shedding and keep their coat healthy."
+        },
+        {
+          "icon": "Ruler",
+          "title": "Size",
+          "category": "Large",
+          "description": "Adult Golden Retrievers typically weigh between 55-75 pounds and require a spacious living environment. Their size makes them great family dogs, but they do need ample room to play and exercise."
+        },
+        {
+          "icon": "Heart",
+          "title": "Temperament",
+          "category": "Friendly & Loyal",
+          "description": "Golden Retrievers are highly social and affectionate dogs, known for their friendly and loyal temperament. They get along well with children, adults, and other pets."
+        },
+        {
+          "icon": "Dumbbell",
+          "title": "Energy Level",
+          "category": "High",
+          "description": "Golden Retrievers are active dogs that require regular physical activity. Daily walks and playtime are essential to keep them happy and prevent boredom."
+        },
+        {
+          "icon": "GraduationCap",
+          "title": "Trainability",
+          "category": "Excellent",
+          "description": "Golden Retrievers are one of the most trainable breeds due to their intelligence and eagerness to please. They excel in obedience training and are often used as service or therapy dogs."
+        },
+        {
+          "icon": "Stethoscope",
+          "title": "Health",
+          "category": "Generally Healthy",
+          "description": "While Golden Retrievers are generally healthy dogs, they can be prone to genetic conditions such as hip dysplasia. Regular vet checkups and a healthy diet help manage these risks."
+        },
+        {
+          "icon": "Clock",
+          "title": "Lifespan",
+          "category": "10-12 years",
+          "description": "Golden Retrievers typically live for 10-12 years. With proper care and a balanced lifestyle, they can enjoy long, happy lives as family companions."
+        },
+        {
+          "icon": "Droplets",
+          "title": "Grooming",
+          "category": "Moderate to High",
+          "description": "In addition to frequent brushing, Golden Retrievers need occasional baths, nail trimming, and ear cleaning to prevent infections, especially if they love swimming."
+        }
+      ]
+    },
+    "Mini Bernedoodle": {
+      "header": {
+        "header": "Mini Bernedoodle Puppies",
+        "subheader": "Loving and Affectionate Family Companions",
+        "alt": "A mini bernedoodle puppy for sale in Sheridan MI",
+        "image": {
+          "lg": "/assets/breeds/mini-bernedoodles/mbd-banner-bg-d",
+          "sm": "/assets/breeds/mini-bernedoodles/mbd-banner-bg-m"
+        }
+      },
+      "intro": {
+        "copy": "Mini Bernedoodles are a popular crossbreed known for their gentle and affectionate nature. At Prairie Creek Puppies, we raise Mini Bernedoodles in a loving environment, ensuring they are well-socialized and ready to become the perfect family companion. Read more to learn if a Mini Bernedoodle is right for you.",
+        "alt": "A mini bernedoodle illustration",
+        "image": "/assets/breeds/mini-bernedoodles/mini-bernedoodle"
+      },
+      "faq": [
+        {
+          "icon": "Scissors",
+          "title": "Shedding",
+          "category": "Low to Moderate",
+          "description": "Mini Bernedoodles are known for their low to moderate shedding, depending on coat type. Regular grooming and brushing can help manage their coat and reduce shedding."
+        },
+        {
+          "icon": "Ruler",
+          "title": "Size",
+          "category": "Small to Medium",
+          "description": "Mini Bernedoodles typically weigh between 25-50 lbs and stand around 18-22 inches tall. Their size makes them great for both apartments and larger living spaces."
+        },
+        {
+          "icon": "Heart",
+          "title": "Temperament",
+          "category": "Affectionate & Loyal",
+          "description": "Mini Bernedoodles are incredibly affectionate and loyal, known for forming strong bonds with their families. They are great with children and other pets."
+        },
+        {
+          "icon": "Dumbbell",
+          "title": "Energy Level",
+          "category": "Moderate",
+          "description": "Mini Bernedoodles enjoy playtime and regular exercise. While they have bursts of energy, they are equally happy lounging around the house."
+        },
+        {
+          "icon": "GraduationCap",
+          "title": "Trainability",
+          "category": "Very Good",
+          "description": "Mini Bernedoodles are intelligent and eager to please, making them highly trainable. Positive reinforcement techniques work best with this gentle breed."
+        },
+        {
+          "icon": "Stethoscope",
+          "title": "Health",
+          "category": "Generally Healthy",
+          "description": "Mini Bernedoodles are generally healthy, but they can be prone to conditions like hip dysplasia. Regular vet visits and a balanced diet help ensure their long-term well-being."
+        },
+        {
+          "icon": "Clock",
+          "title": "Lifespan",
+          "category": "12-15 years",
+          "description": "Mini Bernedoodles typically live for 12-15 years. With proper care, regular exercise, and a balanced diet, they can enjoy a long and healthy life."
+        },
+        {
+          "icon": "Droplets",
+          "title": "Grooming",
+          "category": "Moderate",
+          "description": "Mini Bernedoodles require regular grooming to maintain their coat, especially if it's curly. Regular brushing, trimming, and baths will help keep them looking their best."
+        }
+      ]
+    },
+    "Goldendoodle": {
+      "header": {
+        "header": "Goldendoodle Puppies",
+        "subheader": "Standard & Mini Goldendoodles Available",
+        "alt": "A goldendoodle puppy for sale in Sheridan MI",
+        "image": {
+          "lg": "/assets/breeds/goldendoodles/gd-banner-bg-d",
+          "sm": "/assets/breeds/goldendoodles/gd-banner-bg-m"
+        }
+      },
+      "intro": {
+        "copy": "Goldendoodles are a crossbreed known for their friendly nature, intelligence, and hypoallergenic coats. At Prairie Creek Puppies, we offer both Standard and Mini Goldendoodles raised with love and care. Read more to learn if a Goldendoodle is right for you.",
+        "alt": "A goldendoodle illustration",
+        "image": "/assets/breeds/goldendoodles/goldendoodle"
+      },
+      "faq": [
+        {
+          "icon": "Scissors",
+          "title": "Shedding",
+          "category": "Low to Moderate",
+          "description": "Goldendoodles typically have low to moderate shedding, depending on their coat type. Regular grooming and brushing help manage their shedding and keep their coat healthy."
+        },
+        {
+          "icon": "Ruler",
+          "title": "Size",
+          "category": "Varies",
+          "description": "Goldendoodles come in a range of sizes, from Mini Goldendoodles (weighing 15-30 lbs) to Standard Goldendoodles (weighing 45-90 lbs). They adapt well to different living environments."
+        },
+        {
+          "icon": "Heart",
+          "title": "Temperament",
+          "category": "Friendly & Affectionate",
+          "description": "Goldendoodles are known for their friendly and affectionate nature. They get along well with children, adults, and other pets, making them great family companions."
+        },
+        {
+          "icon": "Dumbbell",
+          "title": "Energy Level",
+          "category": "Moderate to High",
+          "description": "Goldendoodles are energetic and love to play. They require regular exercise, including daily walks and playtime, to keep them happy and healthy."
+        },
+        {
+          "icon": "GraduationCap",
+          "title": "Trainability",
+          "category": "Excellent",
+          "description": "Goldendoodles are highly intelligent and easy to train. They excel in obedience training and are often used as service or therapy dogs due to their gentle temperament."
+        },
+        {
+          "icon": "Stethoscope",
+          "title": "Health",
+          "category": "Generally Healthy",
+          "description": "While Goldendoodles are generally healthy, they may be prone to conditions such as hip dysplasia or certain genetic disorders. Regular vet visits and a healthy lifestyle help manage these risks."
+        },
+        {
+          "icon": "Clock",
+          "title": "Lifespan",
+          "category": "12-15 years",
+          "description": "Goldendoodles typically live for 12-15 years. With proper care and regular exercise, they can enjoy a long and happy life as a beloved family pet."
+        },
+        {
+          "icon": "Droplets",
+          "title": "Grooming",
+          "category": "Moderate to High",
+          "description": "Goldendoodles require regular grooming due to their curly or wavy coats. Regular brushing, baths, and occasional trims help prevent matting and keep them looking their best."
+        }
+      ]
+    },
+    "Mini Goldendoodle": {
+      "header": {
+        "header": "Goldendoodle Puppies",
+        "subheader": "Standard & Mini Goldendoodles Available",
+        "alt": "A goldendoodle puppy for sale in Sheridan MI",
+        "image": {
+          "lg": "/assets/breeds/goldendoodles/gd-banner-bg-d",
+          "sm": "/assets/breeds/goldendoodles/gd-banner-bg-m"
+        }
+      },
+      "intro": {
+        "copy": "Goldendoodles are a crossbreed known for their friendly nature, intelligence, and hypoallergenic coats. At Prairie Creek Puppies, we offer both Standard and Mini Goldendoodles raised with love and care. Read more to learn if a Goldendoodle is right for you.",
+        "alt": "A goldendoodle illustration",
+        "image": "/assets/breeds/goldendoodles/goldendoodle"
+      },
+      "faq": [
+        {
+          "icon": "Scissors",
+          "title": "Shedding",
+          "category": "Low to Moderate",
+          "description": "Goldendoodles typically have low to moderate shedding, depending on their coat type. Regular grooming and brushing help manage their shedding and keep their coat healthy."
+        },
+        {
+          "icon": "Ruler",
+          "title": "Size",
+          "category": "Varies",
+          "description": "Goldendoodles come in a range of sizes, from Mini Goldendoodles (weighing 15-30 lbs) to Standard Goldendoodles (weighing 45-90 lbs). They adapt well to different living environments."
+        },
+        {
+          "icon": "Heart",
+          "title": "Temperament",
+          "category": "Friendly & Affectionate",
+          "description": "Goldendoodles are known for their friendly and affectionate nature. They get along well with children, adults, and other pets, making them great family companions."
+        },
+        {
+          "icon": "Dumbbell",
+          "title": "Energy Level",
+          "category": "Moderate to High",
+          "description": "Goldendoodles are energetic and love to play. They require regular exercise, including daily walks and playtime, to keep them happy and healthy."
+        },
+        {
+          "icon": "GraduationCap",
+          "title": "Trainability",
+          "category": "Excellent",
+          "description": "Goldendoodles are highly intelligent and easy to train. They excel in obedience training and are often used as service or therapy dogs due to their gentle temperament."
+        },
+        {
+          "icon": "Stethoscope",
+          "title": "Health",
+          "category": "Generally Healthy",
+          "description": "While Goldendoodles are generally healthy, they may be prone to conditions such as hip dysplasia or certain genetic disorders. Regular vet visits and a healthy lifestyle help manage these risks."
+        },
+        {
+          "icon": "Clock",
+          "title": "Lifespan",
+          "category": "12-15 years",
+          "description": "Goldendoodles typically live for 12-15 years. With proper care and regular exercise, they can enjoy a long and happy life as a beloved family pet."
+        },
+        {
+          "icon": "Droplets",
+          "title": "Grooming",
+          "category": "Moderate to High",
+          "description": "Goldendoodles require regular grooming due to their curly or wavy coats. Regular brushing, baths, and occasional trims help prevent matting and keep them looking their best."
+        }
+      ]
+    },
+    "Shih Tzu": {
+      "header": {
+        "header": "Shih Tzu Puppies",
+        "subheader": "AKC Shih Tzus Available",
+        "alt": "A Shih Tzu puppy for sale in Sheridan MI",
+        "image": {
+          "lg": "/assets/breeds/shih-tzus/st-banner-bg-d",
+          "sm": "/assets/breeds/shih-tzus/st-banner-bg-m"
+        }
+      },
+      "intro": {
+        "copy": "Shih Tzus are affectionate, outgoing, and charming small dogs that make excellent companions. At Peaceful Country Pets, we raise AKC Shih Tzus with love and care, ensuring they are well-socialized and ready to become a part of your family. Read more to learn if a Shih Tzu is right for you.",
+        "alt": "A Shih Tzu illustration",
+        "image": "/assets/breeds/shih-tzus/shih-tzu"
+      },
+      "faq": [
+        {
+          "icon": "Scissors",
+          "title": "Shedding",
+          "category": "Low",
+          "description": "Shih Tzus have a double coat that sheds minimally. Regular grooming and brushing are essential to prevent matting and keep their coat healthy."
+        },
+        {
+          "icon": "Ruler",
+          "title": "Size",
+          "category": "Small",
+          "description": "Adult Shih Tzus typically weigh between 9-16 pounds and stand about 9-10.5 inches tall, making them perfect for apartment living or homes with limited space."
+        },
+        {
+          "icon": "Heart",
+          "title": "Temperament",
+          "category": "Affectionate & Friendly",
+          "description": "Shih Tzus are known for their loving and friendly nature. They thrive on human companionship and get along well with children and other pets."
+        },
+        {
+          "icon": "Dumbbell",
+          "title": "Energy Level",
+          "category": "Moderate",
+          "description": "Shih Tzus enjoy daily walks and playtime but are also content lounging with their families. They adapt well to their owner's activity level."
+        },
+        {
+          "icon": "GraduationCap",
+          "title": "Trainability",
+          "category": "Good",
+          "description": "Shih Tzus are intelligent but can be a bit stubborn. Consistent, positive reinforcement training methods work best with this breed."
+        },
+        {
+          "icon": "Stethoscope",
+          "title": "Health",
+          "category": "Generally Healthy",
+          "description": "While generally healthy, Shih Tzus can be prone to certain conditions like eye issues and respiratory problems due to their short muzzles. Regular vet check-ups are important."
+        },
+        {
+          "icon": "Clock",
+          "title": "Lifespan",
+          "category": "10-16 years",
+          "description": "Shih Tzus typically live between 10-16 years. With proper care, nutrition, and regular veterinary visits, they can enjoy a long, healthy life."
+        },
+        {
+          "icon": "Droplets",
+          "title": "Grooming",
+          "category": "High",
+          "description": "Shih Tzus require regular grooming due to their long, luxurious coats. Daily brushing and regular professional grooming are recommended to keep them looking their best."
+        }
+      ]
+    },
+    "Mini Dachshund": {
+      "header": {
+        "header": "Mini Dachshund Puppies",
+        "subheader": "Adorable Mini Dachshunds Available",
+        "alt": "A Mini Dachshund puppy for sale in Sheridan MI",
+        "image": {
+          "lg": "/assets/breeds/mini-dachshunds/md-banner-bg-d",
+          "sm": "/assets/breeds/mini-dachshunds/md-banner-bg-m"
+        }
+      },
+      "intro": {
+        "copy": "Mini Dachshunds are lively, courageous, and affectionate small dogs with big personalities. At Peaceful Country Pets, we raise Mini Dachshunds with love and care, ensuring they are well-socialized and ready to become a part of your family. Read more to learn if a Mini Dachshund is right for you.",
+        "alt": "A Mini Dachshund illustration",
+        "image": "/assets/breeds/mini-dachshunds/dachshund"
+      },
+      "faq": [
+        {
+          "icon": "Scissors",
+          "title": "Shedding",
+          "category": "Low to Moderate",
+          "description": "Mini Dachshunds can have smooth, long-haired, or wire-haired coats. Shedding varies with coat type, but regular grooming helps manage shedding and keeps their coat healthy."
+        },
+        {
+          "icon": "Ruler",
+          "title": "Size",
+          "category": "Small",
+          "description": "Adult Mini Dachshunds typically weigh up to 11 pounds and stand about 5-6 inches tall, making them suitable for apartment living or homes with limited space."
+        },
+        {
+          "icon": "Heart",
+          "title": "Temperament",
+          "category": "Curious & Loyal",
+          "description": "Mini Dachshunds are known for their bold and lively nature. They are loyal to their families and can be a bit wary of strangers, making them good watchdogs."
+        },
+        {
+          "icon": "Dumbbell",
+          "title": "Energy Level",
+          "category": "Moderate",
+          "description": "Mini Dachshunds have bursts of energy and enjoy daily walks and playtime. They also appreciate cuddle time with their owners."
+        },
+        {
+          "icon": "GraduationCap",
+          "title": "Trainability",
+          "category": "Moderate",
+          "description": "Mini Dachshunds are intelligent but can be stubborn. Consistent, positive reinforcement training methods are effective with this breed."
+        },
+        {
+          "icon": "Stethoscope",
+          "title": "Health",
+          "category": "Prone to Back Issues",
+          "description": "Due to their long backs, Mini Dachshunds are prone to intervertebral disc disease (IVDD). Preventative care and avoiding excessive jumping can help manage risks."
+        },
+        {
+          "icon": "Clock",
+          "title": "Lifespan",
+          "category": "12-16 years",
+          "description": "Mini Dachshunds typically live between 12-16 years. With proper care, nutrition, and regular veterinary visits, they can enjoy a long, healthy life."
+        },
+        {
+          "icon": "Droplets",
+          "title": "Grooming",
+          "category": "Varies by Coat Type",
+          "description": "Grooming needs vary by coat type. Smooth coats require minimal grooming, while long-haired and wire-haired Dachshunds need regular brushing to prevent matting."
+        }
+      ]
+    }
+  }
+}

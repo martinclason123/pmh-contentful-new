@@ -1,0 +1,126 @@
+/* Intro Styles */
+.intro {
+  padding: 4em;
+}
+
+.sketch {
+  width: 15em;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+.copy {
+  font-size: 1.6em;
+}
+
+.title {
+  font-family: martek-regular;
+  font-size: 5em;
+  margin-bottom: 1em;
+}
+
+@media (min-width: 641px) {
+  .intro {
+    max-width: 144em;
+    margin: 0 auto;
+  }
+}
+
+/* FAQ Section Styles */
+.faq {
+  padding: 2em;
+  margin: 0 auto;
+}
+
+/* Title */
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 1.5em;
+  font-weight: bold;
+}
+
+/* Grid for cards */
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2em;
+}
+
+/* Card Styles */
+.card {
+  background-color: white;
+  border-radius: 0.5em;
+  padding: 2em;
+  box-shadow: 0 0.4em 0.6em rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Card Header */
+.cardHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.2em;
+}
+
+.iconWrapper {
+  background-color: #fef3c7;
+  padding: 0.7em;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1em;
+}
+
+.icon {
+  width: 3em;
+  height: 3em;
+  color: #d97706;
+}
+
+/* Card Title */
+.cardTitle {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+/* Category */
+.category {
+  font-size: 1.4em;
+  color: gray;
+}
+
+/* Card Content */
+.cardContent {
+  font-size: 1.6em;
+  line-height: 1.5;
+}
+
+/* Desktop-specific styles */
+@media (min-width: 1024px) {
+  .intro {
+    padding: 4em 0;
+    margin-top: 5em;
+  }
+  .faq {
+    max-width: 144em;
+    padding: 2em 0;
+  }
+
+  .cardGrid {
+    grid-template-columns: repeat(auto-fit, minmax(30em, 1fr));
+  }
+
+  .sectionTitle {
+    font-size: 3em;
+  }
+}

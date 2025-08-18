@@ -1,0 +1,307 @@
+[
+  {
+    "breed": "Goldendoodle",
+    "name": "Ruby",
+    "id": "rf1",
+    "gender": "Female",
+    "dob": "8/3/24",
+    "ready": "9/28/24",
+    "availability": "Available",
+    "price": "1250",
+    "deposit": false,
+    "litter": "gd8324",
+    "parents": {
+      "dam": {
+        "name": "Roxie",
+        "weight": "65",
+        "image": "roxy",
+        "breed": "Goldendoodle",
+        "description": "Roxie is a nurturing and calm mother, always attentive to her pups. She has a gentle nature that brings comfort and warmth to everyone around her."
+      },
+      "sire": {
+        "name": "Clifford",
+        "weight": "60",
+        "image": "clifford",
+        "breed": "Poodle",
+        "description": "Clifford is a proud and loving father, known for his intelligence and gentle demeanor. He has a joyful presence that lights up the room."
+      }
+    },
+    "gallery": [
+      "gallery-2",
+      "gallery-3",
+      "gallery-4",
+      "gallery-5",
+      "gallery-6",
+      "gallery-7"
+    ],
+    "description": "Ruby is a calm and content little girl, already showing signs of being a sweet and affectionate companion. She’s happiest when nestled close, taking in the world around her."
+  },
+  {
+    "breed": "Goldendoodle",
+    "name": "Rosie",
+    "id": "rf2",
+    "gender": "Female",
+    "dob": "8/3/24",
+    "ready": "9/28/24",
+    "availability": "Available",
+    "price": "1250",
+    "deposit": false,
+    "litter": "gd8324",
+    "parents": {
+      "dam": {
+        "name": "Roxie",
+        "weight": "65",
+        "image": "roxy",
+        "breed": "Goldendoodle",
+        "description": "Roxie is a nurturing and calm mother, always attentive to her pups. She has a gentle nature that brings comfort and warmth to everyone around her."
+      },
+      "sire": {
+        "name": "Clifford",
+        "weight": "60",
+        "image": "clifford",
+        "breed": "Poodle",
+        "description": "Clifford is a proud and loving father, known for his intelligence and gentle demeanor. He has a joyful presence that lights up the room."
+      }
+    },
+    "gallery": [
+      "gallery-1",
+      "gallery-2",
+      "gallery-3"
+    ],
+    "description": "Rosie is a quiet observer, taking in her surroundings with curiosity. She has a gentle way about her, content to rest and cuddle."
+  },
+  {
+    "breed": "Goldendoodle",
+    "name": "Raina",
+    "id": "rf3",
+    "gender": "Female",
+    "dob": "8/3/24",
+    "ready": "9/28/24",
+    "availability": "Reserved",
+    "price": "1250",
+    "deposit": true,
+    "litter": "gd8324",
+    "parents": {
+      "dam": {
+        "name": "Roxie",
+        "weight": "65",
+        "image": "roxy",
+        "breed": "Goldendoodle",
+        "description": "Roxie is a nurturing and calm mother, always attentive to her pups. She has a gentle nature that brings comfort and warmth to everyone around her."
+      },
+      "sire": {
+        "name": "Clifford",
+        "weight": "60",
+        "image": "clifford",
+        "breed": "Poodle",
+        "description": "Clifford is a proud and loving father, known for his intelligence and gentle demeanor. He has a joyful presence that lights up the room."
+      }
+    },
+    "gallery": [
+      "gallery-1",
+      "gallery-2",
+      "gallery-3",
+      "gallery-4"
+    ],
+    "description": "Raina is a sweet soul, content to be near her siblings. She has a peaceful presence and seems to enjoy the simple comfort of being close to family."
+  },
+  {
+    "breed": "Goldendoodle",
+    "name": "Remy",
+    "id": "rm1",
+    "gender": "Male",
+    "dob": "8/3/24",
+    "ready": "9/28/24",
+    "availability": "Reserved",
+    "price": "1250",
+    "deposit": true,
+    "litter": "gd8324",
+    "parents": {
+      "dam": {
+        "name": "Roxie",
+        "weight": "65",
+        "image": "roxy",
+        "breed": "Goldendoodle",
+        "description": "Roxie is a nurturing and calm mother, always attentive to her pups. She has a gentle nature that brings comfort and warmth to everyone around her."
+      },
+      "sire": {
+        "name": "Clifford",
+        "weight": "60",
+        "image": "clifford",
+        "breed": "Poodle",
+        "description": "Clifford is a proud and loving father, known for his intelligence and gentle demeanor. He has a joyful presence that lights up the room."
+      }
+    },
+    "gallery": [
+      "gallery-1",
+      "gallery-2",
+      "gallery-3"
+    ],
+    "description": "Remy is a little cuddle-bug, happiest when close to his littermates. He enjoys the comfort of his surroundings and is content with peaceful moments."
+  },
+  {
+    "breed": "Goldendoodle",
+    "name": "Rocco",
+    "id": "rm2",
+    "gender": "Male",
+    "dob": "8/3/24",
+    "ready": "9/28/24",
+    "availability": "Available",
+    "price": "1250",
+    "deposit": false,
+    "litter": "gd8324",
+    "parents": {
+      "dam": {
+        "name": "Roxie",
+        "weight": "65",
+        "image": "roxy",
+        "breed": "Goldendoodle",
+        "description": "Roxie is a nurturing and calm mother, always attentive to her pups. She has a gentle nature that brings comfort and warmth to everyone around her."
+      },
+      "sire": {
+        "name": "Clifford",
+        "weight": "60",
+        "image": "clifford",
+        "breed": "Poodle",
+        "description": "Clifford is a proud and loving father, known for his intelligence and gentle demeanor. He has a joyful presence that lights up the room."
+      }
+    },
+    "gallery": [
+      "gallery-1",
+      "gallery-2",
+      "gallery-3"
+    ],
+    "description": "Rocco is a curious little fellow, often seen exploring his tiny world. While still a bit reserved, he’s showing signs of being quite inquisitive."
+  },
+  {
+    "breed": "Goldendoodle",
+    "name": "Riley",
+    "id": "rm3",
+    "gender": "Male",
+    "dob": "8/3/24",
+    "ready": "9/28/24",
+    "availability": "Available",
+    "price": "1250",
+    "deposit": false,
+    "litter": "gd8324",
+    "parents": {
+      "dam": {
+        "name": "Roxie",
+        "weight": "65",
+        "image": "roxy",
+        "breed": "Goldendoodle",
+        "description": "Roxie is a nurturing and calm mother, always attentive to her pups. She has a gentle nature that brings comfort and warmth to everyone around her."
+      },
+      "sire": {
+        "name": "Clifford",
+        "weight": "60",
+        "image": "clifford",
+        "breed": "Poodle",
+        "description": "Clifford is a proud and loving father, known for his intelligence and gentle demeanor. He has a joyful presence that lights up the room."
+      }
+    },
+    "gallery": [
+      "gallery-1",
+      "gallery-2"
+    ],
+    "description": "Riley is a peaceful little pup, content with resting and observing his surroundings. He’s calm and easygoing, always looking for a cozy spot to nap."
+  },
+  {
+    "breed": "Goldendoodle",
+    "name": "Ranger",
+    "id": "rm4",
+    "gender": "Male",
+    "dob": "8/3/24",
+    "ready": "9/28/24",
+    "availability": "Available",
+    "price": "1250",
+    "deposit": false,
+    "litter": "gd8324",
+    "parents": {
+      "dam": {
+        "name": "Roxie",
+        "weight": "65",
+        "image": "roxy",
+        "breed": "Goldendoodle",
+        "description": "Roxie is a nurturing and calm mother, always attentive to her pups. She has a gentle nature that brings comfort and warmth to everyone around her."
+      },
+      "sire": {
+        "name": "Clifford",
+        "weight": "60",
+        "image": "clifford",
+        "breed": "Poodle",
+        "description": "Clifford is a proud and loving father, known for his intelligence and gentle demeanor. He has a joyful presence that lights up the room."
+      }
+    },
+    "gallery": [
+      "gallery-1"
+    ],
+    "description": "Ranger is a laid-back little guy, content to be part of the pack. He’s gentle and enjoys being close to his siblings."
+  },
+  {
+    "breed": "Goldendoodle",
+    "name": "Rusty",
+    "id": "rm5",
+    "gender": "Male",
+    "dob": "8/3/24",
+    "ready": "9/28/24",
+    "availability": "Available",
+    "price": "1250",
+    "deposit": false,
+    "litter": "gd8324",
+    "parents": {
+      "dam": {
+        "name": "Roxie",
+        "weight": "65",
+        "image": "roxy",
+        "breed": "Goldendoodle",
+        "description": "Roxie is a nurturing and calm mother, always attentive to her pups. She has a gentle nature that brings comfort and warmth to everyone around her."
+      },
+      "sire": {
+        "name": "Clifford",
+        "weight": "60",
+        "image": "clifford",
+        "breed": "Poodle",
+        "description": "Clifford is a proud and loving father, known for his intelligence and gentle demeanor. He has a joyful presence that lights up the room."
+      }
+    },
+    "gallery": [
+      "gallery-1",
+      "gallery-2"
+    ],
+    "description": "Rusty is a quiet little pup who loves to snuggle up with his littermates. He has a gentle nature and enjoys peaceful moments."
+  },
+  {
+    "breed": "Goldendoodle",
+    "name": "Rocky",
+    "id": "rm6",
+    "gender": "Male",
+    "dob": "8/3/24",
+    "ready": "9/28/24",
+    "availability": "Available",
+    "price": "1250",
+    "deposit": false,
+    "litter": "gd8324",
+    "parents": {
+      "dam": {
+        "name": "Roxie",
+        "weight": "65",
+        "image": "roxy",
+        "breed": "Goldendoodle",
+        "description": "Roxie is a nurturing and calm mother, always attentive to her pups. She has a gentle nature that brings comfort and warmth to everyone around her."
+      },
+      "sire": {
+        "name": "Clifford",
+        "weight": "60",
+        "image": "clifford",
+        "breed": "Poodle",
+        "description": "Clifford is a proud and loving father, known for his intelligence and gentle demeanor. He has a joyful presence that lights up the room."
+      }
+    },
+    "gallery": [
+      "gallery-1",
+      "gallery-2"
+    ],
+    "description": "Rocky is a content little pup, enjoying the comfort of being close to his family. He’s a calm presence, happy to simply be near."
+  }
+]

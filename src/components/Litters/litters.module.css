@@ -1,0 +1,27 @@
+.litters {
+  margin: 5em 0 15em 0;
+}
+
+.litters_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15em;
+}
+.litters header {
+  position: relative;
+  text-align: center;
+  padding: 5em 0;
+}
+
+.litters header h1 {
+  font-size: 5em;
+  font-family: "martek-regular";
+  z-index: 1;
+}
+.litters header img {
+  width: 12em;
+  position: absolute;
+  right: 13em;
+  top: 2em;
+  z-index: -1;
+}

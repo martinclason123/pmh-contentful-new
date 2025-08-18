@@ -1,0 +1,125 @@
+.puppies {
+  padding: 4em;
+}
+
+.puppies h1 {
+  font-size: 5em;
+  font-family: martek-regular;
+}
+
+.filterIcon {
+  display: none;
+}
+
+.cta {
+  background: #fff;
+  border-radius: 0.5em;
+  height: 11.2em;
+  width: 100%;
+  margin: 0 auto 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border: 0.3em solid #000;
+}
+
+.cta_text {
+  display: inline-block;
+  font-size: 4em;
+  color: #000;
+  position: relative;
+  padding-right: 1.25em;
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 0.6;
+}
+
+.cta_text::after {
+  content: url("/assets/hero/right-arrow.svg");
+  position: absolute;
+  right: 0;
+  width: 1em;
+  height: 1em;
+  top: 0;
+  transition: all 100ms ease-in-out;
+}
+
+.button {
+  background: #7fa686;
+  border: none;
+  width: 20em;
+  height: 6.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1em;
+  margin-top: 3em;
+  position: sticky;
+  top: 10em;
+  z-index: 2;
+}
+
+.button span {
+  color: #fff;
+  font-size: 2.4em;
+  display: inline-block;
+  position: relative;
+  padding-right: 1.5em;
+}
+
+.button span::after {
+  position: absolute;
+  right: 0;
+  top: 0.1em;
+  content: "";
+  background-image: url("/assets/puppies/filters-01.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 1em;
+  height: 1em;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 641px) {
+  .puppies {
+    width: 164em;
+    margin: 0 auto;
+  }
+
+
+
+  .button {
+    display: none;
+  }
+
+  .card {
+    width: 23%;
+  }
+
+  .card:hover img {
+    transform: scale(1.1);
+  }
+
+  .cta {
+    margin: 0 0 0 auto;
+    height: 8.2em;
+    width: fit-content;
+    border: transparent;
+  }
+  .cta_text {
+    font-size: 4em;
+  }
+
+  .cta:hover .cta_text::after {
+    right: -0.1em;
+  }
+}

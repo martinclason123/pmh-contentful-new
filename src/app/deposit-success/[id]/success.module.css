@@ -1,0 +1,20 @@
+.success {
+  padding: 4em;
+  min-height: 40vh;
+}
+.success h1 {
+  font-size: 2.4em;
+  line-height: 1.5;
+}
+
+.success .link {
+  color: red;
+  text-decoration: underline;
+}
+
+@media (min-width: 641px) {
+  .success {
+    width: 110em;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,101 @@
+.reviews {
+  margin: 8em auto;
+  overflow: hidden;
+}
+
+.slider {
+  margin-left: 4em !important;
+  overflow: visible;
+}
+
+/* Image/Initial Placeholder */
+.imageWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5em;
+}
+
+.reviewImage {
+  width: 6em;
+  height: 6em;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.initialPlaceholder {
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+  background-color: #222;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Stars */
+.stars {
+  margin-bottom: 1.5em;
+}
+
+.star {
+  color: #ffcc00;
+  margin: 0 0.2em;
+  width: 3em;
+  height: 3em;
+}
+
+/* Review Text */
+.reviewText {
+  font-size: 2.4em;
+  color: #555;
+  margin-bottom: 1.5em;
+}
+
+/* Google Link */
+.slider .googleLink {
+  color: #1a73e8;
+  font-size: 2.4em;
+  text-decoration: none;
+}
+
+/* Slider Arrows */
+.slick-prev,
+.slick-next {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  color: #fff;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.header {
+  padding: 4em;
+}
+
+.title {
+  font-size: 3.6em;
+  font-family: martek-regular;
+}
+
+@media (min-width: 641px) {
+  .reviews {
+    width: 144em;
+    margin: 2em auto 2em auto;
+  }
+
+  .slider {
+    overflow: hidden;
+    margin: 2em 0 0 0;
+  }
+  .title {
+    font-size: 5em;
+  }
+  .reviewImage {
+    width: 4em;
+    height: 4em;
+  }
+}

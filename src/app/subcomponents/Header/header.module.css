@@ -1,0 +1,36 @@
+.header {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgb(0, 0, 0, 15%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  font-size: 5em;
+  font-family: martek-regular;
+  text-align: center;
+  color: #fff;
+}
+.subtitle {
+  text-align: center;
+  color: #fff;
+  font-size: 1.8em;
+}
+
+.anchor {
+  padding-top: 5em;
+}
+
+@media (min-width: 641px) {
+  .title {
+    font-size: 12em;
+  }
+  .subtitle {
+    font-size: 3.6em;
+  }
+}
