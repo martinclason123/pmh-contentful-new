@@ -14,40 +14,61 @@ import {
 } from "../components";
 
 export const metadata = {
-  title:
-    "Peaceful Country Pets | AKC Dachshunds, Golden Retrievers, & Shih Tzus",
+  metadataBase: new URL("https://pmhpuppies.com"),
+  title: {
+    default:
+      "Paw Prints on My Heart | Cavapoo, Goldendoodle, Bernedoodle & Cavalier Puppies in Michigan",
+    template: "%s | Paw Prints on My Heart",
+  },
   description:
-    "Peaceful Country Pets offers high-quality AKC Dachshunds, Golden Retrievers, and Shih Tzus, raised with love and care in Sheridan, MI. Find your perfect companion today.",
-  keywords:
-    "Puppies for sale, Dachshunds, Golden Retrievers, Shih Tzus, AKC puppies, Sheridan MI",
-  author: "Peaceful Country Pets",
+    "Family-raised Cavapoo, Goldendoodle, Bernedoodle, and Cavalier King Charles Spaniel puppies in Sheridan, Michigan.",
+  keywords: [
+    "Cavapoo puppies",
+    "Goldendoodle puppies",
+    "Bernedoodle puppies",
+    "Cavalier King Charles Spaniel puppies",
+    "Sheridan MI puppies",
+    "Michigan puppies",
+  ],
+  authors: [{ name: "Paw Prints on My Heart" }],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title:
-      "Peaceful Country Pets | AKC Dachshunds, Golden Retrievers, & Shih Tzus",
-    description:
-      "Peaceful Country Pets offers high-quality AKC Dachshunds, Golden Retrievers, and Shih Tzus, raised with love and care in Sheridan, MI. Find your perfect companion today.",
-    url: "https://www.peacefulcountrypets.com/",
     type: "website",
+    url: "https://pmhpuppies.com/",
+    siteName: "Paw Prints on My Heart",
+    title:
+      "Paw Prints on My Heart | Cavapoo, Goldendoodle, Bernedoodle & Cavalier Puppies",
+    description: "Ethically raised, well-socialized puppies in Sheridan, MI.",
+    locale: "en_US",
     images: [
       {
-        url: "https://www.peacefulcountrypets.com/assets/og/og-image-01.jpg",
+        url: "https://pmhpuppies.com/assets/og/og-image-01.jpg",
         width: 1200,
         height: 630,
-        alt: "Peaceful Country Pets - Dachshunds, Golden Retrievers, & Shih Tzus",
+        alt: "Paw Prints on My Heart - Cavapoos, Goldendoodles, Bernedoodles & Cavaliers",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title:
-      "Peaceful Country Pets | AKC Dachshunds, Golden Retrievers, & Shih Tzus",
-    description:
-      "Peaceful Country Pets offers high-quality AKC Dachshunds, Golden Retrievers, and Shih Tzus, raised with love and care in Sheridan, MI. Find your perfect companion today.",
-    images: ["https://www.peacefulcountrypets.com/assets/og/og-image-01.jpg"],
+      "Paw Prints on My Heart | Cavapoo, Goldendoodle, Bernedoodle & Cavalier Puppies",
+    description: "Family-raised puppies in Sheridan, Michigan.",
+    images: ["https://pmhpuppies.com/assets/og/og-image-01.jpg"],
   },
-  viewport: "width=device-width, initial-scale=1",
-  charset: "UTF-8",
-  language: "English",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
 };
 
 export default function Home() {

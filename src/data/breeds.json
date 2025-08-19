@@ -395,6 +395,138 @@
           "description": "Grooming needs vary by coat type. Smooth coats require minimal grooming, while long-haired and wire-haired Dachshunds need regular brushing to prevent matting."
         }
       ]
+    },
+    "Cavalier": {
+      "header": {
+        "header": "Cavalier King Charles Spaniel Puppies",
+        "subheader": "Blenheim • Tricolor • Ruby • Black & Tan",
+        "alt": "A Cavalier King Charles Spaniel puppy for sale in Sheridan MI",
+        "image": {
+          "lg": "/assets/breeds/cavalier/cavalier-banner-bg-d",
+          "sm": "/assets/breeds/cavalier/cavalier-banner-bg-m"
+        }
+      },
+      "intro": {
+        "copy": "Cavalier King Charles Spaniels are affectionate, graceful, and gentle companions. At Paw Prints on My Heart, we raise Cavaliers in a family environment so they are well-socialized and ready for life with their new families. Read more to see if a Cavalier is the right fit for you.",
+        "alt": "A Cavalier King Charles Spaniel illustration",
+        "image": "/assets/breeds/cavalier/cavalier"
+      },
+      "faq": [
+        {
+          "icon": "Scissors",
+          "title": "Shedding",
+          "category": "Moderate",
+          "description": "Cavaliers have medium-length silky coats that shed moderately year-round. Weekly brushing helps control shedding and keeps their coat healthy."
+        },
+        {
+          "icon": "Ruler",
+          "title": "Size",
+          "category": "Small",
+          "description": "Adult Cavaliers typically weigh between 13–18 pounds and stand 12–13 inches tall. Their manageable size makes them great for both apartments and larger homes."
+        },
+        {
+          "icon": "Heart",
+          "title": "Temperament",
+          "category": "Gentle & Affectionate",
+          "description": "Cavaliers are known for their affectionate and friendly nature. They bond closely with families, do well with children, and enjoy being with other pets."
+        },
+        {
+          "icon": "Dumbbell",
+          "title": "Energy Level",
+          "category": "Moderate",
+          "description": "While Cavaliers enjoy playtime and daily walks, they are equally content to curl up on the couch. They adapt well to their family's lifestyle."
+        },
+        {
+          "icon": "GraduationCap",
+          "title": "Trainability",
+          "category": "Very Good",
+          "description": "Cavaliers are intelligent and eager to please, making them relatively easy to train. Positive reinforcement works best to encourage their gentle nature."
+        },
+        {
+          "icon": "Stethoscope",
+          "title": "Health",
+          "category": "Prone to Heart Issues",
+          "description": "Cavaliers are prone to certain genetic conditions, particularly mitral valve disease. Regular veterinary checkups and a healthy diet help manage risks."
+        },
+        {
+          "icon": "Clock",
+          "title": "Lifespan",
+          "category": "12–15 years",
+          "description": "Cavalier King Charles Spaniels typically live 12–15 years. With proper care, they can enjoy a long, happy life as beloved companions."
+        },
+        {
+          "icon": "Droplets",
+          "title": "Grooming",
+          "category": "Moderate",
+          "description": "Cavaliers require weekly brushing to prevent tangles in their feathered coats and regular ear cleaning to avoid infections. Occasional trims keep them neat."
+        }
+      ]
+    },
+    "Cavapoo": {
+      "header": {
+        "header": "Cavapoo Puppies",
+        "subheader": "Adorable Cavalier x Poodle Cross",
+        "alt": "A Cavapoo puppy for sale in Sheridan MI",
+        "image": {
+          "lg": "/assets/breeds/cavapoo/cavapoo-banner-bg-d",
+          "sm": "/assets/breeds/cavapoo/cavapoo-banner-bg-m"
+        }
+      },
+      "intro": {
+        "copy": "Cavapoos are a popular designer cross between a Cavalier King Charles Spaniel and a Poodle. They are known for their affectionate, playful personalities and their often low-shedding coats. At Paw Prints on My Heart, we raise Cavapoos in a loving family environment, ensuring they are well-socialized and ready to thrive in their new homes.",
+        "alt": "A Cavapoo illustration",
+        "image": "/assets/breeds/cavapoo/cavapoo"
+      },
+      "faq": [
+        {
+          "icon": "Scissors",
+          "title": "Shedding",
+          "category": "Low to Moderate",
+          "description": "Cavapoos typically inherit a wavy or curly coat from their Poodle parent, which sheds less than many breeds. Regular grooming and brushing help manage their coat and minimize shedding."
+        },
+        {
+          "icon": "Ruler",
+          "title": "Size",
+          "category": "Small to Medium",
+          "description": "Cavapoos usually weigh between 12–25 pounds and stand 9–14 inches tall, depending on whether the Poodle parent was miniature or toy. Their size makes them adaptable for both apartments and larger homes."
+        },
+        {
+          "icon": "Heart",
+          "title": "Temperament",
+          "category": "Affectionate & Friendly",
+          "description": "Cavapoos are gentle, loving, and eager to please. They get along well with children, adults, and other pets, making them excellent family companions."
+        },
+        {
+          "icon": "Dumbbell",
+          "title": "Energy Level",
+          "category": "Moderate",
+          "description": "Cavapoos enjoy playtime, walks, and interactive games, but they are equally happy to snuggle on the couch. Daily activity helps keep them healthy and stimulated."
+        },
+        {
+          "icon": "GraduationCap",
+          "title": "Trainability",
+          "category": "Excellent",
+          "description": "Cavapoos are intelligent and eager to please, which makes training easier. Positive reinforcement works best, and they often excel at obedience and agility."
+        },
+        {
+          "icon": "Stethoscope",
+          "title": "Health",
+          "category": "Generally Healthy",
+          "description": "Cavapoos are generally healthy but may be prone to conditions like heart disease (from the Cavalier) or hip dysplasia and eye issues (from the Poodle). Regular veterinary checkups help ensure long-term health."
+        },
+        {
+          "icon": "Clock",
+          "title": "Lifespan",
+          "category": "12–15 years",
+          "description": "Cavapoos typically live 12–15 years. With good nutrition, regular vet care, and lots of love, they can enjoy long, happy lives."
+        },
+        {
+          "icon": "Droplets",
+          "title": "Grooming",
+          "category": "Moderate",
+          "description": "Cavapoos require regular brushing to prevent tangles and matting, as well as routine baths and trims. Professional grooming every 6–8 weeks helps maintain their coat."
+        }
+      ]
     }
   }
 }

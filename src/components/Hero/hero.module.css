@@ -1,5 +1,5 @@
 .hero {
-  border-bottom: 3em solid #4e5b31;
+  border-bottom: 3em solid #ff0033;
 }
 
 .header {
@@ -55,7 +55,7 @@
   .header {
     width: 43em;
     top: 43%;
-    left: 39em;
+    /* left: 39em; */
   }
   .cta {
     margin: 0;
@@ -71,6 +71,6 @@
   }
 
   .cta:hover {
-    border: 0.3em solid #bbda76;
+    border: 0.3em solid #00a7e1;
   }
 }

@@ -44,12 +44,11 @@ export default function Hero() {
           src="/assets/hero/hero-d.jpg?$staticlink$"
           width="1920"
           height="700"
-          loading="lazy"
-          alt="a puppy standing in a garden"
+          alt="Puppies on a wagon"
         />
       </picture>
       <header className={styles.header}>
-        <h1 className={styles.header_text}>Prairie Creek Puppies</h1>
+        <h1 className={styles.header_text}>Paw Prints on My Heart</h1>
         <Link href={"/puppies"} className={styles.cta}>
           <span className={styles.cta_text}>See Puppies</span>
         </Link>
