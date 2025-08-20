@@ -15,7 +15,7 @@ export default function Form({ subject = "General inquiry" }) {
   const [success, setSuccess] = useState(false);
   const [message, setMessage] = useState("Submit");
 
-  const FORMSPARK_FORM_ID = "AoArnc68v";
+  const FORMSPARK_FORM_ID = "ZWTY6ti0";
 
   const [submit, submitting] = useFormspark({
     formId: FORMSPARK_FORM_ID,

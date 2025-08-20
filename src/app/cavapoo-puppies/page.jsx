@@ -53,7 +53,7 @@ export default async function Cavapoos() {
   };
 
   const noResultsCopy = {
-    header: `Oops! No Cavapoos available right now!`,
+    header: `Oops!`,
     subheader:
       "We don't have any Cavapoo puppies available at the moment, but new litters are on the way.",
     p: "Want to be first in line when the next litter arrives?",

@@ -81,15 +81,15 @@ export default function Location() {
           />
           <ul>
             <li>
-              <a href="mailto:hello@peacefulcountrypets.com">
-                Email: hello@peacefulcountrypets.com
+              <a href="mailto:hello@pmhpuppies.com">
+                Email: hello@pmhpuppies.com
               </a>
             </li>
             <li>
               Message us on&nbsp;
               <a
                 className={styles.link}
-                href="https://www.facebook.com/profile.php?id=61561863522481"
+                href="https://www.facebook.com/profile.php?id=100091205476392"
                 target="_blank"
               >
                 Facebook

@@ -47,7 +47,7 @@ export default async function MiniBernedoodles() {
   };
 
   const noResultsCopy = {
-    header: "Oops! Our Mini Bernedoodle pack is resting",
+    header: "Oops!",
     subheader:
       "We don't have any Mini Bernedoodle puppies available right now, but new litters are on the way!",
     p: "Want to be the first to know when our next bundle of Mini Bernedoodle joy arrives?",

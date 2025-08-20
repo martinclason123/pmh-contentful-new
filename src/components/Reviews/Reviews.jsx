@@ -58,9 +58,12 @@ export default function Reviews() {
               {review.review.length > 100
                 ? `${review.review.substring(0, 100)}...`
                 : review.review}
+              <br />
+              <br />
+              {`-${review.name}`}
             </p>
             <a
-              href="https://www.google.com/search?q=prairie+creek+puppies+sheridan+mi"
+              href="https://www.google.com/search?q=paw+prints+on+my+heart+sheridan+mi&rlz=1C1CHBF_enUS1025US1025&oq=pawprints+on+my+heart+sher&gs_lcrp=EgZjaHJvbWUqCAgBEAAYFhgeMgYIABBFGDkyCAgBEAAYFhgeMg0IAhAAGIYDGIAEGIoFMg0IAxAAGIYDGIAEGIoFMgoIBBAAGIAEGKIEMgoIBRAAGIAEGKIEMgoIBhAAGIAEGKIEMgYIBxBFGD3SAQkxMDQ2OGowajeoAgiwAgHxBYHBGl7SZlT48QWBwRpe0mZU-A&sourceid=chrome&ie=UTF-8#mpd=~15500082679825625935/customers/reviews"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.googleLink}

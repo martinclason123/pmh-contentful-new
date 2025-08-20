@@ -9,7 +9,7 @@ export async function POST(req) {
   try {
     mailchimp.setConfig({
       apiKey: process.env.MAILCHIMP_API_KEY,
-      server: "us21",
+      server: "us10",
     });
 
     // Check if the user is already subscribed

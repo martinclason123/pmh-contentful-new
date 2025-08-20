@@ -7,7 +7,7 @@ export default function Socials() {
       <h2 className={styles.title}>Follow Us</h2>
       <div className={styles.iconContainer}>
         <a
-          href="https://www.facebook.com/profile.php?id=61561863522481"
+          href="https://www.facebook.com/profile.php?id=100091205476392"
           target="_blank"
           rel="noopener noreferrer"
           className={styles.iconLink}
@@ -15,7 +15,7 @@ export default function Socials() {
           <FaFacebook className={styles.icon} />
         </a>
         <a
-          href="https://www.instagram.com/prairiecreekpuppies/"
+          href="https://www.instagram.com/pmhpuppies/"
           target="_blank"
           rel="noopener noreferrer"
           className={styles.iconLink}
@@ -23,15 +23,7 @@ export default function Socials() {
           <FaInstagram className={styles.icon} />
         </a>
         <a
-          href="https://www.tiktok.com/@prairie.creek.pup?_t=8pp4meTR6fm&_r=1"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.iconLink}
-        >
-          <FaTiktok className={styles.icon} />
-        </a>
-        <a
-          href="https://www.youtube.com/@PrairieCreekPuppies-l5n"
+          href="https://www.youtube.com/channel/UCyrGz-AYx4Oh1PIiF9JymZQ"
           target="_blank"
           rel="noopener noreferrer"
           className={styles.iconLink}

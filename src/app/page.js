@@ -80,7 +80,7 @@ export default function Home() {
       <Litters />
       <Featured limiter={4} />
       <About />
-      {/* <Reviews /> */}
+      <Reviews />
       <Socials />
       <Reasons />
       <Location />

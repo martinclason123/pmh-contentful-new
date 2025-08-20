@@ -50,7 +50,7 @@ export default async function Goldendoodles() {
   };
 
   const noResultsCopy = {
-    header: "Oops! Our Goldendoodle gang is resting",
+    header: "Oops!",
     subheader:
       "We don't have any Goldendoodle puppies available right now, but new litters are on the way!",
     p: "Want to be the first to know when our next bundle of Goldendoodle joy arrives?",

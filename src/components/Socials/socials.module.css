@@ -27,13 +27,8 @@
 .icon {
   width: 8em;
   height: 8em;
-  color: #4e5b31;
+  color: #ff0033;
   transition: color 0.3s ease;
-}
-
-/* Hover effects */
-.iconLink:hover .icon {
-  color: #818e64; /* Change icon color on hover */
 }
 
 .iconLink:hover {

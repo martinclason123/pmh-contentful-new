@@ -42,9 +42,7 @@ export default function Footer() {
           </li>
 
           <li>
-            <a href="mailto:hello@peacefulcountrypets.com">
-              hello@peacefulcountrypets.com
-            </a>
+            <a href="mailto:hello@pmhpuppies.com">hello@pmhpuppies.com</a>
           </li>
         </ul>
 
@@ -53,7 +51,7 @@ export default function Footer() {
           <li>
             <a
               target="_blank"
-              href="https://www.facebook.com/profile.php?id=61561863522481"
+              href="https://www.facebook.com/profile.php?id=100091205476392"
             >
               <img
                 className={styles.socials}
@@ -66,7 +64,7 @@ export default function Footer() {
       </nav>
       <img
         src="/assets/footer/logo-white.svg"
-        alt="prairie creek puppies logo"
+        alt="Paw Prints on My Heart logo"
         className={styles.logo}
         width={127}
         height={150}
