@@ -3,32 +3,32 @@ import { Contact } from "../../components";
 
 export const metadata = {
   title:
-    "About Us | Peaceful Country Pets - Ethical Breeders of AKC Golden Retrievers, Goldendoodles, & Mini Goldendoodles",
+    "About Us | Paw Prints on My Heart - Ethical Breeders of Cavaliers, Cavapoos, Goldendoodles & Bernedoodles",
   description:
-    "Learn more about Peaceful Country Pets, a family-owned dog breeding kennel located in Sheridan, MI. Discover our ethical breeding practices, our commitment to the health and well-being of our puppies, and meet the Martin family.",
+    "Learn more about Paw Prints on My Heart, a family-owned breeder in Sheridan, MI. Discover our ethical breeding practices and commitment to raising healthy, well-socialized Cavaliers, Cavapoos, Goldendoodles, and Bernedoodles.",
   openGraph: {
     title:
-      "About Us | Peaceful Country Pets - Ethical Breeders of AKC Golden Retrievers, Goldendoodles, & Mini Goldendoodles",
+      "About Us | Paw Prints on My Heart - Ethical Breeders of Cavaliers, Cavapoos, Goldendoodles & Bernedoodles",
     description:
-      "Discover the story behind Peaceful Country Pets, a trusted breeder of AKC Golden Retrievers, Goldendoodles, and Mini Goldendoodles. Meet the Martin family and learn about our ethical breeding practices.",
-    url: "https://www.prairiecreekpuppies.com/about",
+      "Discover the story behind Paw Prints on My Heart, a trusted Sheridan, MI breeder of Cavaliers, Cavapoos, Goldendoodles, and Bernedoodles. Learn about our ethical breeding practices and family values.",
+    url: "https://www.pmhpuppies.com/about",
     type: "website",
     images: [
       {
-        url: "https://www.prairiecreekpuppies.com/assets/about/hero-d.jpg",
+        url: "https://www.pmhpuppies.com/assets/about/hero-d.jpg",
         width: 1920,
         height: 426,
-        alt: "Peaceful Country Pets - Ethical Dog Breeder Facility",
+        alt: "Paw Prints on My Heart - Ethical dog breeder facility",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title:
-      "About Us | Peaceful Country Pets - Ethical Breeders of AKC Golden Retrievers, Goldendoodles, & Mini Goldendoodles",
+      "About Us | Paw Prints on My Heart - Ethical Breeders of Cavaliers, Cavapoos, Goldendoodles & Bernedoodles",
     description:
-      "Learn more about Peaceful Country Pets, a family-owned dog breeding kennel located in Sheridan, MI. Discover our ethical breeding practices, our commitment to the health and well-being of our puppies, and meet the Martin family.",
-    images: ["https://www.prairiecreekpuppies.com/assets/about/hero-d.jpg"],
+      "Learn about Paw Prints on My Heart in Sheridan, MI—our ethical breeding practices and dedication to healthy, well-socialized Cavaliers, Cavapoos, Goldendoodles, and Bernedoodles.",
+    images: ["https://www.pmhpuppies.com/assets/about/hero-d.jpg"],
   },
 };
 
@@ -76,17 +76,36 @@ export default function About() {
             src="/assets/about/hero-d.jpg"
             width="1920"
             height="426"
-            alt="An ethical dog breeder facility"
+            alt="A collage of children and puppies"
           />
         </picture>
         <h1>About Us</h1>
       </header>
       <p className={styles.copy}>
-        Peaceful Country Pets is a dog breeding kennel located on a family farm
-        owned and operated by Dennis and Lois-Anne Martin, a Mennonite family in
-        Sheridan, MI. The Martin family has over 10 years of experience breeding
-        AKC Golden Retrievers, Shih Tzus and more. The Martins adhere to ethical
-        breeding practices to ensure the health and well-being of their puppies.
+        We, Richard and Wanita Martin, the dedicated and passionate breeders
+        behind Paw Prints on My Heart, have been wholeheartedly committed to
+        raising happy, healthy, and well-socialized puppies for over 10 years.
+        Nestled on a beautiful 60-acre property in the picturesque countryside,
+        our family-run facility is the perfect environment for puppies to grow
+        and flourish.
+      </p>
+      <p className={styles.copy}>
+        Each one of our puppies gets one-on-one attention daily to help them
+        grow to be great members of society and to bring out the best of their
+        personalities. Our puppies are all gently acclimated to crate time, they
+        get to play with a variety of toys, and are introduced to many different
+        surfaces, as well as multiple sounds, sights, and scents! Each puppy
+        gets bathed & blow-dried every other week, to get them used to all the
+        things that will be part of their future as an adult.
+      </p>
+      <p className={styles.copy}>
+        The journey of Paw Prints On My Heart was born from both of us longing
+        for our own dog as young children. As adults, owning our own dogs
+        sparked a newfound passion for breeding and providing others with the
+        joy of bringing home a happy, healthy puppy. Over the years, we have
+        worked with multiple veterinarians & experienced breeders to carefully
+        select healthy canines from specific breeds to ensure that we are able
+        to offer you the healthiest puppy possible.
       </p>
       <div className={styles.cards}>
         <div className={styles.card}>
@@ -108,7 +127,7 @@ export default function About() {
               width="500"
               height="500"
               loading="lazy"
-              alt="a Golden Retriever puppy sitting on a chair"
+              alt="Dogs playing in a play area."
             />
           </picture>
           <p className={styles.subcopy}>
@@ -171,6 +190,7 @@ export default function About() {
           </p>
         </div>
       </div>
+
       <div className={styles.family}>
         <picture>
           <source
@@ -190,19 +210,30 @@ export default function About() {
             width="2048"
             height="1598"
             loading="lazy"
-            alt="A picture of a family"
+            alt="Children on a wagon holding puppies"
             className={styles.portrait}
           />
         </picture>
-        <p className={styles.copy}>
-          Kara and Martin manage the photography, social media, visits, and
-          website on behalf of the Martins. They facilitate all communication
-          between customers and the Martins. Living locally, Martin, Kara, and
-          their family enjoy coming out with their kids to take photos and play
-          with the puppies. Kara loves getting to know people and helping the
-          puppies find their perfect homes.
-        </p>
       </div>
+      <p className={styles.copy}>
+        {`Our mission has always been to help families find their perfect canine
+        companion and connect with all the adoptive families as they bring home
+        their new best friend. At the heart of Paw Prints On My Heart is a
+        steadfast commitment to ethical breeding practices and the well-being of
+        every dog and puppy under our care. We prioritize genetic health by
+        conducting thorough screenings and maintaining detailed records of every
+        puppy's lineage. We also work closely with local veterinarians to ensure
+        each puppy receives proper vaccinations, health check-ups, deworming,
+        and socialization.`}
+      </p>
+      <p className={styles.copy}>
+        In addition to providing the best care possible, we also focus on
+        education and offer resources to help new owners successfully integrate
+        their furry friends into their homes. Our dedication to you and your new
+        family member is unwavering, and the love we have for our dogs and
+        puppies has helped many families create a lifetime of fond memories with
+        their four-legged companions.
+      </p>
       <Contact />
     </article>
   );
