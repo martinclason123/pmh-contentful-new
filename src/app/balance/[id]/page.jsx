@@ -10,7 +10,7 @@ export default async function Balance({ params }) {
   let { price } = match;
 
   if (match.deposit) {
-    price = price - 100;
+    price = price - 300;
   }
 
   let stripeData = {

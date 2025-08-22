@@ -42,17 +42,17 @@ async function createCheckoutSession(puppyData, userData) {
           unit_amount: Math.round(price * feeMultiplier * 100),
         },
       },
-      {
-        quantity: 1,
-        price_data: {
-          currency: CURRENCY,
-          product_data: {
-            name: "Sales Tax (MI)",
-            description: "6% Michigan Sales Tax",
-          },
-          unit_amount: taxAmount,
-        },
-      },
+      // {
+      //   quantity: 1,
+      //   price_data: {
+      //     currency: CURRENCY,
+      //     product_data: {
+      //       name: "Sales Tax (MI)",
+      //       description: "6% Michigan Sales Tax",
+      //     },
+      //     unit_amount: taxAmount,
+      //   },
+      // },
     ],
     metadata,
     payment_intent_data: {
