@@ -74,7 +74,7 @@ export default async function Cavaliers() {
           <Gallery puppies={puppies} fullWidth={false} />
         </div>
       )}
-      <BreedInfo breed={"Cavalier"} />
+      <BreedInfo breed={"Cavalier King Charles Spaniel"} />
       <div className={styles.anchor} id="subscribe"></div>
       <Subscribe interests={["Cavalier"]} />
     </article>
