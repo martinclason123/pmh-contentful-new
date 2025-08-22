@@ -1,12 +1,9 @@
-export const dynamic = "force-dynamic";
 import { createClient } from "contentful";
 import { sanitizeImages } from "../../../utils";
-
 export async function GET(req) {
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken: process.env.CONTENTFUL_DELIVERY_KEY,
-    environment: "master",
   });
 
   try {
@@ -76,10 +73,6 @@ export async function GET(req) {
             image: sanitizeImages(dam.image[0]?.url || ""),
             breed: dam.breed[0],
             description: dam.description,
-            certificationImages:
-              dam.certifictionImages?.map((img) => sanitizeImages(img.url)) ||
-              [],
-            ofa: dam.ofa,
           },
           sire: {
             name: sire.name,
@@ -87,10 +80,6 @@ export async function GET(req) {
             image: sanitizeImages(sire.image[0]?.url || ""),
             breed: sire.breed[0],
             description: sire.description,
-            certificationImages:
-              sire.certifictionImages?.map((img) => sanitizeImages(img.url)) ||
-              [],
-            ofa: sire.ofa,
           },
         },
       };
