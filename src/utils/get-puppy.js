@@ -2,7 +2,7 @@ export default async function getPuppy(puppyId) {
   // Construct the base URL
   let url = `${process.env.ORIGIN_URL || "http://localhost:3000"}/api/puppy`;
 
-  // Append the puppyId query parameter
+  // Append the puppyId query parameters
   if (puppyId) {
     url += `?puppyId=${encodeURIComponent(puppyId)}`;
   }
