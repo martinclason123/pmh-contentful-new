@@ -24,20 +24,20 @@ async function createCheckoutSession(puppyData, userData) {
             name: "Puppy Deposit",
             description: `Deposit for ${puppyData.name} (${puppyData.breed})`,
           },
-          unit_amount: 10341,
+          unit_amount: 31023,
         },
       },
-      {
-        quantity: 1,
-        price_data: {
-          currency: CURRENCY,
-          product_data: {
-            name: "Sales Tax (MI)",
-            description: "6% Michigan Sales Tax",
-          },
-          unit_amount: taxAmount,
-        },
-      },
+      // {
+      //   quantity: 1,
+      //   price_data: {
+      //     currency: CURRENCY,
+      //     product_data: {
+      //       name: "Sales Tax (MI)",
+      //       description: "6% Michigan Sales Tax",
+      //     },
+      //     unit_amount: taxAmount,
+      //   },
+      // },
     ],
     metadata: {
       puppy: JSON.stringify(puppyData),

@@ -12,7 +12,7 @@ async function createCheckoutSession(puppyData, userData) {
 
   let price;
   if (puppyData.deposit === true) {
-    price = puppyData.price - 100;
+    price = puppyData.price - 300;
   } else {
     price = puppyData.price;
   }

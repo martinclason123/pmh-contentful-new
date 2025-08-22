@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import Link from "next/link";
 import {
   Slideshow,
@@ -10,7 +11,7 @@ import {
 import styles from "./puppy.module.css";
 import getPuppy from "../../../utils/get-puppy";
 import getPuppies from "../../../utils/get-puppies";
-
+import { ArrowRight } from "lucide-react"; // Added arrow icon from lucide-react
 
 // Dynamic metadata function
 export async function generateMetadata({ params }) {
@@ -52,6 +53,8 @@ export async function generateMetadata({ params }) {
 
 export default async function Puppy({ params }) {
   let match = await getPuppy(params.id);
+  console.log("params", params.id);
+
   let litterMates = await getPuppies(match.litter);
   const breed = litterMates[0].breed[0];
   litterMates = litterMates.filter((puppy) => puppy.chip !== match.chip);

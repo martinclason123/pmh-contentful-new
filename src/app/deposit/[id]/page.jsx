@@ -1,4 +1,3 @@
-export const dynamic = "force-dynamic";
 import Link from "next/link";
 import styles from "./deposit.module.css";
 import getPuppy from "../../../utils/get-puppy";
@@ -23,7 +22,7 @@ export default async function Deposit({ params }) {
     <section className={`container ${styles.deposit}`}>
       {match ? (
         <>
-          <h1>$100 deposit on {match.name}</h1>
+          <h1>$300 deposit on {match.name}</h1>
           <p>
             <strong>{`A 3.41% convenience fee will be added to the balance for using a card.`}</strong>{" "}
             You can avoid this fee by paying with cash, but no puppies will be
