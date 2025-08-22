@@ -16,7 +16,7 @@ export async function POST(req) {
 
     const msg = {
       to: recipients, // Change to your recipient
-      from: "support@prairiecreekpuppies.com", // Change to your verified sender
+      from: "support@pmhpuppies.com", // Change to your verified sender
       subject: subject,
       text: message,
       html: `<p>${message}</p>`,

@@ -17,7 +17,7 @@ export default function DesktopNav({ menuItems, availableBreeds, puppies }) {
           <Link href={"/"}>
             <img
               src="/assets/navbar/logo.svg"
-              alt="prairie creek puppies logo"
+              alt="Paw Prints on My Heart logo"
               width={127}
               height={150}
               className={styles.logo}

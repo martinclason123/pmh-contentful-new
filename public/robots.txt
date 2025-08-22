@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://www.peacefulcountrypets.com/sitemap.xml
+Sitemap: https://www.pmhpuppies.com//sitemap.xml

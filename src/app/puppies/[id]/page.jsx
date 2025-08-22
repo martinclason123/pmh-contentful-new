@@ -14,28 +14,59 @@ import getPuppies from "../../../utils/get-puppies";
 import { ArrowRight } from "lucide-react"; // Added arrow icon from lucide-react
 
 // Dynamic metadata function
+// Dynamic metadata for pmhpuppies.com
 export async function generateMetadata({ params }) {
   const match = await getPuppy(params.id);
 
+  const site = new URL("https://www.pmhpuppies.com");
+  const canonicalPath = `/puppies/${params.id}`;
+  const fallbackOg = "/assets/og/puppy-default.jpg";
+
   if (!match) {
     return {
-      title: "Puppy Not Found - Prairie Creek Puppies",
+      metadataBase: site,
+      title: "Puppy Not Found | Paw Prints on My Heart",
       description:
         "We couldn't find the puppy you were looking for. Please check out our available puppies or contact us for more information.",
+      alternates: { canonical: canonicalPath },
+      openGraph: {
+        title: "Puppy Not Found | Paw Prints on My Heart",
+        description:
+          "We couldn't find the puppy you were looking for. Please check out our available puppies or contact us for more information.",
+        url: canonicalPath,
+        type: "article",
+        images: [
+          { url: fallbackOg, width: 1200, height: 630, alt: "Puppy not found" },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: "Puppy Not Found | Paw Prints on My Heart",
+        description:
+          "We couldn't find the puppy you were looking for. Please check out our available puppies or contact us for more information.",
+        images: [fallbackOg],
+      },
     };
   }
 
+  const title = `${match.name} | ${match.breed} Puppy - Paw Prints on My Heart`;
+  const desc =
+    `${match.name} is an adorable ${match.breed} puppy.` +
+    (match.description ? ` ${match.description}` : "");
+
   return {
-    title: `${match.name} | ${match.breed} Puppy - Prairie Creek Puppies`,
-    description: `${match.name} is an adorable ${match.breed} puppy. ${match.description}`,
+    metadataBase: site,
+    title,
+    description: desc,
+    alternates: { canonical: canonicalPath },
     openGraph: {
-      title: `${match.name} | ${match.breed} Puppy - Prairie Creek Puppies`,
-      description: `${match.name} is an adorable ${match.breed} puppy. ${match.description}`,
-      url: `https://www.prairiecreekpuppies.com/puppies/${params.id}`,
+      title,
+      description: desc,
+      url: canonicalPath,
       type: "article",
       images: [
         {
-          url: match.hero,
+          url: match.hero || fallbackOg,
           width: 1200,
           height: 630,
           alt: `${match.name} the ${match.breed} Puppy`,
@@ -44,9 +75,9 @@ export async function generateMetadata({ params }) {
     },
     twitter: {
       card: "summary_large_image",
-      title: `${match.name} | ${match.breed} Puppy - Prairie Creek Puppies`,
-      description: `${match.name} is an adorable ${match.breed} puppy. ${match.description}`,
-      images: [match.hero],
+      title,
+      description: desc,
+      images: [match.hero || fallbackOg],
     },
   };
 }

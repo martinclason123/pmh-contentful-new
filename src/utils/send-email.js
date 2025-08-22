@@ -6,7 +6,7 @@ export default async function sendEmail(user, puppy, transaction_type) {
 
   if (transaction_type === "deposit") {
     subject = `Your Deposit on ${puppy.name}`;
-    message = `Congratulations ${user.first}! You have successfully placed a deposit on ${puppy.name}! If we have not been in contact already, we will be soon to set up visit/pick-up arrangements. If you need to get ahold of us, please do not hesitate to call or text (616) 613-6801. If you would like to pay off your balance ahead of time, please use this link: <a href="https://www.peacefulcountrypets.com/balance/${puppy.chip}">https://www.peacefulcountrypets.com/balance/${puppy.chip}</a> Thank you!`;
+    message = `Congratulations ${user.first}! You have successfully placed a deposit on ${puppy.name}! If we have not been in contact already, we will be soon to set up visit/pick-up arrangements. If you need to get ahold of us, please do not hesitate to call or text (616) 613-6801. If you would like to pay off your balance ahead of time, please use this link: <a href="https://www.pmhpuppies.com/balance/${puppy.chip}">https://www.pmhpuppies.com/balance/${puppy.chip}</a> Thank you!`;
   } else {
     subject = `Your Purchase of ${puppy.name}`;
     message = `Congratulations ${user.first}! You have successfully purchased ${puppy.name}! If we have not been in contact already, we will be soon to set up visit/pick-up arrangements. If you need to get ahold of us, please do not hesitate to call or text (616) 613-6801. Thank you!`;
@@ -16,7 +16,7 @@ export default async function sendEmail(user, puppy, transaction_type) {
   const resend = new Resend(process.env.RESEND_API_KEY);
 
   const emailData = {
-    from: "Prairie Creek Puppies <support@prairiecreekpuppies.com>",
+    from: "Paw Prints on My Heart <support@pmhpuppies.com>",
     to: user.email,
     subject: subject,
     html: `<p>${message}</p>`,

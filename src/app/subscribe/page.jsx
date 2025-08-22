@@ -2,30 +2,34 @@ export const dynamic = "force-dynamic";
 import { Subscribe } from "../../components";
 
 export const metadata = {
-  title: "Subscribe for Updates | Peaceful Country Pets",
+  metadataBase: new URL("https://www.pmhpuppies.com"),
+  title: "Subscribe for Updates | Paw Prints on My Heart",
   description:
-    "Stay updated with the latest litters, blog posts, and news from Peaceful Country Pets. Subscribe with your email to receive alerts on AKC Dachshunds, Golden Retrievers, and Shih Tzus.",
+    "Stay updated with the latest litters, blog posts, and news from Paw Prints on My Heart. Subscribe to receive alerts on Cavaliers, Cavapoos, Goldendoodles, and Mini Bernedoodles.",
+  alternates: {
+    canonical: "/subscribe",
+  },
   openGraph: {
-    title: "Subscribe for Updates | Peaceful Country Pets",
+    title: "Subscribe for Updates | Paw Prints on My Heart",
     description:
-      "Stay updated with the latest litters, blog posts, and news from Peaceful Country Pets. Subscribe with your email to receive alerts on AKC Dachshunds, Golden Retrievers, and Shih Tzus.",
-    url: "https://www.peacefulcountrypets.com/subscribe",
+      "Stay updated with the latest litters, blog posts, and news from Paw Prints on My Heart. Subscribe to receive alerts on Cavaliers, Cavapoos, Goldendoodles, and Mini Bernedoodles.",
+    url: "/subscribe",
     type: "website",
     images: [
       {
-        url: "https://www.peacefulcountrypets.com/assets/og/subscribe.jpg",
+        url: "/assets/og/subscribe.jpg",
         width: 1200,
         height: 630,
-        alt: "Puppies at Peaceful Country Pets",
+        alt: "Puppies at Paw Prints on My Heart",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Subscribe for Updates | Peaceful Country Pets",
+    title: "Subscribe for Updates | Paw Prints on My Heart",
     description:
-      "Stay updated with the latest litters, blog posts, and news from Peaceful Country Pets. Subscribe with your email to receive alerts on AKC Dachshunds, Golden Retrievers, and Shih Tzus.",
-    images: ["https://www.peacefulcountrypets.com/assets/og/subscribe.png"],
+      "Stay updated with the latest litters, blog posts, and news from Paw Prints on My Heart. Subscribe to receive alerts on Cavaliers, Cavapoos, Goldendoodles, and Mini Bernedoodles.",
+    images: ["/assets/og/subscribe.jpg"],
   },
 };
 

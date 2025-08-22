@@ -16,19 +16,21 @@ export async function generateMetadata({ params }) {
 
   if (!litter) {
     return {
-      title: "Litter Not Found - Prairie Creek Puppies",
+      title: "Litter Not Found - Paw Prints on My Heart",
       description:
-        "We couldn't find the litter you were looking for. Please check out our available litters or contact us for more information.",
+        "We couldn't find the litter you were looking for. Please check out our current and upcoming litters or contact us for more information.",
     };
   }
 
+  const desc = litter.message || `Learn more about our ${litter.breed} litter.`;
+
   return {
-    title: `${litter.breed} Litter - Prairie Creek Puppies`,
-    description: `${litter.message}`,
+    title: `${litter.breed} Litter - Paw Prints on My Heart`,
+    description: desc,
     openGraph: {
-      title: `${litter.breed} Litter - Prairie Creek Puppies`,
-      description: `${litter.message}`,
-      url: `https://www.prairiecreekpuppies.com/litters/${params.id}`,
+      title: `${litter.breed} Litter - Paw Prints on My Heart`,
+      description: desc,
+      url: `https://www.pmhpuppies.com/litters/${params.id}`,
       type: "article",
       images: [
         {
@@ -41,8 +43,8 @@ export async function generateMetadata({ params }) {
     },
     twitter: {
       card: "summary_large_image",
-      title: `${litter.breed} Litter - Prairie Creek Puppies`,
-      description: `${litter.message}`,
+      title: `${litter.breed} Litter - Paw Prints on My Heart`,
+      description: desc,
       images: [litter.hero],
     },
   };

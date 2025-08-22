@@ -6,35 +6,37 @@ import { Subscribe, PuppiesGallery } from "../../components";
 import getPuppies from "../../utils/get-puppies";
 
 export const metadata = {
+  metadataBase: new URL("https://www.pmhpuppies.com"),
   title:
-    "Available Puppies | AKC Dachshunds, Golden Retrievers, & Shih Tzus - Peaceful Country Pets",
+    "Available Puppies | Goldendoodles, Mini Bernedoodles, Cavaliers & Cavapoos - Paw Prints on My Heart",
   description:
-    "Explore our available puppies at Peaceful Country Pets. We offer AKC Dachshunds, Golden Retrievers, and Shih Tzus. Filter by breed, availability, and gender to find your perfect puppy.",
+    "Explore our available puppies at Paw Prints on My Heart. We offer Goldendoodles, Mini Bernedoodles, Cavaliers, and Cavapoos. Filter by breed, availability, and gender to find your perfect puppy.",
+  alternates: {
+    canonical: "/puppies",
+  },
   openGraph: {
     title:
-      "Available Puppies | AKC Dachshunds, Golden Retrievers, & Shih Tzus - Peaceful Country Pets",
+      "Available Puppies | Goldendoodles, Mini Bernedoodles, Cavaliers & Cavapoos - Paw Prints on My Heart",
     description:
-      "Explore our available puppies at Peaceful Country Pets. We offer AKC Dachshunds, Golden Retrievers, and Shih Tzus. Filter by breed, availability, and gender to find your perfect puppy.",
-    url: "https://www.peacefulcountrypets.com/puppies",
+      "Explore our available puppies at Paw Prints on My Heart. We offer Goldendoodles, Mini Bernedoodles, Cavaliers, and Cavapoos. Filter by breed, availability, and gender to find your perfect puppy.",
+    url: "/puppies",
     type: "website",
     images: [
       {
-        url: "https://www.peacefulcountrypets.com/assets/og/available-puppies.jpg",
+        url: "/assets/og/available-puppies.jpg",
         width: 1200,
         height: 630,
-        alt: "Puppies at Peaceful Country Pets",
+        alt: "Puppies at Paw Prints on My Heart",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title:
-      "Available Puppies | AKC Dachshunds, Golden Retrievers, & Shih Tzus - Peaceful Country Pets",
+      "Available Puppies | Goldendoodles, Mini Bernedoodles, Cavaliers & Cavapoos - Paw Prints on My Heart",
     description:
-      "Explore our available puppies at Peaceful Country Pets. We offer AKC Dachshunds, Golden Retrievers, and Shih Tzus. Filter by breed, availability, and gender to find your perfect puppy.",
-    images: [
-      "https://www.peacefulcountrypets.com/assets/og/available-puppies.jpg",
-    ],
+      "Explore our available puppies at Paw Prints on My Heart. We offer Goldendoodles, Mini Bernedoodles, Cavaliers, and Cavapoos. Filter by breed, availability, and gender to find your perfect puppy.",
+    images: ["/assets/og/og-image-01.jpg"],
   },
 };
 
