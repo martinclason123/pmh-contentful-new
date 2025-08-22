@@ -1,0 +1,1175 @@
+{
+  "contentTypes": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "pch5cfcx3vwy"
+          }
+        },
+        "id": "litter",
+        "type": "ContentType",
+        "createdAt": "2024-08-16T20:52:39.840Z",
+        "updatedAt": "2025-02-24T15:57:14.693Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 13,
+        "publishedAt": "2025-02-24T15:57:14.693Z",
+        "firstPublishedAt": "2024-08-16T20:52:40.114Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "4nTcf7h8zBxM58ir4rOsRH"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "4nTcf7h8zBxM58ir4rOsRH"
+          }
+        },
+        "publishedCounter": 7,
+        "version": 14,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "4nTcf7h8zBxM58ir4rOsRH"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/pch5cfcx3vwy/environments/master/content_types/litter"
+      },
+      "displayField": "id",
+      "name": "Litter",
+      "description": "A litter of puppies, holding the data that the puppies will share. Litter ID, breed, price, certifications, parents, etc.",
+      "fields": [
+        {
+          "id": "id",
+          "name": "id",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "price",
+          "name": "price",
+          "type": "Integer",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "birthdate",
+          "name": "birthdate",
+          "type": "Date",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "available",
+          "name": "available",
+          "type": "Date",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "certifications",
+          "name": "certifications",
+          "type": "Array",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "defaultValue": {
+            "en-US": [
+              "none"
+            ]
+          },
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Symbol",
+            "validations": [
+              {
+                "in": [
+                  "APRI",
+                  "AKC",
+                  "ACHC",
+                  "NONE"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "breed",
+          "name": "breed",
+          "type": "Array",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Symbol",
+            "validations": [
+              {
+                "in": [
+                  "Golden Retriever",
+                  "Goldendoodle",
+                  "Mini Goldendoodle",
+                  "Shih Tzu",
+                  "Bernedoodle",
+                  "Mini Bernedoodle",
+                  "Mini Retriever"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "dam",
+          "name": "dam",
+          "type": "Link",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "linkContentType": [
+                "parent"
+              ],
+              "message": "Please choose a parent"
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Entry"
+        },
+        {
+          "id": "sire",
+          "name": "sire",
+          "type": "Link",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "linkContentType": [
+                "parent"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Entry"
+        },
+        {
+          "id": "hero",
+          "name": "hero",
+          "type": "Object",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "message",
+          "name": "message",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "size": {
+                "max": 25
+              }
+            }
+          ],
+          "defaultValue": {
+            "en-US": "Coming September 2024"
+          },
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "video",
+          "name": "video",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "pch5cfcx3vwy"
+          }
+        },
+        "id": "parent",
+        "type": "ContentType",
+        "createdAt": "2024-08-16T21:03:01.602Z",
+        "updatedAt": "2025-02-24T15:47:11.514Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 19,
+        "publishedAt": "2025-02-24T15:47:11.514Z",
+        "firstPublishedAt": "2024-08-16T21:03:01.975Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "4nTcf7h8zBxM58ir4rOsRH"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "4nTcf7h8zBxM58ir4rOsRH"
+          }
+        },
+        "publishedCounter": 10,
+        "version": 20,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "4nTcf7h8zBxM58ir4rOsRH"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/pch5cfcx3vwy/environments/master/content_types/parent"
+      },
+      "displayField": "description",
+      "name": "parent",
+      "description": "A Dam or Sire to be associated to a litter.",
+      "fields": [
+        {
+          "id": "name",
+          "name": "name",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "gender",
+          "name": "gender",
+          "type": "Array",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Symbol",
+            "validations": [
+              {
+                "in": [
+                  "dam",
+                  "sire"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "weight",
+          "name": "weight",
+          "type": "Integer",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "description",
+          "name": "description",
+          "type": "Text",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "image",
+          "name": "image",
+          "type": "Object",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "size": {
+                "max": 1
+              },
+              "message": "Please choose only 1 image"
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "breed",
+          "name": "breed",
+          "type": "Array",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Symbol",
+            "validations": [
+              {
+                "in": [
+                  "Golden Retriever",
+                  "Poodle",
+                  "Goldendoodle",
+                  "Mini Bernedoodle",
+                  "Bernese Mountain Dog",
+                  "King Cavalier"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "pch5cfcx3vwy"
+          }
+        },
+        "id": "puppy",
+        "type": "ContentType",
+        "createdAt": "2024-08-17T12:51:16.459Z",
+        "updatedAt": "2024-09-28T17:59:15.017Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 21,
+        "publishedAt": "2024-09-28T17:59:15.017Z",
+        "firstPublishedAt": "2024-08-17T12:51:16.805Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "4nTcf7h8zBxM58ir4rOsRH"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "4nTcf7h8zBxM58ir4rOsRH"
+          }
+        },
+        "publishedCounter": 11,
+        "version": 22,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "4nTcf7h8zBxM58ir4rOsRH"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/pch5cfcx3vwy/environments/master/content_types/puppy"
+      },
+      "displayField": "chip",
+      "name": "puppy",
+      "description": "A puppy. Will be associated to a litter",
+      "fields": [
+        {
+          "id": "chip",
+          "name": "chip",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "name",
+          "name": "name",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "litter",
+          "name": "litter",
+          "type": "Link",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "linkContentType": [
+                "litter"
+              ],
+              "message": "Please choose 1 litter for this puppy. "
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Entry"
+        },
+        {
+          "id": "hero",
+          "name": "hero",
+          "type": "Object",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "size": {
+                "max": 1
+              },
+              "message": "Please choose 1 image for the main image"
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "gallery",
+          "name": "gallery",
+          "type": "Object",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "gender",
+          "name": "gender",
+          "type": "Array",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "size": {
+                "max": 1
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Symbol",
+            "validations": [
+              {
+                "in": [
+                  "male",
+                  "female"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "availability",
+          "name": "availability",
+          "type": "Array",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Symbol",
+            "validations": [
+              {
+                "in": [
+                  "Available",
+                  "Reserved",
+                  "Sold"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "description",
+          "name": "description",
+          "type": "Text",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "priceOverride",
+          "name": "Price Override",
+          "type": "Integer",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "deposit",
+          "name": "deposit",
+          "type": "Boolean",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "defaultValue": {
+            "en-US": false
+          },
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "buyerEmail",
+          "name": "buyer email",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "buyerPhone",
+          "name": "buyer phone",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "buyerCity",
+          "name": "buyer city",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "buyerState",
+          "name": "buyer state",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "foundOn",
+          "name": "found on",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "buyerName",
+          "name": "buyer name",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "buyerZip",
+          "name": "buyer zip",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "buyerStreet",
+          "name": "buyer street",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "buyer",
+          "name": "buyer",
+          "type": "Boolean",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "defaultValue": {
+            "en-US": false
+          },
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    }
+  ],
+  "tags": [
+  ],
+  "editorInterfaces": [
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "pch5cfcx3vwy",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 14,
+        "createdAt": "2024-08-16T20:52:40.286Z",
+        "createdBy": {
+          "sys": {
+            "id": "4nTcf7h8zBxM58ir4rOsRH",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2025-02-24T15:57:15.192Z",
+        "updatedBy": {
+          "sys": {
+            "id": "4nTcf7h8zBxM58ir4rOsRH",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "litter",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "id",
+          "settings": {
+            "helpText": "Write a unique id for the litter. something like gr0924 for golden retrievers born September 2024"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "price",
+          "settings": {
+            "helpText": "Set a price for the litter. All puppies will share this price."
+          },
+          "widgetId": "numberEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "birthdate",
+          "settings": {
+            "ampm": "24",
+            "format": "dateonly",
+            "helpText": "Choose the date the litter was born"
+          },
+          "widgetId": "datePicker",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "available",
+          "settings": {
+            "ampm": "24",
+            "format": "dateonly",
+            "helpText": "Choose a date the puppies can go to their new home. "
+          },
+          "widgetId": "datePicker",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "certifications",
+          "settings": {
+            "helpText": "Choose any certifications the litter has. "
+          },
+          "widgetId": "listInput",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "breed",
+          "settings": {
+            "helpText": "Please choose a breed"
+          },
+          "widgetId": "listInput",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "dam",
+          "settings": {
+            "helpText": "Choose a dam. Create it before adding it to the litter. ",
+            "showLinkEntityAction": true,
+            "showCreateEntityAction": true
+          },
+          "widgetId": "entryLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "sire",
+          "settings": {
+            "helpText": "Please choose a sire for the litter. ",
+            "showLinkEntityAction": true,
+            "showCreateEntityAction": true
+          },
+          "widgetId": "entryLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "hero",
+          "widgetId": "zjcnWgBknf9zB7IM9HZjE",
+          "widgetNamespace": "app"
+        },
+        {
+          "fieldId": "message",
+          "settings": {
+            "helpText": "A short message to display on the litter preview, like Coming September 2024"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "video",
+          "settings": {
+            "helpText": "Add the id of a YouTube video. For example: \"ojRhjkHP9Ds\""
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "pch5cfcx3vwy",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 21,
+        "createdAt": "2024-08-16T21:03:02.154Z",
+        "createdBy": {
+          "sys": {
+            "id": "4nTcf7h8zBxM58ir4rOsRH",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2025-02-24T15:47:12.031Z",
+        "updatedBy": {
+          "sys": {
+            "id": "4nTcf7h8zBxM58ir4rOsRH",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "parent",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "name",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "gender",
+          "settings": {
+            "helpText": "Please choose a gender"
+          },
+          "widgetId": "checkbox",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "weight",
+          "settings": {
+            "helpText": "Add the weight of the adult dog"
+          },
+          "widgetId": "numberEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "description",
+          "settings": {
+            "helpText": "Please add a brief bio for the parent"
+          },
+          "widgetId": "multipleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "image",
+          "widgetId": "zjcnWgBknf9zB7IM9HZjE",
+          "widgetNamespace": "app"
+        },
+        {
+          "fieldId": "breed",
+          "settings": {
+            "helpText": "Enter the breed of the parent"
+          },
+          "widgetId": "checkbox",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "pch5cfcx3vwy",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 22,
+        "createdAt": "2024-08-17T12:51:16.991Z",
+        "createdBy": {
+          "sys": {
+            "id": "4nTcf7h8zBxM58ir4rOsRH",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2024-09-28T17:59:15.933Z",
+        "updatedBy": {
+          "sys": {
+            "id": "4nTcf7h8zBxM58ir4rOsRH",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "puppy",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "chip",
+          "settings": {
+            "helpText": "Enter the chip id."
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "name",
+          "settings": {
+            "helpText": "Add a name for the puppy."
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "litter",
+          "settings": {
+            "helpText": "Choose a litter for this puppy",
+            "showLinkEntityAction": true,
+            "showCreateEntityAction": true
+          },
+          "widgetId": "entryLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "hero",
+          "widgetId": "zjcnWgBknf9zB7IM9HZjE",
+          "widgetNamespace": "app"
+        },
+        {
+          "fieldId": "gallery",
+          "widgetId": "zjcnWgBknf9zB7IM9HZjE",
+          "widgetNamespace": "app"
+        },
+        {
+          "fieldId": "gender",
+          "widgetId": "checkbox",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "availability",
+          "settings": {
+            "helpText": "Mark the availability of the puppy"
+          },
+          "widgetId": "checkbox",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "description",
+          "settings": {
+            "helpText": "Enter a description for the puppy"
+          },
+          "widgetId": "multipleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "priceOverride",
+          "settings": {
+            "helpText": "If you want to override the price of the litter for this specific puppy, enter an amount here. "
+          },
+          "widgetId": "numberEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "deposit",
+          "settings": {
+            "helpText": "Leave as no unless a deposit was already taken before listing.",
+            "trueLabel": "Yes",
+            "falseLabel": "No"
+          },
+          "widgetId": "boolean",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "buyerEmail",
+          "settings": {
+            "helpText": "Leave this blank. Stripe will update it after purchase"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "buyerPhone",
+          "settings": {
+            "helpText": "Leave this blank. Stripe will update it after purchase"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "buyerCity",
+          "settings": {
+            "helpText": "Leave this blank. Stripe will update it after purchase"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "buyerState",
+          "settings": {
+            "helpText": "Leave this blank. Stripe will update it after purchase"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "foundOn",
+          "settings": {
+            "helpText": "Leave this blank. Stripe will update it after purchase"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "buyerName",
+          "settings": {
+            "helpText": "Leave this blank. Stripe will update it after purchase"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "buyerZip",
+          "settings": {
+            "helpText": "Leave this blank. Stripe will update it after purchase"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "buyerStreet",
+          "settings": {
+            "helpText": "Leave this blank. Stripe will update it after purchase"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "buyer",
+          "settings": {
+            "helpText": "Leave this blank. Stripe will update it after purchase",
+            "trueLabel": "Yes",
+            "falseLabel": "No"
+          },
+          "widgetId": "boolean",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    }
+  ],
+  "locales": [
+    {
+      "name": "English (United States)",
+      "code": "en-US",
+      "fallbackCode": null,
+      "default": true,
+      "contentManagementApi": true,
+      "contentDeliveryApi": true,
+      "optional": false,
+      "sys": {
+        "type": "Locale",
+        "id": "5EHJvjzIM8GquTxzoIjVHd",
+        "version": 1,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "pch5cfcx3vwy"
+          }
+        },
+        "environment": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Environment",
+            "id": "master",
+            "uuid": "05199869-d833-494b-a79a-f594a8419265"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "4nTcf7h8zBxM58ir4rOsRH"
+          }
+        },
+        "createdAt": "2024-08-16T20:33:31Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "4nTcf7h8zBxM58ir4rOsRH"
+          }
+        },
+        "updatedAt": "2024-08-16T20:33:31Z"
+      }
+    }
+  ]
+}
