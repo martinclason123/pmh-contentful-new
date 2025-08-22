@@ -1,4 +1,5 @@
 // app/cavalier-puppies/page.jsx
+export const dynamic = "force-dynamic";
 import styles from "./cavaliers.module.css";
 import { Subscribe } from "../../components";
 import { NoResults, Header, Gallery, BreedInfo } from "../subcomponents";

@@ -1,4 +1,4 @@
-
+export const dynamic = "force-dynamic";
 import styles from "./goldendoodles.module.css";
 import { Subscribe } from "../../components";
 import { NoResults, Header, Gallery, BreedInfo } from "../subcomponents";
