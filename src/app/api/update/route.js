@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import path from "path";
 import { promises as fs } from "fs";
 
