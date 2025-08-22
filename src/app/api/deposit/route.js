@@ -24,7 +24,8 @@ async function createCheckoutSession(puppyData, userData) {
             name: "Puppy Deposit",
             description: `Deposit for ${puppyData.name} (${puppyData.breed})`,
           },
-          unit_amount: 31023,
+          // unit_amount: 31023,
+          unit_amount: 100,
         },
       },
       // {
