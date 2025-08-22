@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import styles from "./litter.module.css";
 import { Subscribe } from "../../../components";
 import { Gallery, Parents, Back } from "../../subcomponents";

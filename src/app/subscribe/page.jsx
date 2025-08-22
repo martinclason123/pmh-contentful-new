@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { Subscribe } from "../../components";
 
 export const metadata = {

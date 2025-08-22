@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import styles from "./litters.module.css";
 import { Litters } from "../../components";
 
