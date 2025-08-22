@@ -1,4 +1,4 @@
-
+export const dynamic = "force-dynamic";
 import axios from "axios";
 import { NextResponse } from "next/server";
 import FormData from "form-data";
