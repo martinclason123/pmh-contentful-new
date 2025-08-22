@@ -1,4 +1,4 @@
-export const dynamic = "force-dynamic";
+
 import mailchimp from "@mailchimp/mailchimp_marketing";
 import md5 from "md5";
 

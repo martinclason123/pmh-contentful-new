@@ -1,4 +1,3 @@
-export const dynamic = "force-dynamic";
 import Link from "next/link";
 import styles from "./balance.module.css";
 import getPuppy from "../../../utils/get-puppy";

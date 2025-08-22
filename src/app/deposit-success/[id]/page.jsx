@@ -1,4 +1,4 @@
-export const dynamic = "force-dynamic";
+
 import Link from "next/link";
 
 import getPuppy from "../../../utils/get-puppy";

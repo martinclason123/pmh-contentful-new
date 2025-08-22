@@ -1,4 +1,4 @@
-export const dynamic = "force-dynamic";
+
 import sgMail from "@sendgrid/mail";
 
 export async function POST(req) {

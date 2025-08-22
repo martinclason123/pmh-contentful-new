@@ -1,5 +1,4 @@
 // app/cavapoo-puppies/page.jsx
-export const dynamic = "force-dynamic";
 
 import styles from "./cavapoos.module.css";
 import { Subscribe } from "../../components";

@@ -1,4 +1,4 @@
-export const dynamic = "force-dynamic";
+
 import { createClient } from "contentful";
 import { sanitizeImages } from "../../../utils";
 
