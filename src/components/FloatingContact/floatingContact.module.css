@@ -1,0 +1,56 @@
+.floatingBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0.75rem 0 calc(env(safe-area-inset-bottom, 0.5rem) + 0.5rem);
+  backdrop-filter: blur(16px);
+  background-color: rgba(255, 255, 255, 0.75);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.08);
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.contactLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  text-decoration: none;
+  color: #222;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.contactLink:hover {
+  transform: translateY(-2px);
+  color: var(--brand-accent, #007bff);
+}
+
+.contactIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+@media (min-width: 641px) {
+  .floatingBar {
+    display: none;
+  }
+}

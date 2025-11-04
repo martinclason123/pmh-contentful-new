@@ -18,3 +18,4 @@ export { default as ResponsiveImage } from "./ResponsiveImage/ResponsiveImage.js
 export { default as Modal } from "./Modal/Modal.jsx";
 export { default as ModalSlider } from "./Modal/ModalSlider.jsx";
 export { default as Ofa } from "./Ofa/Ofa.jsx";
+export { default as FloatingContact } from "./FloatingContact/FloatingContact.jsx";

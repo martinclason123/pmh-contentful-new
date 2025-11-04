@@ -29,61 +29,65 @@ export async function GET(req) {
 
     // Clean up and structure the response
     const response = entries.items.map((entry) => {
-      const {
-        chip,
-        name,
-        hero,
-        gallery,
-        litter,
-        gender,
-        availability,
-        description,
-        deposit,
-        priceOverride,
-        buyer,
-        buyerName,
-        buyerEmail,
-        buyerPhone,
-      } = entry.fields;
+      try {
+        const {
+          chip,
+          name,
+          hero,
+          gallery,
+          litter,
+          gender,
+          availability,
+          description,
+          deposit,
+          priceOverride,
+          buyer,
+          buyerName,
+          buyerEmail,
+          buyerPhone,
+        } = entry.fields;
 
-      const dam = litter.fields.dam.fields;
-      const sire = litter.fields.sire.fields;
-      const breed = litter.fields.breed;
+        const dam = litter.fields.dam?.fields || "";
+        const sire = litter.fields.sire?.fields || "";
+        const breed = litter.fields?.breed || "";
 
-      return {
-        chip,
-        name,
-        gender,
-        hero: sanitizeImages(hero?.[0]?.url),
-        gallery: gallery?.map((img) => sanitizeImages(img.url)) || [],
-        price: priceOverride ? priceOverride : litter.fields.price,
-        birthdate: litter.fields.birthdate,
-        available: litter.fields.available,
-        availability,
-        description,
-        deposit,
-        breed,
-        buyer,
-        buyerName,
-        buyerEmail,
-        buyerPhone,
-        parents: {
-          dam: {
-            name: dam.name,
-            weight: dam.weight,
-            image: sanitizeImages(dam.image[0]?.url || ""),
-            breed: dam.breed[0],
-            description: dam.description,
+        return {
+          chip,
+          name,
+          gender,
+          hero: sanitizeImages(hero?.[0]?.url),
+          gallery: gallery?.map((img) => sanitizeImages(img.url)) || [],
+          price: priceOverride ? priceOverride : litter.fields.price,
+          birthdate: litter.fields.birthdate,
+          available: litter.fields.available,
+          availability,
+          description,
+          deposit,
+          breed,
+          buyer,
+          buyerName,
+          buyerEmail,
+          buyerPhone,
+          parents: {
+            dam: {
+              name: dam.name,
+              weight: dam.weight,
+              image: sanitizeImages(dam.image[0]?.url || ""),
+              breed: dam.breed[0],
+              description: dam.description,
+            },
+            sire: {
+              name: sire.name,
+              weight: sire.weight,
+              image: sanitizeImages(sire.image[0]?.url || ""),
+              breed: sire.breed[0],
+              description: sire.description,
+            },
           },
-          sire: {
-            name: sire.name,
-            weight: sire.weight,
-            image: sanitizeImages(sire.image[0]?.url || ""),
-            breed: sire.breed[0],
-            description: sire.description,
-          },
-        },
-      };
+        };
+      } catch (error) {
+        console.log("Error getting pup: ", entry);
+      }
     });
 
     return new Response(JSON.stringify({ puppies: response }), {
