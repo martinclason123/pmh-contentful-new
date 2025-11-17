@@ -1,0 +1,74 @@
+.desktopMessaging {
+  display: none;
+
+  @media (min-width: 641px) {
+    z-index: 9;
+    font-size: 0.521vw;
+    position: fixed;
+    right: 2em;
+    bottom: 2em;
+    width: 29em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2em;
+    cursor: pointer;
+  }
+
+  .dialogBox {
+    position: relative;
+    display: flex;
+    gap: 1em;
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.24);
+    width: 100%;
+    padding: 2.4em;
+    border-radius: 1.3em;
+    opacity: 1;
+    background: #fff;
+    align-items: center;
+    img {
+      width: 5em;
+      height: auto;
+      border-radius: 50%;
+    }
+    p {
+      font-size: 1.6em;
+      text-align: left;
+      line-height: 1.4;
+      text-wrap: balance;
+    }
+    figure {
+      width: 5em;
+      aspect-ratio: 1/1;
+      transform: rotate(45deg);
+      position: absolute;
+      right: 5em;
+      bottom: -0.25em;
+      right: 2em;
+      background: #fff;
+    }
+  }
+  button {
+    width: fit-content;
+    min-width: 5em;
+    padding: 0 1.5em;
+    height: 4.8em;
+    border-radius: 9.1em;
+    box-shadow: 0 10px 11px rgba(0, 0, 0, 0.2);
+    display: flex;
+    background-color: #af4e30;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+    gap: 0.25em;
+    border: none;
+    svg {
+      width: 1.4em;
+      height: auto;
+    }
+    span {
+      font-size: 1.6em;
+      color: #fff;
+    }
+  }
+}
