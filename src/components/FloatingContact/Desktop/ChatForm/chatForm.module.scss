@@ -1,0 +1,129 @@
+.chatForm {
+  background: #f5f5f7;
+  border-radius: 0.8em;
+  box-shadow: 0 1em 1.1em rgba(0, 0, 0, 0.2);
+  font-size: 0.521vw;
+
+  h2 {
+    font-size: 1.4em;
+    color: #fff;
+    background-color: #af4e30;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4em;
+    padding: 2em 0;
+  }
+  p {
+    font-size: 1.4em;
+    margin: 1.5em 1em;
+    background-color: #e4e9f0;
+    border-radius: 2.4em 2.4em 2.4em 0.3em;
+    padding: 1.5em 2.6em 1.6em 2.1em;
+  }
+  .formWrapper {
+    background: #fff;
+    border-radius: 2.4em 2.4em 0.3em 2.4em;
+    margin-left: auto;
+    margin-right: 1.6em;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    input,
+    textarea {
+      border: none;
+      height: 3em;
+      max-height: 3em !important;
+    }
+    textarea {
+      height: 3em;
+      max-height: 3em;
+      min-height: 3em;
+      line-height: 3em;
+      overflow: hidden;
+      white-space: nowrap;
+      resize: none;
+    }
+    .inputWrapper {
+      position: relative;
+      margin: 2em 0;
+
+      // Disable browser border styles
+      input,
+      textarea {
+        border: none !important;
+        outline: none !important;
+        background: transparent;
+        width: 100%;
+        // padding: 0.6em 0;
+      }
+
+      // ----- STATIC UNDERLINE -----
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0; // stick to the bottom of wrapper
+        width: 100%;
+        height: 2px;
+        background-color: #e5ecfd; // light line
+        z-index: 1;
+      }
+
+      // ----- FOCUS ANIMATION LINE -----
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        height: 2px;
+        width: 0;
+        background-color: #af4e30; // highlight color
+        transform: translateX(-50%);
+        transition: width 0.28s ease;
+        z-index: 2; // above the static underline
+      }
+
+      &:focus-within::after {
+        width: 100%; // animate outward from center
+      }
+
+      // ------- FLOATING LABEL -------
+      .label {
+        position: absolute;
+        left: 0;
+        top: 1.5em;
+        color: #777;
+        pointer-events: none;
+        transition: transform 0.2s ease, color 0.2s ease;
+      }
+
+      &:focus-within .label {
+        transform: translateY(-2.5em) scale(0.8);
+        color: #af4e30;
+      }
+
+      /* Not empty (manual via React) */
+      &.hasValue .label {
+        transform: translateY(-2.5em) scale(0.8);
+      }
+
+      /* Native placeholder logic */
+      input:not(:placeholder-shown) + .label,
+      textarea:not(:placeholder-shown) + .label {
+        transform: translateY(-2.5em) scale(0.8);
+      }
+
+      /* Autofill fix */
+      input:-webkit-autofill {
+        box-shadow: 0 0 0 1000px #fff inset !important;
+        -webkit-text-fill-color: #000 !important;
+      }
+
+      input:-webkit-autofill + .label {
+        transform: translateY(-2.5em) scale(0.8);
+      }
+    }
+  }
+}

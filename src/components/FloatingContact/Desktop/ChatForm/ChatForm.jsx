@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import styles from "./chatForm.module.scss";
+import { useState, useRef } from "react";
 export default function ChatForm({ setChatOpen }) {
   const [name, setName] = useState("");
   const [mobile, setMobile] = useState("");
@@ -35,6 +36,8 @@ export default function ChatForm({ setChatOpen }) {
     );
   };
 
+  const phoneRef = useRef(null);
+
   const handleSubmit = (e) => {
     if (!e.target.checkValidity()) {
       // Browser will show native tooltips automatically
@@ -43,7 +46,13 @@ export default function ChatForm({ setChatOpen }) {
     const digits = normalizePhone(mobile);
 
     if (!isValidPhone(digits)) {
-      alert("Please enter valid US mobile phone number");
+      phoneRef.current.setCustomValidity(
+        "Please enter a valid US phone number"
+      );
+      phoneRef.current.reportValidity(); // ← shows native popup!
+      e.preventDefault();
+
+      return;
     }
     e.preventDefault();
     console.log("Submitting:", { name, mobile: digits, message });
@@ -51,61 +60,100 @@ export default function ChatForm({ setChatOpen }) {
 
   return (
     <>
-      <div>
-        <h2>{`Get a quick response vias text`}</h2>
+      <div className={styles.chatForm}>
+        <h2>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="18px"
+            width="18px"
+            viewBox="0 0 17 17"
+          >
+            <path
+              fill="rgba(255,255,255,.4)"
+              fill-rule="evenodd"
+              d="M13.81,6.8a1.06,1.06,0,1,1-1.06-1.06A1.05,1.05,0,0,1,13.81,6.8Zm-4.25,0A1.06,1.06,0,1,1,8.5,5.74,1.05,1.05,0,0,1,9.56,6.8Zm-4.25,0A1.06,1.06,0,1,1,4.25,5.74,1.05,1.05,0,0,1,5.31,6.8ZM1.7,1.7V11.9H5.1v1.7l2.27-1.7H15.3V1.7ZM3.4,17V13.6H1.7A1.7,1.7,0,0,1,0,11.9V1.7A1.7,1.7,0,0,1,1.7,0H15.3A1.7,1.7,0,0,1,17,1.7V11.9a1.7,1.7,0,0,1-1.7,1.7H7.93Z"
+            ></path>
+          </svg>
+          {`Get a quick response via text`}
+        </h2>
         <p>{`Enter your information, and Kara will text you shortly`}</p>
         <form
           onSubmit={(e) => {
             handleSubmit(e);
           }}
         >
-          <label className="visually-hidden" htmlFor="input_name">
-            {`Name`}
-          </label>
-          <input
-            id="input_name"
-            type="text"
-            placeholder="Name"
-            autoComplete="name"
-            required={true}
-            minLength={3}
-            value={name}
-            onChange={(e) => {
-              setName(e.target.value);
-            }}
-          />
-          <label
-            className="visually-hidden"
-            htmlFor="input_phone"
-          >{`Mobile Phone`}</label>
-          <input
-            id="input_phone"
-            type="tel"
-            autoComplete="tel"
-            placeholder="Mobile Phone"
-            required={true}
-            value={mobile}
-            onChange={(e) => {
-              const raw = e.target.value;
-              const digits = normalizePhone(raw);
-              const formatted = formatPhone(digits);
-              setMobile(formatted);
-            }}
-          />
-          <label
-            className="visually-hidden"
-            htmlFor="input_message"
-          >{`Message`}</label>
-          <textarea
-            required={true}
-            minLength={15}
-            placeholder="Message"
-            id="input_message"
-            value={message}
-            onChange={(e) => {
-              setMessage(e.target.value);
-            }}
-          ></textarea>
+          <div className={styles.formWrapper}>
+            <div
+              className={`${styles.inputWrapper} ${
+                name ? styles.hasValue : ""
+              }`}
+            >
+              <label className={styles.label} htmlFor="input_name">
+                {`Name`}
+              </label>
+              <input
+                id="input_name"
+                type="text"
+                placeholder=" "
+                autoComplete="name"
+                required={true}
+                minLength={3}
+                value={name}
+                onChange={(e) => {
+                  setName(e.target.value);
+                }}
+              />
+            </div>
+            <div
+              className={`${styles.inputWrapper} ${
+                mobile ? styles.hasValue : ""
+              }`}
+            >
+              <label
+                className={styles.label}
+                htmlFor="input_phone"
+              >{`Mobile Phone`}</label>
+              <input
+                id="input_phone"
+                type="tel"
+                autoComplete="tel"
+                placeholder=" "
+                required={true}
+                value={mobile}
+                ref={phoneRef}
+                onChange={(e) => {
+                  const raw = e.target.value;
+                  const digits = normalizePhone(raw);
+                  const formatted = formatPhone(digits);
+                  setMobile(formatted);
+                }}
+              />
+            </div>
+            <div
+              className={`${styles.inputWrapper} ${
+                message ? styles.hasValue : ""
+              }`}
+            >
+              <label
+                className={styles.label}
+                htmlFor="input_message"
+              >{`Message`}</label>
+              <textarea
+                rows={1}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") e.preventDefault();
+                }}
+                required={true}
+                minLength={15}
+                placeholder=" "
+                id="input_message"
+                value={message}
+                onChange={(e) => {
+                  setMessage(e.target.value);
+                }}
+              ></textarea>
+            </div>
+          </div>
 
           <button type="submit">Submit</button>
         </form>
