@@ -12,7 +12,6 @@
     flex-direction: column;
     align-items: flex-end;
     gap: 2em;
-    cursor: pointer;
   }
 
   .dialogBox {
@@ -62,6 +61,8 @@
     justify-content: center;
     gap: 0.25em;
     border: none;
+    cursor: pointer;
+    color: #fff;
     svg {
       width: 1.4em;
       height: auto;

@@ -1,10 +1,13 @@
 "use client";
 import styles from "./chatForm.module.scss";
 import { useState, useRef } from "react";
+import { Check, X } from "lucide-react";
+import { sendSMS } from "../../../../utils/sendSMS";
 export default function ChatForm({ setChatOpen }) {
   const [name, setName] = useState("");
   const [mobile, setMobile] = useState("");
   const [message, setMessage] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
   const formatPhone = (digits) => {
     if (!digits) return "";
@@ -55,8 +58,13 @@ export default function ChatForm({ setChatOpen }) {
       return;
     }
     e.preventDefault();
+    sendSMS(name, digits, message);
     console.log("Submitting:", { name, mobile: digits, message });
   };
+
+  const isNameValid = name.trim().length >= 3;
+  const digits = normalizePhone(mobile);
+  const isMobileValid = isValidPhone(digits);
 
   return (
     <>
@@ -76,7 +84,9 @@ export default function ChatForm({ setChatOpen }) {
           </svg>
           {`Get a quick response via text`}
         </h2>
-        <p>{`Enter your information, and Kara will text you shortly`}</p>
+        <p
+          className={styles.chatBubble}
+        >{`Enter your information, and Kara will text you shortly`}</p>
         <form
           onSubmit={(e) => {
             handleSubmit(e);
@@ -85,8 +95,8 @@ export default function ChatForm({ setChatOpen }) {
           <div className={styles.formWrapper}>
             <div
               className={`${styles.inputWrapper} ${
-                name ? styles.hasValue : ""
-              }`}
+                isNameValid ? styles.valid : ""
+              } ${name ? styles.hasValue : ""}`}
             >
               <label className={styles.label} htmlFor="input_name">
                 {`Name`}
@@ -103,11 +113,12 @@ export default function ChatForm({ setChatOpen }) {
                   setName(e.target.value);
                 }}
               />
+              <Check className={styles.checkmark} color="rgb(0, 165, 127)" />
             </div>
             <div
               className={`${styles.inputWrapper} ${
-                mobile ? styles.hasValue : ""
-              }`}
+                isMobileValid ? styles.valid : ""
+              } ${mobile ? styles.hasValue : ""}`}
             >
               <label
                 className={styles.label}
@@ -128,6 +139,7 @@ export default function ChatForm({ setChatOpen }) {
                   setMobile(formatted);
                 }}
               />
+              <Check className={styles.checkmark} color="rgb(0, 165, 127)" />
             </div>
             <div
               className={`${styles.inputWrapper} ${
@@ -154,8 +166,13 @@ export default function ChatForm({ setChatOpen }) {
               ></textarea>
             </div>
           </div>
+          <p
+            className={styles.agreement}
+          >{`By submitting this form, you agree to receive a one-time SMS reply from Kara regarding your inquiry. This is a conversational message from a real person — not marketing or automated messaging. Message and data rates may apply. Reply STOP to opt out.`}</p>
 
-          <button type="submit">Submit</button>
+          <button disabled={submitting} type="submit" className={styles.submit}>
+            Submit
+          </button>
         </form>
       </div>
       <button
@@ -163,7 +180,7 @@ export default function ChatForm({ setChatOpen }) {
           setChatOpen(false);
         }}
       >
-        <span>x</span>
+        <X />
       </button>
     </>
   );

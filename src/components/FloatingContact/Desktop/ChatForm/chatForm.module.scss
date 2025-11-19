@@ -14,7 +14,7 @@
     gap: 0.4em;
     padding: 2em 0;
   }
-  p {
+  p.chatBubble {
     font-size: 1.4em;
     margin: 1.5em 1em;
     background-color: #e4e9f0;
@@ -29,12 +29,31 @@
     width: 70%;
     display: flex;
     flex-direction: column;
-    padding: 2em;
+    padding: 0 2em;
+
+    .checkmark {
+      position: absolute;
+      right: 0.5em;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2em;
+      aspect-ratio: 1/1;
+      opacity: 0; // <-- hidden initially
+      transition: opacity 0.2s ease;
+      pointer-events: none;
+    }
+
+    /* Only show checkmark when input is valid */
+    .inputWrapper.valid .checkmark {
+      opacity: 1;
+    }
+
     input,
     textarea {
       border: none;
       height: 3em;
       max-height: 3em !important;
+      position: relative;
     }
     textarea {
       height: 3em;
@@ -124,6 +143,22 @@
       input:-webkit-autofill + .label {
         transform: translateY(-2.5em) scale(0.8);
       }
+    }
+  }
+  .agreement {
+    font-size: 1em;
+    line-height: 1.5;
+    padding: 2em 4em;
+    text-align: justify;
+  }
+  .submit {
+    color: #fff;
+    border-radius: 0.8em;
+    padding: 0 1.5em;
+    height: 3em;
+    margin: 0 auto 2em auto;
+    &:hover {
+      background-color: #b26a55;
     }
   }
 }

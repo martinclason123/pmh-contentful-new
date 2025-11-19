@@ -31,7 +31,8 @@
     "sass": "^1.94.0",
     "slick-carousel": "^1.8.1",
     "stripe": "^16.12.0",
-    "swiper": "^11.1.14"
+    "swiper": "^11.1.14",
+    "twilio": "^5.10.5"
   },
   "devDependencies": {
     "eslint": "^8",
