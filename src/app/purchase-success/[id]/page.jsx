@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ConversionEvent from "./ConversionEvent";
 
 import getPuppy from "../../../utils/get-puppy";
 
@@ -9,16 +10,19 @@ export default async function DepositSuccess({ params }) {
   return (
     <section className={`container ${styles.success}`}>
       {match ? (
-        <h1>
-          Congratulations! You have completed the purchase of {match.name}!
-          Please{" "}
-          <Link className={styles.link} href={"/#location"}>
-            Contact Us
-          </Link>{" "}
-          to schedule a visit/pick-up. A confirmation email has been sent to
-          you. If you did not receive the email, be sure to check your spam
-          folder. Thank You!
-        </h1>
+        <>
+          <ConversionEvent amount={1200} />
+          <h1>
+            Congratulations! You have completed the purchase of {match.name}!
+            Please{" "}
+            <Link className={styles.link} href={"/#location"}>
+              Contact Us
+            </Link>{" "}
+            to schedule a visit/pick-up. A confirmation email has been sent to
+            you. If you did not receive the email, be sure to check your spam
+            folder. Thank You!
+          </h1>
+        </>
       ) : (
         <>
           Something went wrong. Please call us at (616) 613-6801 if you are

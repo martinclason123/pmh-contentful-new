@@ -1,4 +1,6 @@
 "use client";
+import { handleDiscordMessage } from "../../pixelEvents";
+
 import styles from "./chatForm.module.scss";
 import { useState, useRef } from "react";
 import { Check, X } from "lucide-react";
@@ -65,6 +67,8 @@ export default function ChatForm({ setChatOpen }) {
 
     if (result.success) {
       setStatus("success");
+      // onClick={handleCallClick}
+      handleDiscordMessage();
       // optional: clear values
       // setName("");
       // setMobile("");
@@ -200,7 +204,7 @@ export default function ChatForm({ setChatOpen }) {
               </div>
 
               <p className={styles.agreement}>
-                {`By submitting this form, you agree to receive a one-time SMS reply from Kara regarding your inquiry. This is a conversational message from a real person — not marketing or automated messaging. Message and data rates may apply. Reply STOP to opt out.`}
+                {`Kara is a real person, not a bot or AI. It may take her a couple minutes to get back to you. You will not be signed up to receive alerts of any kind and your personal information will never be shared.`}
               </p>
 
               {status === "error" && (
