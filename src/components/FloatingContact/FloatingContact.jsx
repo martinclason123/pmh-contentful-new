@@ -1,3 +1,4 @@
+"use client";
 import styles from "./floatingContact.module.css";
 import { Phone, MessageCircle } from "lucide-react";
 import Desktop from "./Desktop/Desktop";

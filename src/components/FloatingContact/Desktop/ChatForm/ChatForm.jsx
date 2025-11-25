@@ -1,5 +1,5 @@
 "use client";
-import { handleDiscordMessage } from "../../pixelEvents";
+import { handleDiscordMessage } from "../../../../pixelEvents";
 
 import styles from "./chatForm.module.scss";
 import { useState, useRef } from "react";

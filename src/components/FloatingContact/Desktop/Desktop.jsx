@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import styles from "./desktop.module.scss";
-import { handleDiscordOpen } from "../../pixelEvents";
+import { handleDiscordOpen } from "../../../pixelEvents";
 
 import ChatForm from "./ChatForm/ChatForm";
 
