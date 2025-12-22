@@ -1,0 +1,116 @@
+.accordian {
+  --ink: #464647;
+  --surface: #fff;
+  --surface-2: #f5f5f7;
+  --line: rgba(70, 70, 71, 0.18);
+  --line-strong: rgba(70, 70, 71, 0.35);
+  --focus: rgba(70, 70, 71, 0.55);
+
+  .item {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 1.1em;
+    overflow: hidden;
+    box-shadow: none;
+
+    & + .item {
+      margin-top: 1.2em;
+    }
+  }
+
+  .itemOpen {
+    border-color: var(--line-strong);
+  }
+
+  .title {
+    width: 100%;
+    border: none;
+    background: var(--surface);
+    color: var(--ink);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.2em;
+
+    padding: 1.6em 1.6em;
+    cursor: pointer;
+    text-align: left;
+
+    transition: background-color 0.15s ease;
+
+    &:hover {
+      background: var(--surface-2);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: 3px;
+      border-radius: 1.1em;
+    }
+  }
+
+  .titleOpen {
+    background: var(--surface-2);
+  }
+
+  .titleText {
+    font-size: 2em;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  .chevron {
+    width: 3em;
+    height: 3em;
+    color: var(--ink);
+    flex: 0 0 auto;
+    transition: transform 0.18s ease;
+  }
+
+  .chevronOpen {
+    transform: rotate(180deg);
+  }
+
+  /* COLLAPSIBLE PANEL */
+  .content {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+
+    /* IMPORTANT: keep closed state truly invisible */
+    border-top: none;
+    padding: 0;
+
+    transition: grid-template-rows 0.22s ease, padding 0.22s ease;
+    background: var(--surface);
+    color: var(--ink);
+  }
+
+  .contentOpen {
+    grid-template-rows: 1fr;
+
+    /* add separation + spacing only when open */
+    border-top: 1px solid var(--line);
+    padding: 1.2em 0 1.6em 0;
+  }
+
+  .contentInner {
+    overflow: hidden;
+
+    /* no padding here — padding on .contentOpen prevents “always visible” */
+    padding: 0 1.6em;
+
+    font-size: 2em;
+    line-height: 1.6;
+    color: var(--ink);
+    opacity: 0.92;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .chevron,
+    .content {
+      transition: none;
+    }
+  }
+}

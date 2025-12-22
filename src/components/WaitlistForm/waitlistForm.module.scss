@@ -1,0 +1,363 @@
+.chatForm {
+  header {
+    padding: 2em;
+    h1 {
+      font-size: 5em;
+    }
+    p {
+      font-size: 2em;
+      margin-top: 1em;
+    }
+  }
+
+  .successPane {
+    background: #fff;
+    border-radius: 2.4em 2.4em 0.3em 2.4em;
+    margin-left: auto;
+    margin-right: 1.6em;
+    margin-bottom: 1.6em;
+    width: 70%;
+    padding: 2.4em 2.8em 2.8em;
+    text-align: center;
+    box-shadow: 0 0.6em 1.2em rgba(0, 0, 0, 0.12);
+  }
+
+  .successHeading {
+    font-size: 1.6em;
+    font-weight: 600;
+    margin-bottom: 0.4em;
+    color: #2f3a4a;
+  }
+
+  .successBody {
+    font-size: 1.3em;
+    line-height: 1.6;
+    color: #4b5a6e;
+  }
+
+  .errorMessage {
+    font-size: 1.1em;
+    color: #b3261e;
+    margin: 0 4em 1.5em;
+  }
+
+  h2 {
+    font-size: 1.4em;
+    color: #fff;
+    background-color: #af4e30;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4em;
+    padding: 2em 0;
+  }
+  p.chatBubble {
+    font-size: 1.4em;
+    margin: 1.5em 1em;
+    background-color: #e4e9f0;
+    border-radius: 2.4em 2.4em 2.4em 0.3em;
+    padding: 1.5em 2.6em 1.6em 2.1em;
+  }
+  .formWrapper {
+    background: #fff;
+    // border-radius: 2.4em 2.4em 0.3em 2.4em;
+    // margin-left: auto;
+    // margin-right: 1.6em;
+    // width: 70%;
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+
+    .checkmark {
+      position: absolute;
+      right: 0.5em;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2em;
+      aspect-ratio: 1/1;
+      opacity: 0; // <-- hidden initially
+      transition: opacity 0.2s ease;
+      pointer-events: none;
+    }
+
+    /* Only show checkmark when input is valid */
+    .inputWrapper.valid .checkmark {
+      opacity: 1;
+    }
+
+    input,
+    textarea {
+      border: none;
+      height: 3em;
+      max-height: 3em !important;
+      position: relative;
+      font-size: 1.6em;
+    }
+    textarea {
+      height: 3em;
+      max-height: 3em;
+      min-height: 3em;
+      line-height: 3em;
+      overflow: hidden;
+      white-space: nowrap;
+      resize: none;
+    }
+    .inputWrapper {
+      position: relative;
+      margin: 2em 0;
+
+      // Disable browser border styles
+      input,
+      textarea {
+        border: none !important;
+        outline: none !important;
+        background: transparent;
+        width: 100%;
+        // padding: 0.6em 0;
+      }
+
+      // ----- STATIC UNDERLINE -----
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0; // stick to the bottom of wrapper
+        width: 100%;
+        height: 2px;
+        background-color: #e5ecfd; // light line
+        z-index: 1;
+      }
+
+      // ----- FOCUS ANIMATION LINE -----
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        height: 2px;
+        width: 0;
+        background-color: #af4e30; // highlight color
+        transform: translateX(-50%);
+        transition: width 0.28s ease;
+        z-index: 2; // above the static underline
+      }
+
+      &:focus-within::after {
+        width: 100%; // animate outward from center
+      }
+
+      // ------- FLOATING LABEL -------
+      .label {
+        position: absolute;
+        left: 0;
+        top: 0em;
+        color: #777;
+        pointer-events: none;
+        transition: transform 0.2s ease, color 0.2s ease;
+        font-size: 1.6em;
+      }
+
+      &:focus-within .label {
+        transform: translateY(-0.75em) scale(0.8);
+        color: #af4e30;
+      }
+
+      /* Not empty (manual via React) */
+      &.hasValue .label {
+        transform: translateY(-0.75em) scale(0.8);
+      }
+
+      /* Native placeholder logic */
+      input:not(:placeholder-shown) + .label,
+      textarea:not(:placeholder-shown) + .label {
+        transform: translateY(-0.75em) scale(0.8);
+      }
+
+      /* Autofill fix */
+      input:-webkit-autofill {
+        box-shadow: 0 0 0 1000px #fff inset !important;
+        -webkit-text-fill-color: #000 !important;
+      }
+
+      input:-webkit-autofill + .label {
+        transform: translateY(-0.75em) scale(0.8);
+      }
+    }
+  }
+  .agreement {
+    font-size: 1em;
+    line-height: 1.5;
+    padding: 2em 4em;
+    text-align: justify;
+  }
+  .submit {
+    width: fit-content;
+    min-width: 12em;
+    height: 4.4em;
+    display: block;
+    margin: 2.5em auto 2em;
+    padding: 0 2em;
+    background-color: #af4e30;
+    color: #fff;
+    font-size: 1.6em;
+    font-weight: 500;
+
+    border: none;
+    border-radius: 999px; // intentional pill
+    cursor: pointer;
+
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.18);
+    transition: background-color 0.15s ease, box-shadow 0.15s ease,
+      transform 0.05s ease;
+
+    &:hover {
+      background-color: #b26a55;
+      box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+      transform: translateY(1px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.18);
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+  .radioGroup {
+    border: none;
+    padding: 0;
+    margin: 2.2em 0 1.2em;
+  }
+
+  .radioLegend {
+    font-size: 1.6em;
+    color: #777;
+    margin-bottom: 1em;
+    padding: 0;
+  }
+
+  .radioList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+  }
+
+  .radioOption {
+    display: flex;
+    align-items: center;
+    gap: 1.2em;
+    cursor: pointer;
+
+    // match your "clean underline" feel with a subtle row separator
+    padding: 1.1em 0;
+
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #e5ecfd;
+    }
+
+    input[type="radio"] {
+      appearance: none;
+      -webkit-appearance: none;
+
+      width: 1.6em;
+      height: 1.6em;
+      border-radius: 50%;
+      border: 2px solid #c9d6fb;
+      background: #fff;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      flex: 0 0 auto;
+
+      &:focus-visible {
+        outline: 2px solid #af4e30;
+        outline-offset: 3px;
+      }
+
+      &:checked {
+        border-color: #af4e30;
+      }
+
+      &:checked::after {
+        content: "";
+        width: 0.8em;
+        height: 0.8em;
+        border-radius: 50%;
+        background: #af4e30;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .radioLabelText {
+      font-size: 1.6em;
+      color: #2f3a4a;
+      line-height: 1.3;
+    }
+  }
+
+  // Optional: show your green checkmark state pattern for the group
+  .radioGroup.valid .radioLegend {
+    color: #2f3a4a;
+  }
+  .ctaBlock {
+    text-align: center;
+    padding: 0 2em 2.2em;
+  }
+
+  .nextStep {
+    font-size: 1.35em;
+    line-height: 1.5;
+    color: #4b5a6e;
+    margin-top: 1.2em;
+  }
+
+  .termsNote {
+    font-size: 1.2em;
+    line-height: 1.45;
+    color: #6b7688;
+    margin-top: 0.8em;
+  }
+
+  .sectionDivider {
+    margin: 3em 2em 2.2em;
+    height: 1px;
+    background: rgba(70, 70, 71, 0.18);
+  }
+
+  /* optional: if you want the divider to feel more “designed” */
+  /* .sectionDivider {
+    position: relative;
+    margin: 3em 2em 2.2em;
+    height: 1px;
+    background: rgba(70, 70, 71, 0.12);
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 6em;
+      height: 3px;
+      background: rgba(175, 78, 48, 0.25);
+      transform: translate(-50%, -50%);
+      border-radius: 999px;
+    }
+  } */
+}

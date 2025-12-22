@@ -6,3 +6,4 @@ export { default as getAvailableLitters } from "./get-avaialable-litters";
 export { default as sanitizeImages } from "./sanitize-images";
 export { default as faxTransactionNotification } from "./fax-transaction-notification";
 export { default as sendSMS } from "./sendSMS";
+export { default as getWaitlists } from "./get-waitlists";
