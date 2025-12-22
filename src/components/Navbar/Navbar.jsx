@@ -32,6 +32,7 @@ const Navbar = async () => {
         { message: "View All Puppies", link: "./puppies" },
       ],
     },
+    { title: "Waitlist", link: "/waitlist" },
     { title: "Location/Contact", link: "/#location" },
     { title: "About", link: "/about" },
   ];
