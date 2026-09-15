@@ -27,7 +27,9 @@
 
 .links {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  gap: 2em 0;
   padding: 4em 0 4em 0;
 }
 
@@ -117,6 +119,14 @@
 .ask:hover {
   background-color: #0096ca;
   border-color: #0080ad;
+}
+.schedule {
+  width: 100%;
+  background: #97b05f;
+}
+
+.schedule:hover {
+  background: #818e64;
 }
 .reserve,
 .balance {

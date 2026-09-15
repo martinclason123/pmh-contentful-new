@@ -11,6 +11,7 @@ import {
 import styles from "./puppy.module.css";
 import getPuppy from "../../../utils/get-puppy";
 import getPuppies from "../../../utils/get-puppies";
+import { getBreederScheduling } from "../../../data/scheduling";
 import { ArrowRight } from "lucide-react"; // Added arrow icon from lucide-react
 
 // Dynamic metadata function
@@ -92,6 +93,13 @@ export default async function Puppy({ params }) {
 
   const available = match.availability === "Available";
   const reserved = match.availability === "Reserved";
+  const scheduling = getBreederScheduling();
+
+  const schedulingUrl = scheduling
+    ? `${scheduling.calendlyUrl}?utm_source=peaceful_country_pets&utm_medium=website&utm_campaign=puppy_visit&utm_content=${encodeURIComponent(
+        match.chip
+      )}`
+    : null;
 
   return (
     <section className={`container`}>
@@ -139,6 +147,17 @@ export default async function Puppy({ params }) {
                       >
                         <span>Reserve Me</span>
                       </Link>
+                      {schedulingUrl ? (
+                        <a
+                          href={schedulingUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`${styles.cta} ${styles.schedule}`}
+                          aria-label={`Schedule a time to meet ${match.name} with ${scheduling.name}`}
+                        >
+                          <span>Schedule a Time to Meet Me!</span>
+                        </a>
+                      ) : null}
                     </div>
                   ) : (
                     <div>
