@@ -1,12 +1,34 @@
 import { Resend } from "resend";
+import {
+  formatGoHomeDate,
+  getPickupSchedulingUrl,
+} from "../data/scheduling";
 
-export default async function sendEmail(user, puppy, transaction_type) {
+export default async function sendEmail(
+  user,
+  puppy,
+  transaction_type,
+  restrictedPickupUrl
+) {
   let message;
   let subject;
+  let pickupMessage = "";
 
   // Base domain for links inside emails
   const origin = process.env.ORIGIN_URL || "https://www.pmhpuppies.com";
   const waitlistFaqUrl = `${origin}/waitlist#faq`;
+
+  if (transaction_type !== "waitlist" && !puppy.pickupScheduled) {
+    const pickupUrl = (
+      restrictedPickupUrl ||
+      getPickupSchedulingUrl(puppy, {
+        name: `${user.first} ${user.last}`.trim(),
+        email: user.email,
+      })
+    ).replace(/&/g, "&amp;");
+    const goHomeDate = formatGoHomeDate(puppy.available);
+    pickupMessage = `Please <a href="${pickupUrl}">pick a time to come pick up ${puppy.name}</a> on or after <strong>${goHomeDate}</strong>.`;
+  }
 
   // NEW: Waitlist email branch
   if (transaction_type === "waitlist") {
@@ -46,10 +68,10 @@ export default async function sendEmail(user, puppy, transaction_type) {
     `;
   } else if (transaction_type === "deposit") {
     subject = `Your Deposit on ${puppy.name}`;
-    message = `Congratulations ${user.first}! You have successfully placed a deposit on ${puppy.name}! If we have not been in contact already, we will be soon to set up visit/pick-up arrangements. If you need to get ahold of us, please do not hesitate to call or text (616) 613-6801. If you would like to pay off your balance ahead of time, please use this link: <a href="https://www.pmhpuppies.com/balance/${puppy.chip}">https://www.pmhpuppies.com/balance/${puppy.chip}</a> Thank you!`;
+    message = `Congratulations ${user.first}! You have successfully placed a deposit on ${puppy.name}! ${pickupMessage} If you need to get ahold of us, please do not hesitate to call or text (616) 613-6801. If you would like to pay off your balance ahead of time, please use this link: <a href="https://www.pmhpuppies.com/balance/${puppy.chip}">https://www.pmhpuppies.com/balance/${puppy.chip}</a> Thank you!`;
   } else {
     subject = `Your Purchase of ${puppy.name}`;
-    message = `Congratulations ${user.first}! You have successfully purchased ${puppy.name}! If we have not been in contact already, we will be soon to set up visit/pick-up arrangements. If you need to get ahold of us, please do not hesitate to call or text (616) 613-6801. Thank you!`;
+    message = `Congratulations ${user.first}! You have successfully purchased ${puppy.name}! ${pickupMessage} If you need to get ahold of us, please do not hesitate to call or text (616) 613-6801. Thank you!`;
   }
 
   const resend = new Resend(process.env.RESEND_API_KEY);

@@ -27,6 +27,8 @@
 
 .links {
   display: flex;
+  flex-wrap: wrap;
+  row-gap: 2em;
   justify-content: space-between;
   padding: 4em 0 4em 0;
 }
@@ -131,6 +133,14 @@
 .reserve span,
 .balance span {
   color: #000;
+}
+.schedule {
+  width: 100%;
+  background: #97b05f;
+}
+
+.schedule:hover {
+  background: #818e64;
 }
 .balance {
   margin-bottom: 2em;

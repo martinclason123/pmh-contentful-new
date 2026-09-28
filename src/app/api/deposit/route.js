@@ -1,6 +1,7 @@
 export const dynamic = "force-dynamic";
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
+import { getOrCreatePickupSchedulingLink } from "../../../utils/calendly";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
@@ -8,11 +9,28 @@ const CURRENCY = "usd";
 
 async function createCheckoutSession(puppyData, userData) {
   const origin = process.env.ORIGIN_URL || "http://localhost:3000";
+  const pickupSchedulingUrl = puppyData.pickupScheduled
+    ? null
+    : await getOrCreatePickupSchedulingLink(puppyData, {
+        name: `${userData.first} ${userData.last}`.trim(),
+        email: userData.email,
+      });
+
+  const metadata = {
+    puppy: JSON.stringify(puppyData),
+    user: JSON.stringify(userData),
+    transaction_type: "deposit",
+    puppy_chip: `${puppyData.chip}`,
+    ...(pickupSchedulingUrl && {
+      pickup_scheduling_url: pickupSchedulingUrl,
+    }),
+  };
 
   const TAX_RATE = 0.06; // 6% Michigan Sales Tax
   const taxAmount = Math.round(10341 * TAX_RATE); // Calculate tax in cents
 
   const checkoutSession = await stripe.checkout.sessions.create({
+    client_reference_id: `${puppyData.chip}`,
     payment_method_types: ["card"],
     mode: "payment",
     line_items: [
@@ -39,17 +57,9 @@ async function createCheckoutSession(puppyData, userData) {
       //   },
       // },
     ],
-    metadata: {
-      puppy: JSON.stringify(puppyData),
-      user: JSON.stringify(userData),
-      transaction_type: "deposit",
-    },
+    metadata,
     payment_intent_data: {
-      metadata: {
-        puppy: JSON.stringify(puppyData),
-        user: JSON.stringify(userData),
-        transaction_type: "deposit",
-      },
+      metadata,
     },
     success_url: `${origin}/deposit-success/${puppyData.chip}?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${origin}/puppies/${puppyData.chip}`,

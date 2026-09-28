@@ -1,6 +1,7 @@
 export const dynamic = "force-dynamic";
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
+import { getOrCreatePickupSchedulingLink } from "../../../utils/calendly";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
@@ -8,6 +9,12 @@ const CURRENCY = "usd";
 
 async function createCheckoutSession(puppyData, userData) {
   const origin = process.env.ORIGIN_URL || "http://localhost:3000";
+  const pickupSchedulingUrl = puppyData.pickupScheduled
+    ? null
+    : await getOrCreatePickupSchedulingLink(puppyData, {
+        name: `${userData.first} ${userData.last}`.trim(),
+        email: userData.email,
+      });
   const TAX_RATE = 0.06; // 6% Michigan Sales Tax
 
   let price;
@@ -25,9 +32,14 @@ async function createCheckoutSession(puppyData, userData) {
     puppy: JSON.stringify(puppyData),
     user: JSON.stringify(userData),
     transaction_type: "balance",
+    puppy_chip: `${puppyData.chip}`,
+    ...(pickupSchedulingUrl && {
+      pickup_scheduling_url: pickupSchedulingUrl,
+    }),
   };
 
   const checkoutSession = await stripe.checkout.sessions.create({
+    client_reference_id: `${puppyData.chip}`,
     payment_method_types: ["card", "klarna"],
     mode: "payment",
     line_items: [

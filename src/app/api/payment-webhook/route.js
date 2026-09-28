@@ -33,6 +33,7 @@ export async function POST(req) {
       const metadata = session?.metadata || {};
       const transactionType =
         metadata.transaction_type || metadata.transactionType || null;
+      const pickupSchedulingUrl = metadata.pickup_scheduling_url;
 
       // NEW: waitlist branch (keep it early and minimal)
       if (transactionType === "waitlist") {
@@ -141,9 +142,11 @@ export async function POST(req) {
       }
 
       // Send email and fax notifications
-      sendEmail(user, puppy, transactionType);
-      adminEmail(user, puppy, transactionType);
-      faxTransactionNotification(user, puppy, transactionType, amount);
+      await Promise.all([
+        sendEmail(user, puppy, transactionType, pickupSchedulingUrl),
+        adminEmail(user, puppy, transactionType),
+        faxTransactionNotification(user, puppy, transactionType, amount),
+      ]);
 
       const updateObj =
         !puppy.buyer || transactionType === "deposit"

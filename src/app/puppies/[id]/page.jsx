@@ -11,6 +11,7 @@ import {
 import styles from "./puppy.module.css";
 import getPuppy from "../../../utils/get-puppy";
 import getPuppies from "../../../utils/get-puppies";
+import { getBreederScheduling } from "../../../data/scheduling";
 import { ArrowRight } from "lucide-react"; // Added arrow icon from lucide-react
 
 // Dynamic metadata function
@@ -92,6 +93,15 @@ export default async function Puppy({ params }) {
 
   const available = match.availability === "Available";
   const reserved = match.availability === "Reserved";
+  const scheduling = getBreederScheduling();
+  const schedulingUrl = new URL(scheduling.calendlyUrl);
+  const puppyReference = `${match.name} (${match.chip})`;
+  schedulingUrl.searchParams.set("a1", puppyReference);
+  schedulingUrl.searchParams.set("utm_source", scheduling.trackingSource);
+  schedulingUrl.searchParams.set("utm_medium", "website");
+  schedulingUrl.searchParams.set("utm_campaign", "puppy_visit");
+  schedulingUrl.searchParams.set("utm_content", puppyReference);
+  schedulingUrl.searchParams.set("utm_term", match.chip);
 
   return (
     <section className={`container`}>
@@ -139,6 +149,15 @@ export default async function Puppy({ params }) {
                       >
                         <span>Reserve Me</span>
                       </Link>
+                      <a
+                        href={schedulingUrl.toString()}
+                        className={`${styles.cta} ${styles.schedule}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Schedule a time to meet ${match.name} at ${scheduling.name}`}
+                      >
+                        <span>Schedule a Time to Meet Me!</span>
+                      </a>
                     </div>
                   ) : (
                     <div>

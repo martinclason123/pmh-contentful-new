@@ -12,10 +12,12 @@ export default async function Deposit({ params }) {
     price: match.price,
     chip: match.chip,
     breed: match.breed,
+    available: match.available,
     buyer: match.buyer,
     buyerEmail: match.buyerEmail,
     buyerName: match.buyerName,
     buyerPhone: match.buyerPhone,
+    pickupScheduled: match.pickupScheduled,
   };
 
   return (

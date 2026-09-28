@@ -45,6 +45,7 @@ export async function GET(req) {
           buyerName,
           buyerEmail,
           buyerPhone,
+          pickupScheduled,
         } = entry.fields;
 
         const dam = litter.fields.dam?.fields || "";
@@ -68,6 +69,7 @@ export async function GET(req) {
           buyerName,
           buyerEmail,
           buyerPhone,
+          pickupScheduled: pickupScheduled ?? false,
           parents: {
             dam: {
               name: dam.name,

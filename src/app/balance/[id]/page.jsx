@@ -19,10 +19,12 @@ export default async function Balance({ params }) {
     chip: match.chip,
     deposit: match.deposit,
     breed: match.breed,
+    available: match.available,
     buyer: match.buyer,
     buyerEmail: match.buyerEmail,
     buyerName: match.buyerName,
     buyerPhone: match.buyerPhone,
+    pickupScheduled: match.pickupScheduled,
   };
 
   return (

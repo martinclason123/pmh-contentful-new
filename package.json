@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "calendly:webhook:setup": "node scripts/setup-calendly-webhook.mjs"
   },
   "dependencies": {
     "@formspark/use-formspark": "^0.1.39",
