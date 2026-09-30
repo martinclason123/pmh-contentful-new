@@ -17,7 +17,7 @@ function addDays(dateString, days) {
 export async function createPickupSchedulingLink(
   puppy,
   invitee = {},
-  breederId = "peacefulCountryPets"
+  breederId
 ) {
   const token = process.env.CALENDLY_ACCESS_TOKEN;
 
@@ -64,7 +64,7 @@ export async function createPickupSchedulingLink(
 export async function getOrCreatePickupSchedulingLink(
   puppy,
   invitee = {},
-  breederId = "peacefulCountryPets"
+  breederId
 ) {
   if (process.env.STRIPE_SECRET_KEY) {
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
