@@ -49,10 +49,11 @@ const query = new URLSearchParams({
 const subscriptions = await calendlyRequest(
   `/webhook_subscriptions?${query.toString()}`
 );
-const activeSubscriptions = subscriptions.collection.filter(
-  (subscription) =>
-    subscription.callback_url === callbackUrl &&
-    subscription.state === "active"
+const matchingSubscriptions = subscriptions.collection.filter(
+  (subscription) => subscription.callback_url === callbackUrl
+);
+const activeSubscriptions = matchingSubscriptions.filter(
+  (subscription) => subscription.state === "active"
 );
 const desiredEvents = ["invitee.created", "invitee.canceled"];
 const completeSubscription = activeSubscriptions.find((subscription) =>
@@ -66,7 +67,7 @@ if (completeSubscription) {
   process.exit(0);
 }
 
-for (const subscription of activeSubscriptions) {
+for (const subscription of matchingSubscriptions) {
   const subscriptionId = subscription.uri.split("/").filter(Boolean).pop();
 
   await calendlyRequest(`/webhook_subscriptions/${subscriptionId}`, {

@@ -432,25 +432,36 @@ export async function sendBreederSchedulingNotification({
   });
 
   if (process.env.CONTACT_PREFERENCE?.trim().toLowerCase() === "email") {
-    const contactRecipients = excludeDuplicateRecipients(
-      getContactEmailRecipients(),
-      adminRecipients
-    );
+    try {
+      const contactRecipients = excludeDuplicateRecipients(
+        getContactEmailRecipients(),
+        adminRecipients
+      );
 
-    if (contactRecipients.length > 0) {
-      await sendEmail({
-        from: scheduling.emailFrom,
-        to: contactRecipients,
-        subject,
-        html,
-        idempotencyKey: `${idempotencyPrefix}-contact/${eventId}`,
-      });
+      if (contactRecipients.length > 0) {
+        await sendEmail({
+          from: scheduling.emailFrom,
+          to: contactRecipients,
+          subject,
+          html,
+          idempotencyKey: `${idempotencyPrefix}-contact/${eventId}`,
+        });
+      }
+    } catch (error) {
+      console.error(
+        "Unable to send the secondary scheduling contact email:",
+        error
+      );
     }
 
     return;
   }
 
-  await sendFax(html, notificationType);
+  try {
+    await sendFax(html, notificationType);
+  } catch (error) {
+    console.error("Unable to send the secondary scheduling fax:", error);
+  }
 }
 
 export { getEventKind };
