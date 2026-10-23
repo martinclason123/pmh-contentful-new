@@ -1,5 +1,6 @@
 export const dynamic = "force-dynamic";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import {
   Slideshow,
   Parents,
@@ -19,36 +20,13 @@ import { ArrowRight } from "lucide-react"; // Added arrow icon from lucide-react
 export async function generateMetadata({ params }) {
   const match = await getPuppy(params.id);
 
+  if (!match) {
+    notFound();
+  }
+
   const site = new URL("https://www.pmhpuppies.com");
   const canonicalPath = `/puppies/${params.id}`;
   const fallbackOg = "/assets/og/puppy-default.jpg";
-
-  if (!match) {
-    return {
-      metadataBase: site,
-      title: "Puppy Not Found | Paw Prints on My Heart",
-      description:
-        "We couldn't find the puppy you were looking for. Please check out our available puppies or contact us for more information.",
-      alternates: { canonical: canonicalPath },
-      openGraph: {
-        title: "Puppy Not Found | Paw Prints on My Heart",
-        description:
-          "We couldn't find the puppy you were looking for. Please check out our available puppies or contact us for more information.",
-        url: canonicalPath,
-        type: "article",
-        images: [
-          { url: fallbackOg, width: 1200, height: 630, alt: "Puppy not found" },
-        ],
-      },
-      twitter: {
-        card: "summary_large_image",
-        title: "Puppy Not Found | Paw Prints on My Heart",
-        description:
-          "We couldn't find the puppy you were looking for. Please check out our available puppies or contact us for more information.",
-        images: [fallbackOg],
-      },
-    };
-  }
 
   const title = `${match.name} | ${match.breed} Puppy - Paw Prints on My Heart`;
   const desc =
@@ -84,11 +62,14 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Puppy({ params }) {
-  let match = await getPuppy(params.id);
-  console.log("params", params.id);
+  const match = await getPuppy(params.id);
+
+  if (!match) {
+    notFound();
+  }
 
   let litterMates = await getPuppies(match.litter);
-  const breed = litterMates[0].breed[0];
+  const breed = match.breed[0];
   litterMates = litterMates.filter((puppy) => puppy.chip !== match.chip);
 
   const available = match.availability === "Available";

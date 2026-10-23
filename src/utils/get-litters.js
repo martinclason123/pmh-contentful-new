@@ -1,26 +1,29 @@
 export default async function getLitters(id = null) {
   const url = new URL(
-    `${process.env.ORIGIN_URL || "http://localhost:3000"}/api/litters`
+    "/api/litters",
+    process.env.ORIGIN_URL || "http://localhost:3000"
   );
 
-  // If an id is provided, add it as a query parameter
   if (id) {
-    url.searchParams.append("id", id);
+    url.searchParams.set("id", id);
   }
 
   const response = await fetch(url);
 
-  if (response.ok) {
-    const data = await response.json();
-  
+  if (id && response.status === 404) {
+    return null;
+  }
 
+  if (!response.ok) {
     if (id) {
-      return data.litters[0];
-    } else {
-      return data.litters;
+      throw new Error(`Failed to fetch litter (HTTP ${response.status})`);
     }
-  } else {
+
     console.error("Failed to fetch litters:", response.statusText);
     return [];
   }
+
+  const data = await response.json();
+  // The filtered API returns an empty list when the litter no longer exists.
+  return id ? data.litters[0] ?? null : data.litters;
 }

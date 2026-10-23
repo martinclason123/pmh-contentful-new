@@ -1,4 +1,5 @@
 export const dynamic = "force-dynamic";
+import { notFound } from "next/navigation";
 import styles from "./litter.module.css";
 import { Subscribe } from "../../../components";
 import { Gallery, Parents, Back } from "../../subcomponents";
@@ -15,11 +16,7 @@ export async function generateMetadata({ params }) {
   const litter = await getLitters(params.id);
 
   if (!litter) {
-    return {
-      title: "Litter Not Found - Paw Prints on My Heart",
-      description:
-        "We couldn't find the litter you were looking for. Please check out our current and upcoming litters or contact us for more information.",
-    };
+    notFound();
   }
 
   const desc = litter.message || `Learn more about our ${litter.breed} litter.`;
@@ -51,8 +48,14 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Litter({ params }) {
+  const record = await getLitters(params.id);
+
+  if (!record) {
+    notFound();
+  }
+
+  const { parents, video } = record;
   const litter = await getPuppies(params.id);
-  const { parents, video } = await getLitters(params.id); // Retrieve the video ID
   const interests = [`${params.id}`];
 
   return (

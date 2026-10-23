@@ -1,29 +1,27 @@
 export default async function getPuppy(puppyId) {
-  // Construct the base URL
-  let url = `${process.env.ORIGIN_URL || "http://localhost:3000"}/api/puppy`;
+  const url = new URL(
+    "/api/puppy",
+    process.env.ORIGIN_URL || "http://localhost:3000"
+  );
 
-  // Append the puppyId query parameter
   if (puppyId) {
-    url += `?puppyId=${encodeURIComponent(puppyId)}`;
+    url.searchParams.set("puppyId", puppyId);
   }
 
-  try {
-    const response = await fetch(url, {
-      method: "GET",
-      cache: "no-store",
-    });
+  const response = await fetch(url, {
+    method: "GET",
+    cache: "no-store",
+  });
 
-    console.log("url:", url);
-
-    if (response.ok) {
-      const data = await response.json();
-      return data.puppy;
-    } else {
-      console.error("Failed to fetch puppy:", response.statusText);
-      return {};
-    }
-  } catch (error) {
-    console.error("Error fetching puppy:", error);
-    return {};
+  // Missing records are expected; outages must still surface as server errors.
+  if (response.status === 404) {
+    return null;
   }
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch puppy (HTTP ${response.status})`);
+  }
+
+  const data = await response.json();
+  return data.puppy;
 }

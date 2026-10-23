@@ -1,12 +1,17 @@
 export const dynamic = "force-dynamic";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import styles from "./balance.module.css";
 import getPuppy from "../../../utils/get-puppy";
 
 import { Agreement } from "../../subcomponents";
 
 export default async function Balance({ params }) {
-  let match = await getPuppy(params.id);
+  const match = await getPuppy(params.id);
+
+  if (!match) {
+    notFound();
+  }
   let { price } = match;
 
   if (match.deposit) {
