@@ -1,4 +1,5 @@
 export const dynamic = "force-dynamic";
+import { localDepositTest, readTestPuppy, testPuppyChip } from "../../../utils/local-deposit-test";
 import Stripe from "stripe";
 import sendEmail from "../../../utils/send-email";
 import adminEmail from "../../../utils/admin-email";
@@ -34,6 +35,12 @@ export async function POST(req) {
       const transactionType =
         metadata.transaction_type || metadata.transactionType || null;
       const pickupSchedulingUrl = metadata.pickup_scheduling_url;
+
+      if (localDepositTest() && (
+        event.livemode !== false || session.payment_status !== "paid" ||
+        transactionType !== "deposit" || metadata.local_deposit_test !== "true" ||
+        metadata.puppy_chip !== testPuppyChip
+      )) return new Response(null, { status: 200 });
 
       // NEW: waitlist branch (keep it early and minimal)
       if (transactionType === "waitlist") {
@@ -131,6 +138,15 @@ export async function POST(req) {
         break;
       }
 
+      if (localDepositTest()) {
+        if (String(puppy?.chip) !== testPuppyChip) {
+          return new Response("Expected the local test puppy", { status: 400 });
+        }
+        if ((await readTestPuppy()).checkoutSession === session.id) {
+          return new Response(null, { status: 200 });
+        }
+      }
+
       const { first, last, phone, email, street, city, state, zip, foundUs } =
         user;
 
@@ -141,11 +157,13 @@ export async function POST(req) {
         puppy.availability = ["Sold"];
       }
 
-      // Send email and fax notifications
+      const testSession = localDepositTest() ? session.id : undefined;
       await Promise.all([
-        sendEmail(user, puppy, transactionType, pickupSchedulingUrl),
-        adminEmail(user, puppy, transactionType),
-        faxTransactionNotification(user, puppy, transactionType, amount),
+        sendEmail(user, puppy, transactionType, pickupSchedulingUrl, testSession),
+        adminEmail(user, puppy, transactionType, testSession),
+        testSession
+          ? undefined
+          : faxTransactionNotification(user, puppy, transactionType, amount),
       ]);
 
       const updateObj =
@@ -162,6 +180,7 @@ export async function POST(req) {
               buyerStreet: street,
               foundOn: foundUs,
               buyer: true,
+              ...(localDepositTest() && { checkoutSession: session.id }),
             }
           : {
               availability: puppy.availability,

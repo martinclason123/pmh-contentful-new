@@ -1,6 +1,7 @@
+import { localDepositTest, sendLocalTestEmail } from "./local-deposit-test";
 import { Resend } from "resend";
 
-export default async function adminEmail(user, puppy, transaction_type) {
+export default async function adminEmail(user, puppy, transaction_type, testSession) {
   let subject;
   let message;
 
@@ -44,13 +45,19 @@ export default async function adminEmail(user, puppy, transaction_type) {
   const resend = new Resend(process.env.RESEND_API_KEY);
 
   try {
-    await resend.emails.send({
+    const email = {
       from: "Paw Prints on My Heart <support@pmhpuppies.com>",
       to: recipients,
       subject,
       html: `<p>${message}</p>`,
-    });
+    };
+    if (localDepositTest()) {
+      await sendLocalTestEmail(email, testSession, "admin");
+    } else {
+      await resend.emails.send(email);
+    }
   } catch (error) {
+    if (localDepositTest()) throw new Error("Test email could not be sent");
     console.error("Error sending admin email via Resend:", error);
   }
 }

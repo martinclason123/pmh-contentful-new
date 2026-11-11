@@ -2,6 +2,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Footer, Navbar, Popup, FloatingContact } from "../components";
+import { localDepositTest } from "../utils/local-deposit-test";
 import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -72,6 +73,14 @@ export const Metadata = {
 };
 
 export default function RootLayout({ children }) {
+  if (localDepositTest()) {
+    return (
+      <html lang="en">
+        <body className={inter.className}><main>{children}</main></body>
+      </html>
+    );
+  }
+
   return (
     <html lang="en">
       <head>

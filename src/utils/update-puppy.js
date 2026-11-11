@@ -1,3 +1,4 @@
+import { localDepositTest, readTestPuppy, saveTestPuppy, testPuppyChip } from "./local-deposit-test";
 import { createClient } from "contentful-management";
 
 async function getPuppyEntry(chip) {
@@ -20,6 +21,10 @@ async function getPuppyEntry(chip) {
 }
 
 export async function getManagedPuppy(chip) {
+  if (localDepositTest()) {
+    if (String(chip) !== testPuppyChip) throw new Error("Expected the local test puppy");
+    return readTestPuppy();
+  }
   try {
     const entry = await getPuppyEntry(chip);
 
@@ -36,6 +41,7 @@ export async function getManagedPuppy(chip) {
 }
 
 export async function updatePuppy(chip, updateData) {
+  if (localDepositTest()) return saveTestPuppy(chip, updateData);
   try {
     const entry = await getPuppyEntry(chip);
 

@@ -154,7 +154,9 @@ export function getFollowUpConfig(env, { seriesDefinitions } = {}) {
     cronSecret: env.CRON_SECRET,
     linkSecret: env.FOLLOW_UP_LINK_SECRET,
     enrollAfter: env.FOLLOW_UP_ENROLL_AFTER,
-    pilotLimit: positiveInteger("FOLLOW_UP_PILOT_LIMIT"),
+    pilotLimit: env.FOLLOW_UP_PILOT_LIMIT === "unlimited"
+      ? Infinity
+      : positiveInteger("FOLLOW_UP_PILOT_LIMIT"),
     policy,
   });
 }

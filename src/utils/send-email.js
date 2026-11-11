@@ -1,3 +1,4 @@
+import { localDepositTest, sendLocalTestEmail } from "./local-deposit-test";
 import { Resend } from "resend";
 import {
   formatGoHomeDate,
@@ -8,7 +9,8 @@ export default async function sendEmail(
   user,
   puppy,
   transaction_type,
-  restrictedPickupUrl
+  restrictedPickupUrl,
+  testSession,
 ) {
   let message;
   let subject;
@@ -95,8 +97,13 @@ export default async function sendEmail(
   };
 
   try {
-    await resend.emails.send(emailData);
+    if (localDepositTest()) {
+      await sendLocalTestEmail(emailData, testSession, "buyer");
+    } else {
+      await resend.emails.send(emailData);
+    }
   } catch (error) {
+    if (localDepositTest()) throw new Error("Test email could not be sent");
     console.error("Error sending email via Resend:", error);
   }
 }

@@ -38,3 +38,4 @@ next-env.d.ts
 
 # Local synthetic follow-up reports
 /.follow-up-reports/
+/.local-checkout/

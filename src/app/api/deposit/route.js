@@ -1,5 +1,6 @@
 export const dynamic = "force-dynamic";
 import { NextResponse } from "next/server";
+import { localDepositTest, readTestPuppy, testPuppyChip } from "../../../utils/local-deposit-test";
 import Stripe from "stripe";
 import { getOrCreatePickupSchedulingLink } from "../../../utils/calendly";
 
@@ -9,18 +10,22 @@ const CURRENCY = "usd";
 
 async function createCheckoutSession(puppyData, userData) {
   const origin = process.env.ORIGIN_URL || "http://localhost:3000";
-  const pickupSchedulingUrl = puppyData.pickupScheduled
-    ? null
-    : await getOrCreatePickupSchedulingLink(puppyData, {
-        name: `${userData.first} ${userData.last}`.trim(),
-        email: userData.email,
-      });
+  let pickupSchedulingUrl;
+  if (localDepositTest()) {
+    pickupSchedulingUrl = new URL("/local-test/pickup", origin).href;
+  } else if (!puppyData.pickupScheduled) {
+    pickupSchedulingUrl = await getOrCreatePickupSchedulingLink(puppyData, {
+      name: `${userData.first} ${userData.last}`.trim(),
+      email: userData.email,
+    });
+  }
 
   const metadata = {
     puppy: JSON.stringify(puppyData),
     user: JSON.stringify(userData),
     transaction_type: "deposit",
     puppy_chip: `${puppyData.chip}`,
+    ...(localDepositTest() && { local_deposit_test: "true" }),
     ...(pickupSchedulingUrl && {
       pickup_scheduling_url: pickupSchedulingUrl,
     }),
@@ -74,6 +79,23 @@ async function createCheckoutSession(puppyData, userData) {
 export async function POST(req) {
   try {
     const { puppyData, userData } = await req.json();
+
+    if (localDepositTest()) {
+      if (!/^sk_test_/.test(process.env.STRIPE_SECRET_KEY || "")) {
+        return new Response("Local checkout requires a Stripe test key", { status: 503 });
+      }
+      if (String(puppyData?.chip) !== testPuppyChip) {
+        return new Response("Use the local test puppy", { status: 400 });
+      }
+      const puppy = await readTestPuppy();
+      // Keep Checkout metadata under Stripe's 500-character value limit.
+      const { chip, name, breed, price, available, pickupScheduled } = puppy;
+      const session = await createCheckoutSession(
+        { chip, name, breed, price, available, pickupScheduled },
+        userData,
+      );
+      return NextResponse.json(session);
+    }
 
     const session = await createCheckoutSession(puppyData, userData);
 

@@ -2,6 +2,7 @@ export const dynamic = "force-dynamic";
 import Link from "next/link";
 import ConversionEvent from "./ConversionEvent";
 
+import { localDepositTest } from "../../../utils/local-deposit-test";
 import getPuppy from "../../../utils/get-puppy";
 import getCheckoutPickupUrl from "../../../utils/get-checkout-pickup-url";
 import {
@@ -13,9 +14,12 @@ import styles from "./success.module.css";
 export default async function DepositSuccess({ params, searchParams }) {
   let match = await getPuppy(params.id);
   const shouldOfferPickupScheduling = match && !match.pickupScheduled;
-  const restrictedPickupUrl = shouldOfferPickupScheduling
-    ? await getCheckoutPickupUrl(searchParams?.session_id, params.id)
-    : null;
+  let restrictedPickupUrl;
+  if (shouldOfferPickupScheduling) {
+    restrictedPickupUrl = localDepositTest()
+      ? "/local-test/pickup"
+      : await getCheckoutPickupUrl(searchParams?.session_id, params.id);
+  }
   const pickupUrl = shouldOfferPickupScheduling
     ? restrictedPickupUrl ||
       getPickupSchedulingUrl(match, {
@@ -31,7 +35,7 @@ export default async function DepositSuccess({ params, searchParams }) {
     <section className={`container ${styles.success}`}>
       {match ? (
         <>
-          <ConversionEvent amount={300} />
+          {!localDepositTest() && <ConversionEvent amount={300} />}
           <h1>Congratulations! You have placed a deposit on {match.name}!</h1>
           <p>
             A confirmation email has been sent to you. If you did not receive

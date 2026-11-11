@@ -4,11 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:checkout": "node --env-file=.env.local scripts/local-checkout.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "calendly:webhook:setup": "node scripts/setup-calendly-webhook.mjs",
     "test:follow-up": "node --test test/customer-follow-up/*.test.mjs",
+    "follow-up:preview-preparation": "node --env-file=.env.local scripts/preview-pickup-email.mjs",
+    "follow-up:preview-welcome": "node --env-file=.env.local scripts/preview-pickup-email.mjs --welcome",
     "follow-up:simulate": "node scripts/simulate-follow-up.mjs",
     "test:follow-up:database": "node --env-file=.env.follow-up-test.local scripts/check-follow-up-database.mjs",
     "test:follow-up:scheduling-database": "node --env-file=.env.follow-up-test.local --test test/customer-follow-up/postgres.integration.mjs"

@@ -15,6 +15,7 @@ import { createCalendlyWebhookHandler } from "../../../lib/customer-follow-up/ca
 import { recordCalendlyFollowUp } from "../../../lib/customer-follow-up/runtime.mjs";
 
 export const runtime = "nodejs";
+export const maxDuration = 60;
 
 export const POST = createCalendlyWebhookHandler({
   env: process.env,

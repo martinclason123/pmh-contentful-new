@@ -88,6 +88,63 @@ function transactionStore(client, breederId) {
         ).rows[0],
       );
     },
+    async getJourney(id) {
+      return journeyFrom((await query(
+        "SELECT * FROM customer_follow_up.journeys WHERE breeder_id=$1 AND id=$2",
+        [id],
+      )).rows[0]);
+    },
+    async suppress(email, time) {
+      await query(
+        "INSERT INTO customer_follow_up.suppressions VALUES ($1,$2,'customer-opt-out',$3) ON CONFLICT DO NOTHING",
+        [email, time],
+      );
+    },
+    async dueDeliveries(stages, now, limit, journeyId, maxAttempts, retryHours) {
+      return (await query(
+        `SELECT m.journey_id AS "journeyId", m.stage
+         FROM customer_follow_up.messages m
+         JOIN customer_follow_up.journeys j ON (m.breeder_id,m.journey_id)=(j.breeder_id,j.id)
+         LEFT JOIN customer_follow_up.delivery_attempts a ON (m.breeder_id,m.journey_id,m.stage)=(a.breeder_id,a.journey_id,a.stage)
+         WHERE m.breeder_id=$1 AND m.stage=ANY($2::text[]) AND m.state='pending'
+           AND j.status='active' AND j.schedule_version=m.schedule_version
+           AND m.due_at<=$3 AND m.expires_at>$3 AND ($5::text IS NULL OR m.journey_id=$5)
+           AND NOT EXISTS (SELECT 1 FROM customer_follow_up.suppressions s
+             WHERE s.breeder_id=m.breeder_id AND s.customer_email=j.customer_email)
+           AND (a.attempts IS NULL OR (a.provider_id IS NULL AND a.attempts<$6
+             AND a.schedule_version=m.schedule_version
+             AND a.first_attempt_at + $7::int * interval '1 hour'>$3
+             AND a.last_attempt_at + interval '2 minutes'<=$3))
+         ORDER BY m.due_at, m.journey_id, m.stage LIMIT $4`,
+        [stages, now, limit, journeyId, maxAttempts, retryHours],
+      )).rows;
+    },
+    async getAttempt(id, stage) {
+      return (await query(
+        "SELECT * FROM customer_follow_up.delivery_attempts WHERE breeder_id=$1 AND journey_id=$2 AND stage=$3",
+        [id, stage],
+      )).rows[0] ?? null;
+    },
+    async reserveAttempt(message, time) {
+      await query(
+        `INSERT INTO customer_follow_up.delivery_attempts
+         (breeder_id,journey_id,stage,schedule_version,first_attempt_at,last_attempt_at,attempts)
+         VALUES ($1,$2,$3,$4,$5,$5,1)
+         ON CONFLICT (breeder_id,journey_id,stage) DO UPDATE
+         SET last_attempt_at=EXCLUDED.last_attempt_at, attempts=delivery_attempts.attempts+1`,
+        [message.journeyId, message.stage, message.scheduleVersion, time],
+      );
+    },
+    async markSent(message, time, providerId) {
+      await query(
+        "UPDATE customer_follow_up.delivery_attempts SET provider_id=$4 WHERE breeder_id=$1 AND journey_id=$2 AND stage=$3",
+        [message.journeyId, message.stage, providerId],
+      );
+      await query(
+        "UPDATE customer_follow_up.messages SET state='sent', sent_at=$4 WHERE breeder_id=$1 AND journey_id=$2 AND stage=$3",
+        [message.journeyId, message.stage, time],
+      );
+    },
     async getJourneys() {
       return (
         await query(

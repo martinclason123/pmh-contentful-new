@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 
 export const schema = "customer_follow_up";
-const migrations = ["001-booking-state.sql", "002-configurable-series.sql"];
+const migrations = ["001-booking-state.sql", "002-configurable-series.sql", "003-delivery-attempts.sql"];
 
 /** Versioned, checksummed migrations. The webhook never creates tables itself. */
 export async function migrateFollowUps(client) {

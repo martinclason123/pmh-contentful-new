@@ -299,3 +299,53 @@ test("S15: no synthetic M2 customer rows remain after the rehearsal", async () =
     assert.equal(Number(result.rows[0].count), 0);
   }
 });
+
+test("PMH pickup-only delivery retries, audits and sends a stage at most once", async () => {
+  const { deliverDue, getDeliveryConfig } = await import("../../src/lib/customer-follow-up/deliver-due.mjs");
+  const { stopToken, validStopToken } = await import("../../src/lib/customer-follow-up/stop-link.mjs");
+  const breederId = "synthetic-m2-delivery";
+  await cleanup(breederId);
+  try {
+    const env = createSchedulingEnvironment({ repository, breederId });
+    const booking = env.book("delivery", "2026-10-10T16:00:00Z");
+    assert.equal((await env.post(booking)).status, 200);
+    const { journeys: [journey] } = await env.snapshot();
+    const delivery = getDeliveryConfig({
+      FOLLOW_UP_DELIVERY_STAGES: "preparation", FOLLOW_UP_CONTENT_KEY: "pmh-welcome",
+      FOLLOW_UP_AUDIT_EMAIL: "audit@pmh.test",
+    });
+    const payloads = [];
+    const options = {
+      config: env.config, delivery, repository, clock: env.clock,
+      getPuppy: async (chip) => ({ chip, name: "Synthetic Puppy" }),
+      send: async (payload) => {
+        payloads.push(payload);
+        if (payloads.length === 1) throw new Error("Synthetic provider timeout");
+        return "synthetic-resend-id";
+      },
+    };
+    assert.deepEqual(await deliverDue({ ...options, journeyId: journey.id }), { sent: 0, failed: 1 });
+    assert.deepEqual(await deliverDue(options), { sent: 0, failed: 0 });
+    env.clock.advance(120000);
+    const concurrent = await Promise.all([deliverDue(options), deliverDue(options)]);
+    assert.equal(concurrent.reduce((sum, result) => sum + result.sent, 0), 1);
+    assert.equal(payloads.length, 2);
+    assert.equal(payloads[0].idempotencyKey, payloads[1].idempotencyKey);
+    assert.equal(payloads[1].auditEmail, "audit@pmh.test");
+    assert.equal(payloads[1].customerEmail, journey.customerEmail);
+    assert.match(payloads[1].email.html, /Click here to watch the pickup video/);
+    assert.equal(payloads[1].email.attachments.length, 3);
+    const token = stopToken(env.config, journey);
+    assert.ok(validStopToken(env.config, journey, token));
+    assert.ok(!validStopToken(env.config, journey, token.replace(/.$/, "x")));
+    await repository.transaction(breederId, (tx) => tx.suppress(journey.customerEmail, new Date(env.clock.now()).toISOString()));
+    const after = await env.snapshot();
+    assert.equal(after.messages.find(({stage}) => stage === "preparation").state, "sent");
+    assert.deepEqual(after.messages.filter(({stage}) => stage !== "preparation").map(({state}) => state), ["pending", "pending"]);
+    env.clock.advance(10 * 86400000);
+    assert.deepEqual(await deliverDue(options), { sent: 0, failed: 0 });
+    assert.equal(payloads.length, 2);
+  } finally {
+    await cleanup(breederId);
+  }
+});

@@ -1,18 +1,22 @@
 export const dynamic = "force-dynamic";
 
+import { localDepositTest, readTestPuppy, testPuppyChip } from "../../../utils/local-deposit-test";
 import { createClient } from "contentful";
 import { sanitizeImages } from "../../../utils";
 export async function GET(req) {
+  const puppyId = new URL(req.url).searchParams.get("puppyId");
+  if (localDepositTest()) {
+    return puppyId === testPuppyChip
+      ? Response.json({ puppy: await readTestPuppy() })
+      : Response.json({ error: "Use the local test puppy" }, { status: 404 });
+  }
+
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken: process.env.CONTENTFUL_DELIVERY_KEY,
   });
 
   try {
-    // Extract puppyId (chip) from query parameters
-    const { searchParams } = new URL(req.url);
-    const puppyId = searchParams.get("puppyId");
-
     // If no puppyId is provided, return an error
     if (!puppyId) {
       return new Response(JSON.stringify({ error: "puppyId is required" }), {
