@@ -1,57 +1,8 @@
 import "server-only";
 
-import { createHmac, timingSafeEqual } from "crypto";
+export { verifyCalendlyWebhookSignature } from "../lib/customer-follow-up/signature.mjs";
 
 const CALENDLY_API_ORIGIN = "https://api.calendly.com";
-const SIGNATURE_TOLERANCE_SECONDS = 180;
-
-export function verifyCalendlyWebhookSignature(
-  rawBody,
-  signatureHeader,
-  signingKey
-) {
-  if (!signatureHeader || !signingKey) {
-    return false;
-  }
-
-  const values = signatureHeader.split(",").reduce((result, value) => {
-    const separatorIndex = value.indexOf("=");
-
-    if (separatorIndex > 0) {
-      const key = value.slice(0, separatorIndex).trim();
-      const item = value.slice(separatorIndex + 1).trim();
-      result[key] = [...(result[key] || []), item];
-    }
-
-    return result;
-  }, {});
-
-  const timestamp = Number(values.t?.[0]);
-  const signatures = values.v1 || [];
-  const age = Math.abs(Date.now() / 1000 - timestamp);
-
-  if (
-    !Number.isFinite(timestamp) ||
-    signatures.length === 0 ||
-    age > SIGNATURE_TOLERANCE_SECONDS
-  ) {
-    return false;
-  }
-
-  const expectedSignature = createHmac("sha256", signingKey)
-    .update(`${timestamp}.${rawBody}`)
-    .digest("hex");
-  const expectedBuffer = Buffer.from(expectedSignature, "utf8");
-
-  return signatures.some((signature) => {
-    const signatureBuffer = Buffer.from(signature, "utf8");
-
-    return (
-      signatureBuffer.length === expectedBuffer.length &&
-      timingSafeEqual(signatureBuffer, expectedBuffer)
-    );
-  });
-}
 
 export async function getCalendlyResource(uri) {
   const data = await getCalendlyResponse(uri);
@@ -101,7 +52,7 @@ export function extractPuppyChip(invitee) {
     .sort(
       (left, right) =>
         (left.position ?? Number.MAX_SAFE_INTEGER) -
-        (right.position ?? Number.MAX_SAFE_INTEGER)
+        (right.position ?? Number.MAX_SAFE_INTEGER),
     )
     .find((item) => item.answer?.trim())?.answer;
   const chipMatch = puppyAnswer?.match(/\(([^()]+)\)\s*$/);

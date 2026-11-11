@@ -56,7 +56,7 @@ export async function POST(req) {
           },
         };
 
-        // For this milestone: just log from the utility
+
         await addToWaitlist(waitlistPayload);
         await sendEmail(
           {

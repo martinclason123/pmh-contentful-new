@@ -7,7 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "calendly:webhook:setup": "node scripts/setup-calendly-webhook.mjs"
+    "calendly:webhook:setup": "node scripts/setup-calendly-webhook.mjs",
+    "test:follow-up": "node --test test/customer-follow-up/*.test.mjs",
+    "follow-up:simulate": "node scripts/simulate-follow-up.mjs",
+    "test:follow-up:database": "node --env-file=.env.follow-up-test.local scripts/check-follow-up-database.mjs",
+    "test:follow-up:scheduling-database": "node --env-file=.env.follow-up-test.local --test test/customer-follow-up/postgres.integration.mjs"
   },
   "dependencies": {
     "@formspark/use-formspark": "^0.1.39",
@@ -25,6 +29,7 @@
     "next": "14.2.5",
     "next-client-cookies": "^1.1.1",
     "next-sitemap": "^4.2.3",
+    "pg": "^8.23.1",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.3.0",

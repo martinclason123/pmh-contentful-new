@@ -1,0 +1,67 @@
+flowchart TD
+  subgraph booking ["1. Keep the pickup schedule current"]
+    booked["Calendly pickup booked or rescheduled"]
+    verify["Verify webhook and link pickup journey"]
+    schedule["Set unsent dates: -3, +7, +21 days"]
+    canceled["Pickup canceled or staff stops journey"]
+    stopPending["Stop pending emails"]
+    pause["Staff pauses or resumes breeder emails"]
+    booked --> verify --> schedule
+    canceled --> stopPending
+  end
+
+  state[("Neon Postgres: this breeder's follow-up state")]
+  schedule --> state
+  stopPending --> state
+  pause --> state
+
+  subgraph delivery ["2. Send only when due and allowed"]
+    hourly["Vercel Cron runs hourly"]
+    claim["Find and claim due emails; exit if none"]
+    checks["Recheck dates, opt-out, stops, pause and sent history"]
+    eligible{"Allowed to send now?"}
+    skip["Skip stopped or expired; hold paused or changed"]
+    stage{"Which email is due?"}
+    preparation["Preparation: bring list, food, crate guidance"]
+    checkIn["Check-in: settling in, pictures and stories"]
+    review["Ask for an honest Google review"]
+    send["Resend sends with breeder branding and opt-out link"]
+    accepted{"Send accepted?"}
+    record["Record sent; no repeats; finish after all three"]
+    failure["Retry on later hourly run; flag uncertain sends"]
+    hourly --> claim --> checks --> eligible
+    eligible -->|"No"| skip
+    eligible -->|"Yes"| stage
+    stage -->|"3 days before / immediately"| preparation
+    stage -->|"7 days after"| checkIn
+    stage -->|"21 days after"| review
+    preparation --> send
+    checkIn --> send
+    review --> send
+    send --> accepted
+    accepted -->|"Yes"| record
+    accepted -->|"No or uncertain"| failure
+  end
+
+  state -->|"Inside 3 days: attempt preparation now"| claim
+  state -.->|"Latest saved state"| checks
+
+  subgraph controls ["3. Easy opt-out at any time"]
+    optOut["Customer clicks Do not email me again"]
+    stopPage["One stop button; no login"]
+    suppression["Save opt-out; stop pending and future follow-ups"]
+    bounce["Resend reports permanent bounce or complaint"]
+    optOut --> stopPage --> suppression
+    bounce --> suppression
+  end
+  send -.->|"Link in every email"| optOut
+
+  style booking fill:#F5FBFF,stroke:#3DADFF
+  style delivery fill:#F5F5F5,stroke:#B3B3B3
+  style controls fill:#FFF0FA,stroke:#F849C1
+  style state fill:#DCCCFF,stroke:#874FFF
+  style eligible fill:#FFECBD,stroke:#FFC943
+  style stage fill:#FFECBD,stroke:#FFC943
+  style accepted fill:#FFECBD,stroke:#FFC943
+  style record fill:#CDF4D3,stroke:#66D575
+  style suppression fill:#FFCDC2,stroke:#FF7556

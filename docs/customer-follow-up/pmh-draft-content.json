@@ -1,0 +1,24 @@
+{
+  "key": "pmh-draft",
+  "status": "draft-for-technical-testing",
+  "approvedForLiveCustomers": false,
+  "preparation": {
+    "subject": "Getting ready for your puppy pickup",
+    "bring": [
+      "Your pickup confirmation and any remaining paperwork",
+      "A suitable carrier or crate and a washable towel",
+      "Any questions you would like to discuss at pickup"
+    ],
+    "food": "At pickup we will confirm your puppy's current food and feeding routine. Please follow the breeder-provided instructions. Final PMH food details will be added before launch.",
+    "crate": "Ask us about the puppy's current crate routine and how to continue it at home. Final PMH crate guidance will be added before launch."
+  },
+  "checkIn": {
+    "subject": "How is your puppy settling in?",
+    "body": "We would love to hear how things are going in your puppy's new home. Reply with an update, a picture or a favorite story. We will ask your permission before sharing anything on social media."
+  },
+  "review": {
+    "subject": "Would you share your experience with PMH?",
+    "body": "We would appreciate an honest Google review of your experience with Paw Prints on My Heart. Thank you for taking a moment to share it."
+  },
+  "optOut": "Do not email me again"
+}
