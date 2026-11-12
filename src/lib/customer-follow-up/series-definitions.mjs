@@ -3,7 +3,7 @@
  * stages or changing timing/content; existing journeys retain their snapshot.
  * Breeder identity and content sets remain in env, not in these shared rules.
  */
-export const seriesDefinitions = {
+const definitions = {
   "standard-v1": {
     key: "standard-v1",
     stages: [
@@ -38,5 +38,25 @@ export const seriesDefinitions = {
         sendImmediatelyIfDue: false,
       },
     ],
+  },
+};
+
+
+export const seriesDefinitions = {
+  ...definitions,
+  "pmh-pickup-v2": {
+    key: "pmh-pickup-v2",
+    stages: definitions["standard-v1"].stages.map((stage) =>
+      stage.id === "check-in"
+        ? {
+            ...stage,
+            id: "pickup-day",
+            offsetDays: 0,
+            template: "pickup-day",
+            contentKey: "pickup-day",
+            expiry: { anchor: "due", days: 1 },
+          }
+        : stage,
+    ),
   },
 };

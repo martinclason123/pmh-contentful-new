@@ -4,7 +4,12 @@ import { stopToken } from "./stop-link.mjs";
 import { sendFollowUpEmail } from "./email-delivery.mjs";
 import { welcomeEmail } from "./welcome-email.mjs";
 
-const renderers = new Map([["preparation", welcomeEmail]]);
+import { pickupDayEmail } from "./pickup-day-email.mjs";
+
+const renderers = new Map([
+  ["preparation", welcomeEmail],
+  ["pickup-day", pickupDayEmail],
+]);
 
 export function getDeliveryConfig(env) {
   const stages = (env.FOLLOW_UP_DELIVERY_STAGES || "").split(",").map((stage) => stage.trim()).filter(Boolean);

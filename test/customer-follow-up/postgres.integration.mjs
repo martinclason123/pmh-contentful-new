@@ -349,3 +349,47 @@ test("PMH pickup-only delivery retries, audits and sends a stage at most once", 
     await cleanup(breederId);
   }
 });
+
+test("PMH pickup-day follows a rescheduled pickup and uses the audited sender", async () => {
+  const { deliverDue, getDeliveryConfig } = await import("../../src/lib/customer-follow-up/deliver-due.mjs");
+  const breederId = "synthetic-m2-pickup-day";
+  await cleanup(breederId);
+  try {
+    const env = createSchedulingEnvironment({
+      repository, breederId, overrides: { FOLLOW_UP_SERIES_KEY: "pmh-pickup-v2" },
+    });
+    const original = env.book("pickup-day", "2026-10-09T16:00:00Z");
+    assert.equal((await env.post(original)).status, 200);
+    const replacement = env.book("pickup-day-new", "2026-10-10T16:00:00Z", { previous: original });
+    assert.equal((await env.post(replacement)).status, 200);
+    const { journeys: [journey], messages } = await env.snapshot();
+    assert.equal(messages.find(({stage}) => stage === "pickup-day").dueAt, "2026-10-10T16:00:00.000Z");
+    assert.ok(!messages.some(({stage}) => stage === "check-in"));
+    const payloads = [];
+    const options = {
+      config: env.config, repository, clock: env.clock,
+      delivery: getDeliveryConfig({
+        FOLLOW_UP_DELIVERY_STAGES: "pickup-day",
+        FOLLOW_UP_CONTENT_KEY: "pmh-welcome",
+        FOLLOW_UP_AUDIT_EMAIL: "audit@pmh.test",
+      }),
+      getPuppy: async (chip) => ({ chip, name: "Synthetic Puppy" }),
+      send: async (payload) => {
+        payloads.push(payload);
+        return "synthetic-pickup-day-id";
+      },
+    };
+    env.clock.advance(86400000);
+    assert.deepEqual(await deliverDue(options), { sent: 0, failed: 0 });
+    env.clock.advance(86400000);
+    assert.deepEqual(await deliverDue({ ...options, journeyId: journey.id }), { sent: 0, failed: 0 });
+    assert.deepEqual(await deliverDue(options), { sent: 1, failed: 0 });
+    assert.deepEqual(await deliverDue(options), { sent: 0, failed: 0 });
+    assert.equal(payloads.length, 1);
+    assert.equal(payloads[0].auditEmail, "audit@pmh.test");
+    assert.match(payloads[0].email.text, /616-302-5766/);
+    assert.match(payloads[0].email.html, /Stop pickup follow-up emails/);
+  } finally {
+    await cleanup(breederId);
+  }
+});

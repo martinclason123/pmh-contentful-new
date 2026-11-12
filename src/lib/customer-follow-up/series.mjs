@@ -3,7 +3,7 @@ import { seriesDefinitions } from "./series-definitions.mjs";
 const identifier = /^[a-z][a-z0-9-]{0,63}$/;
 // Contract for the M4 renderer. "update" is the reusable text/picture-update
 // template; this list does not imply that rendering/delivery exists yet.
-const templates = new Set(["preparation", "check-in", "review", "update"]);
+const templates = new Set(["preparation", "check-in", "review", "update", "pickup-day"]);
 const expiryPolicies = new Set(["checkInExpiryDays", "reviewExpiryDays"]);
 const integer = (value) =>
   Number.isSafeInteger(value) && Math.abs(value) <= 3650;

@@ -62,3 +62,12 @@ before sending manually.
 A later stage needs a renderer, a timing and audit test, and an update to the
 delivery allowlist. Already-enrolled journeys retain all three planned stages.
 Review due dates and expiry before enabling any newly released stage.
+
+## Pickup-day email release
+
+For newly enrolled bookings, use `FOLLOW_UP_SERIES_KEY=pmh-pickup-v2`
+and `FOLLOW_UP_DELIVERY_STAGES=preparation,pickup-day`. The second email
+becomes due at the scheduled pickup time and runs through the hourly sender,
+with the same audit BCC and opt-out link as preparation. If a pickup is
+rescheduled, the email follows the replacement appointment. Existing bookings
+keep their original series. The review stage stays off the delivery allowlist.
