@@ -42,21 +42,36 @@ const definitions = {
 };
 
 
+const pickupV2 = {
+  key: "pmh-pickup-v2",
+  stages: definitions["standard-v1"].stages.map((stage) =>
+    stage.id === "check-in"
+      ? {
+          ...stage,
+          id: "pickup-day",
+          offsetDays: 0,
+          template: "pickup-day",
+          contentKey: "pickup-day",
+          expiry: { anchor: "due", days: 1 },
+        }
+      : stage,
+  ),
+};
+
+const oneWeek = {
+  ...definitions["standard-v1"].stages.find(({ id }) => id === "check-in"),
+  id: "one-week",
+  template: "one-week",
+  contentKey: "one-week",
+};
+
 export const seriesDefinitions = {
   ...definitions,
-  "pmh-pickup-v2": {
-    key: "pmh-pickup-v2",
-    stages: definitions["standard-v1"].stages.map((stage) =>
-      stage.id === "check-in"
-        ? {
-            ...stage,
-            id: "pickup-day",
-            offsetDays: 0,
-            template: "pickup-day",
-            contentKey: "pickup-day",
-            expiry: { anchor: "due", days: 1 },
-          }
-        : stage,
+  [pickupV2.key]: pickupV2,
+  "pmh-pickup-v3": {
+    key: "pmh-pickup-v3",
+    stages: pickupV2.stages.flatMap((stage) =>
+      stage.id === "pickup-day" ? [stage, oneWeek] : [stage],
     ),
   },
 };

@@ -393,3 +393,56 @@ test("PMH pickup-day follows a rescheduled pickup and uses the audited sender", 
     await cleanup(breederId);
   }
 });
+
+test("PMH one-week email sends seven days after pickup with BCC and leaves old bookings alone", async () => {
+  const { deliverDue, getDeliveryConfig } = await import("../../src/lib/customer-follow-up/deliver-due.mjs");
+  const breederId = "synthetic-m2-one-week";
+  const pickup = "2026-10-10T16:00:00Z";
+  await cleanup(breederId);
+  try {
+    const legacy = createSchedulingEnvironment({ repository, breederId });
+    assert.equal((await legacy.post(legacy.book("old-check-in", pickup))).status, 200);
+    const env = createSchedulingEnvironment({
+      repository, breederId, overrides: { FOLLOW_UP_SERIES_KEY: "pmh-pickup-v3" },
+    });
+    assert.equal((await env.post(env.book("new-one-week", pickup))).status, 200);
+    const { messages } = await env.snapshot();
+    const week = messages.filter(({stage}) => stage === "one-week");
+    assert.equal(week.length, 1);
+    assert.equal(week[0].dueAt, "2026-10-17T16:00:00.000Z");
+    assert.equal(messages.filter(({stage}) => stage === "check-in").length, 1);
+
+    const payloads = [];
+    const originalFetch = globalThis.fetch;
+    try {
+      globalThis.fetch = async (url, { body }) => {
+        assert.equal(url, "https://api.resend.com/emails");
+        payloads.push(JSON.parse(body));
+        return Response.json({ id: "synthetic-one-week" });
+      };
+      const options = {
+        config: env.config, repository, clock: env.clock,
+        delivery: getDeliveryConfig({
+          FOLLOW_UP_DELIVERY_STAGES: "one-week",
+          FOLLOW_UP_CONTENT_KEY: "pmh-welcome",
+          FOLLOW_UP_AUDIT_EMAIL: "audit@pmh.test",
+        }),
+        getPuppy: async (chip) => ({ chip, name: "Synthetic Puppy" }),
+      };
+      env.clock.advance(9 * 86400000 - 1);
+      assert.deepEqual(await deliverDue(options), { sent: 0, failed: 0 });
+      env.clock.advance(1);
+      assert.deepEqual(await deliverDue(options), { sent: 1, failed: 0 });
+      assert.deepEqual(await deliverDue(options), { sent: 0, failed: 0 });
+    } finally {
+      globalThis.fetch = originalFetch;
+    }
+    assert.equal(payloads.length, 1);
+    assert.deepEqual(payloads[0].to, ["customer@pmh.test"]);
+    assert.deepEqual(payloads[0].bcc, ["audit@pmh.test"]);
+    assert.match(payloads[0].html, /https:\/\/www\.facebook\.com\/profile\.php\?id=61582896891113/);
+    assert.match(payloads[0].text, /favorite nap spot/);
+  } finally {
+    await cleanup(breederId);
+  }
+});

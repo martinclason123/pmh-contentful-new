@@ -71,3 +71,11 @@ becomes due at the scheduled pickup time and runs through the hourly sender,
 with the same audit BCC and opt-out link as preparation. If a pickup is
 rescheduled, the email follows the replacement appointment. Existing bookings
 keep their original series. The review stage stays off the delivery allowlist.
+
+## One-week check-in release
+
+Use `FOLLOW_UP_SERIES_KEY=pmh-pickup-v3` and
+`FOLLOW_UP_DELIVERY_STAGES=preparation,pickup-day,one-week`. New bookings
+schedule the third email seven calendar days after the pickup appointment.
+It uses the same reply address, audit BCC and opt-out link. Previously enrolled
+bookings keep their series. The review request remains off the delivery allowlist.

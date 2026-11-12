@@ -3,12 +3,13 @@ import { stageEligibility } from "./schedule.mjs";
 import { stopToken } from "./stop-link.mjs";
 import { sendFollowUpEmail } from "./email-delivery.mjs";
 import { welcomeEmail } from "./welcome-email.mjs";
-
+import { oneWeekEmail } from "./one-week-email.mjs";
 import { pickupDayEmail } from "./pickup-day-email.mjs";
 
 const renderers = new Map([
   ["preparation", welcomeEmail],
   ["pickup-day", pickupDayEmail],
+  ["one-week", oneWeekEmail],
 ]);
 
 export function getDeliveryConfig(env) {
