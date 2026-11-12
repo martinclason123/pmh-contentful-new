@@ -4,12 +4,14 @@ import { stopToken } from "./stop-link.mjs";
 import { sendFollowUpEmail } from "./email-delivery.mjs";
 import { welcomeEmail } from "./welcome-email.mjs";
 import { oneWeekEmail } from "./one-week-email.mjs";
+import { reviewEmail } from "./review-email.mjs";
 import { pickupDayEmail } from "./pickup-day-email.mjs";
 
 const renderers = new Map([
   ["preparation", welcomeEmail],
   ["pickup-day", pickupDayEmail],
   ["one-week", oneWeekEmail],
+  ["review", reviewEmail],
 ]);
 
 export function getDeliveryConfig(env) {
@@ -80,6 +82,7 @@ export async function deliverDue({
       const email = await renderers.get(prepared.stage.template)({
         customerName: null, puppyName: puppy.name, pickupAt: prepared.journey.pickupAt,
         timeZone: config.timeZone, breederName: config.breederName, stopUrl: stopUrl.href,
+        reviewUrl: config.reviewUrl,
       });
       const sent = await transact(async (tx) => {
         const current = await loadEligible(tx, candidate);

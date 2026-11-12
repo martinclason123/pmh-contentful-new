@@ -79,3 +79,12 @@ Use `FOLLOW_UP_SERIES_KEY=pmh-pickup-v3` and
 schedule the third email seven calendar days after the pickup appointment.
 It uses the same reply address, audit BCC and opt-out link. Previously enrolled
 bookings keep their series. The review request remains off the delivery allowlist.
+
+## Google review release
+
+Keep `FOLLOW_UP_SERIES_KEY=pmh-pickup-v3` and set
+`FOLLOW_UP_DELIVERY_STAGES=preparation,pickup-day,one-week,review`.
+The Google review email uses the review stage already scheduled for eligible
+bookings, 21 calendar days after pickup. It follows the same audit BCC and
+opt-out rules. The sender does not look at replies or feedback when deciding
+who gets a review request.

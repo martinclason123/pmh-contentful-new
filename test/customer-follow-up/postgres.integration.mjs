@@ -446,3 +446,52 @@ test("PMH one-week email sends seven days after pickup with BCC and leaves old b
     await cleanup(breederId);
   }
 });
+
+test("PMH review sends at 21 days using the Google link and audit BCC", async () => {
+  const { deliverDue, getDeliveryConfig } = await import("../../src/lib/customer-follow-up/deliver-due.mjs");
+  const breederId = "synthetic-m2-review";
+  const googleUrl = "https://g.page/r/CY790YOY8l0sEBM/review";
+  await cleanup(breederId);
+  try {
+    const env = createSchedulingEnvironment({
+      repository, breederId,
+      overrides: { FOLLOW_UP_SERIES_KEY: "pmh-pickup-v3", GOOGLE_REVIEW_URL: googleUrl },
+    });
+    assert.equal((await env.post(env.book("review", "2026-10-10T16:00:00Z"))).status, 200);
+    const { messages } = await env.snapshot();
+    assert.equal(messages.find(({stage}) => stage === "review").dueAt, "2026-10-31T16:00:00.000Z");
+
+    const payloads = [];
+    const originalFetch = globalThis.fetch;
+    try {
+      globalThis.fetch = async (url, { body }) => {
+        assert.equal(url, "https://api.resend.com/emails");
+        payloads.push(JSON.parse(body));
+        return Response.json({ id: "synthetic-review-send" });
+      };
+      const options = {
+        config: env.config, repository, clock: env.clock,
+        delivery: getDeliveryConfig({
+          FOLLOW_UP_DELIVERY_STAGES: "review",
+          FOLLOW_UP_CONTENT_KEY: "pmh-welcome",
+          FOLLOW_UP_AUDIT_EMAIL: "audit@pmh.test",
+        }),
+        getPuppy: async (chip) => ({ chip, name: "Synthetic Puppy" }),
+      };
+      env.clock.advance(23 * 86400000 - 1);
+      assert.deepEqual(await deliverDue(options), { sent: 0, failed: 0 });
+      env.clock.advance(1);
+      assert.deepEqual(await deliverDue(options), { sent: 1, failed: 0 });
+      assert.deepEqual(await deliverDue(options), { sent: 0, failed: 0 });
+    } finally {
+      globalThis.fetch = originalFetch;
+    }
+    assert.equal(payloads.length, 1);
+    assert.deepEqual(payloads[0].bcc, ["audit@pmh.test"]);
+    assert.equal(payloads[0].subject, "How did we do?");
+    assert.ok(payloads[0].html.includes('href="' + googleUrl + '"'));
+    assert.match(payloads[0].text, /honest Google review/);
+  } finally {
+    await cleanup(breederId);
+  }
+});
